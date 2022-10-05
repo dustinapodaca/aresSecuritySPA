@@ -607,7 +607,7 @@ export default function Example() {
               </div>
             </div>
             <div className="w-full lg:w-1/2 xl:w-5/12 px-4">
-              <div className="mt-10 p-4 sm:mx-auto lg:mt-0">
+              <div className="mt-10 sm:mx-auto lg:mt-0">
                 <span className="font-semibold text-3xl text-white mb-2 block">
                   Why Choose Us
                 </span>
