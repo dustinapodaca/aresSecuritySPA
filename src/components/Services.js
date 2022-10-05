@@ -1,10 +1,11 @@
 import React from 'react';
 import { AnimationOnScroll } from 'react-animation-on-scroll';
+import { Link } from "react-scroll";
 
-export default function Example() {
+export default function Services() {
   return (
     <>
-      <section className="pt-12 lg:pt-[120px] pb-12 lg:pb-[90px] overflow-hidden bg-black">
+      <section id="services" className="pt-12 lg:pt-[120px] pb-12 lg:pb-[90px] overflow-hidden bg-black">
         <div className="container mx-auto px-6">
           <div className="flex flex-wrap justify-between items-center -mx-4">
             <div className="w-full lg:w-6/12 px-4">
@@ -632,9 +633,8 @@ export default function Example() {
                 <p className="text-white text-lg text-body-color mb-12">
                   Our client portal allows management to review incidents, submit requests, and recall incoming & outgoing personnel. Contact us today for a quote!
                 </p>
-                <button className="sm:mx-auto">
-                  <a
-                    href="#contact"
+                <button className="sm:mx-auto"><Link to="contact" spy={true} smooth={true}>
+                  <span
                     className="
                     mx-auto
                     py-4
@@ -652,8 +652,8 @@ export default function Example() {
                     "
                   >
                   Get A Quote
-                  </a>
-                </button>
+                  </span>
+                </Link></button>
               </div>
             </div>
           </div>

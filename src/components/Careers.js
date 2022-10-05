@@ -1,10 +1,10 @@
 import React from 'react';
 import { AnimationOnScroll } from 'react-animation-on-scroll';
 
-export default function Example() {
+export default function Careers() {
   return (
     <>
-      <section className="text-gray-600 body-font">
+      <section id="careers" className="text-gray-600 body-font">
         <div className="container mx-auto flex flex-col px-5 pt-24 pb-8 justify-center items-center">
           <AnimationOnScroll animateIn="animate__fadeInUp" duration={1} animateOnce={true}>
             <img className="lg:w-4/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded mx-auto" alt="hero" src="https://www.aressecurity.co/wp-content/uploads/2022/10/IMG_4640-2-2-2-scaled-2.jpeg"/>

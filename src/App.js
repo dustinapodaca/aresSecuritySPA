@@ -8,18 +8,26 @@ import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Careers from './components/Careers';
 import Footer from './components/Footer';
+import { animateScroll as scroll } from "react-scroll";
 
 class App extends React.Component {
+
+  scrollToTop = () => {
+    scroll.scrollToTop();
+  };
+
   render() {
     return (
       <>
-        <Hero />
-        <Company />
-        <Services />
+        <Hero id="home" />
+        <Company id="company" />
+        <Services id="services" />
         <Testimonials />
-        <Contact />
-        <Careers />
-        <Footer />
+        <Contact id="contact" />
+        <Careers id="careers" />
+        <Footer
+          scrollToTop={this.scrollToTop}
+        />
       </>
     );
   }

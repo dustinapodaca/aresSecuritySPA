@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default function Example() {
+export default function Company() {
   return (
     <>
-      <section className="text-gray-600 body-font">
+      <section id="company" className="text-gray-600 body-font">
         <div className="container px-5 py-24 mx-auto">
           <div className="text-center mb-20">
             <h2 className="sm:text-3xl text-2xl font-medium title-font text-gray-900 mb-4">Women Owned & Operated.</h2>

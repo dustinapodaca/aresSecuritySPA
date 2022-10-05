@@ -2,13 +2,14 @@ import React from 'react';
 import { Fragment } from 'react';
 import { Popover, Transition } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import { Link } from "react-scroll";
 
 const navigation = [
-  { name: 'Company  ', href: '#' },
-  { name: 'Services  ', href: '#' },
-  { name: 'Contact Us  ', href: '#' },
-  { name: 'Apply  ', href: '#' },
-]
+  { name: 'Company  ', to: 'company' },
+  { name: 'Services  ', to: 'services' },
+  { name: 'Contact Us  ', to: 'contact' },
+  { name: 'Careers  ', to: 'careers' },
+];
 
 export default function Hero() {
   return (
@@ -48,9 +49,9 @@ export default function Hero() {
                 </div>
                 <div className="hidden md:ml-16 md:block md:space-x-12 md:pr-4">
                   {navigation.map((item) => (
-                    <a key={item.name} href={item.href} className="font-medium text-white text-lg pb-1 link link-underline link-underline-black">
+                    <span key={item.name} className="font-medium text-white text-lg pb-1 link link-underline link-underline-black active"><Link to={item.to} spy={true} smooth={true}>
                       {item.name}
-                    </a>
+                    </Link></span>
                   ))}
                 </div>
               </nav>
@@ -80,20 +81,19 @@ export default function Hero() {
                     </div>
                     <div className="-mr-2">
                       <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-                        <span className="sr-only">Close main menu</span>
+                        <span className="sr-only">Close Main Menu</span>
                         <XMarkIcon className="h-6 w-6" aria-hidden="true" />
                       </Popover.Button>
                     </div>
                   </div>
                   <div className="space-y-1 px-2 pt-2 pb-3">
                     {navigation.map((item) => (
-                      <a
+                      <span
                         key={item.name}
-                        href={item.href}
                         className="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900"
-                      >
+                      ><Link to={item.to} spy={true} smooth={true}>
                         {item.name}
-                      </a>
+                      </Link></span>
                     ))}
                     <div className="space-y-1 px-2 pt-1 pb-2">
                       <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start mx-auto">
