@@ -28,7 +28,7 @@ export default function Example() {
                 <div className="w-full xl:w-1/2 px-3 sm:px-4">
                   <div className="my-4 relative z-10">
                     <img
-                      src="https://www.aressecurity.co/wp-content/uploads/2021/08/20210703_163937-2-scaled.jpg"
+                      src="https://www.aressecurity.co/wp-content/uploads/2022/10/received_613864499661396.jpeg"
                       alt=""
                       className="rounded-2xl w-full"
                     />
