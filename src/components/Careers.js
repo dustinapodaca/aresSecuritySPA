@@ -1,11 +1,14 @@
 import React from 'react';
+import { AnimationOnScroll } from 'react-animation-on-scroll';
 
 export default function Example() {
   return (
     <>
       <section className="text-gray-600 body-font">
-        <div className="container mx-auto flex flex-col px-5 py-24 justify-center items-center">
-          <img className="lg:w-4/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded" alt="hero" src="https://www.aressecurity.co/wp-content/uploads/2022/10/IMG_4640-2-2-2-scaled-2.jpeg"/>
+        <div className="container mx-auto flex flex-col px-5 pt-24 pb-8 justify-center items-center">
+          <AnimationOnScroll animateIn="animate__fadeInUp" duration={2} animateOnce={true}>
+            <img className="lg:w-4/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded mx-auto" alt="hero" src="https://www.aressecurity.co/wp-content/uploads/2022/10/IMG_4640-2-2-2-scaled-2.jpeg"/>
+          </AnimationOnScroll>
             <div className="w-full md:w-2/3 flex flex-col mb-16 items-center text-center">
             <h2 className="font-bold text-4xl sm:text-4xl text-black mb-8">
               Join Our <span className="text-litegreen">Team</span></h2>

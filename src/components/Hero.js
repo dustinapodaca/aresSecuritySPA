@@ -2,9 +2,6 @@ import React from 'react';
 import { Fragment } from 'react';
 import { Popover, Transition } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-// import Zoom from 'react-reveal/Zoom';
-
-
 
 const navigation = [
   { name: 'Company  ', href: '#' },
@@ -13,7 +10,7 @@ const navigation = [
   { name: 'Apply  ', href: '#' },
 ]
 
-export default function Example() {
+export default function Hero() {
   return (
     <div className="relative overflow-hidden bg-black">
       <div className="mx-auto max-w-7xl">
@@ -42,8 +39,8 @@ export default function Example() {
                       />
                     </div>
                     <div className="-mr-2 flex items-center md:hidden">
-                      <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-                        <span className="sr-only">Open main menu</span>
+                      <Popover.Button className="inline-flex items-center justify-center rounded-md bg-litegreen p-2 text-black hover:bg-litegreen hover:text-black focus:outline-none focus:ring-2 focus:ring-inset focus:ring-odgreen focus:transition ease-in-out duration-200">
+                        <span className="sr-only">Open Main Menu</span>
                         <Bars3Icon className="h-6 w-6" aria-hidden="true" />
                       </Popover.Button>
                     </div>
@@ -98,6 +95,32 @@ export default function Example() {
                         {item.name}
                       </a>
                     ))}
+                    <div className="space-y-1 px-2 pt-1 pb-2">
+                      <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start mx-auto">
+                        <a href="https://facebook.com/protectionbyares" target="_blank" rel="noreferrer" className="text-gray-500">
+                          <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-5 h-5 fill-odgreen" viewBox="0 0 24 24">
+                            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                          </svg>
+                        </a>
+                        {/* <a className="ml-3 text-gray-500">
+                <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-5 h-5" viewBox="0 0 24 24">
+                  <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                </svg>
+              </a> */}
+                        <a href="https://instagram.com/protectionbyares" target="_blank" rel="noreferrer" className="ml-3 text-gray-500">
+                          <svg fill="#FFFFFF" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-5 h-5 fill-odgreen" viewBox="0 0 24 24">
+                            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+                          </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/company/ares-security-llc/" target="_blank" rel="noreferrer" className="ml-3 text-gray-500">
+                          <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" className="w-5 h-5 fill-odgreen" viewBox="0 0 24 24">
+                            <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+                            <circle cx="4" cy="4" r="2" stroke="none"></circle>
+                          </svg>
+                        </a>
+                      </span>
+                    </div>
                   </div>
                 </div>
               </Popover.Panel>
@@ -144,37 +167,17 @@ export default function Example() {
               <p className="mt-3 text-litegreen text-gray-500 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-lg md:mt-7 md:text-xl lg:mx-0 lg:mb-8">
                 Ares strives to be Colorado's first Security Company dedicated to the Cannabis Industry. We understand that MJ Dispensaries face different obstacles than ordinary businesses, which is why guards are trained on Product, Distribution, and MED regulations.
               </p>
-              {/* <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
-                <div className="rounded-md shadow">
-                  <a
-                    href="#"
-                    className="flex w-full items-center justify-center rounded-md border border-transparent bg-odgreen px-8 py-3 text-base font-medium text-white hover:bg-white hover:text-odgreen md:py-3 md:px-10 md:text-lg mx-auto transition-colors	duration-200 ease-in-out shadow"
-                  >
-                    Contact Us
-                  </a>
-                </div>
-                <div className="mt-3 sm:mt-0 sm:ml-3 shadow">
-                  <a
-                    href="#"
-                    className="flex w-full items-center justify-center rounded-md border border-transparent bg-odgreen px-8 py-3 text-base font-medium text-white hover:bg-white hover:text-odgreen md:py-3 md:px-10 md:text-lg mx-auto transition-colors	duration-200 ease-in-out shadow"
-                  >
-                    Apply Now
-                  </a>
-                </div>
-              </div> */}
             </div>
           </main>
         </div>
       </div>
-      {/* <Zoom> */}
-        <div id="heroImg" className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-          <img
-            className="h-56 w-full object-cover sm:h-72 md:h-96 lg:h-full lg:w-full"
-            src="https://www.aressecurity.co/wp-content/uploads/2021/08/IMG_4688-3NoWrinkles-scaled.jpg"
-            alt=""
-          />
-        </div>
-      {/* </Zoom> */}
+      <div id="heroImg" className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+        <img
+          className="h-56 w-full object-cover sm:h-72 md:h-96 lg:h-full lg:w-full"
+          src="https://www.aressecurity.co/wp-content/uploads/2021/08/IMG_4688-3NoWrinkles-scaled.jpg"
+          alt=""
+        />
+      </div>
     </div>
   )
 }
