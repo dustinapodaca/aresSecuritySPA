@@ -14,7 +14,7 @@ export default function Careers() {
               Join Our <span className="text-litegreen">Team</span></h2>
             <p className="mb-8 leading-relaxed">Our philosphy is simple - the wellbeing of our employees is most important to us. We believe that happy and healthy employees are the foundation of a great company, and that balance between work, play, and rest is a must. At Ares, you are more than just a security guard. Here, you will have the opportunity to work in customer service, managerial, marketing, and sales roles- because as we grow, we want you to grow with us! We encourage anybody who is serious about security and knowledgeable about cannabis to apply.</p>
               <div className="flex w-full justify-center items-end">
-                <button className="inline-flex text-black bg-litegreen border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Apply Now</button>
+              <button className="inline-flex text-black bg-litegreen border-0 py-3 px-10 focus:outline-none hover:bg-odgreen hover:text-white transition ease-in-out rounded-lg text-lg">Apply Now</button>
               </div>
             </div>
         </div>
