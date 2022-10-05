@@ -4,8 +4,8 @@ import { AnimationOnScroll } from 'react-animation-on-scroll';
 export default function Example() {
   return (
     <>
-      <section className="pt-20 lg:pt-[120px] pb-12 lg:pb-[90px] overflow-hidden bg-black">
-        <div className="container mx-auto p-2">
+      <section className="pt-12 lg:pt-[120px] pb-12 lg:pb-[90px] overflow-hidden bg-black">
+        <div className="container mx-auto px-6">
           <div className="flex flex-wrap justify-between items-center -mx-4">
             <div className="w-full lg:w-6/12 px-4">
               <div className="flex items-center -mx-3 sm:-mx-4">
@@ -28,7 +28,7 @@ export default function Example() {
                 <div className="w-full xl:w-1/2 px-3 sm:px-4">
                   <div className="my-4 relative z-10">
                     <img
-                      src="https://www.aressecurity.co/wp-content/uploads/2022/10/received_613864499661396.jpeg"
+                      src="https://www.aressecurity.co/wp-content/uploads/2022/10/received_6138644996613962-3.jpg"
                       alt=""
                       className="rounded-2xl w-full"
                     />
@@ -619,8 +619,8 @@ export default function Example() {
                   <AnimationOnScroll animateIn="animate__fadeIn" duration={3} className="inline-block" animateOnce={true}>
                     <span className='text-odgreen'> employees</span>
                   </AnimationOnScroll><span> </span> 
-                  <AnimationOnScroll animateIn="animate__fadeIn" duration={3} delay={750} className="inline-block" animateOnce={true}>
-                    <span className='text-odgreen'> feel safe</span>
+                  <AnimationOnScroll animateIn="animate__fadeIn" duration={3} delay={750} className="inline-block" animateOnce={true}><span> feel</span> 
+                    <span className='text-odgreen'> safe</span>
                   </AnimationOnScroll><span> & </span> 
                   <AnimationOnScroll animateIn="animate__fadeIn" duration={3} delay={1100} className="inline-block" animateOnce={true}>
                     <span className='text-odgreen'>happy</span>
@@ -630,7 +630,7 @@ export default function Example() {
                   Our guards are trained on product, distribution, and MED regulations, tailoring our services to your dispensaries needs. GPS perimeter patrol scans, daily reports, and logbook software generates security analytics for your business.
                 </p>
                 <p className="text-white text-lg text-body-color mb-12">
-                  Our client portal allows management to review incidents, submit requests, and recall incoming / outgoing personnel. Contact us today for a quote!
+                  Our client portal allows management to review incidents, submit requests, and recall incoming & outgoing personnel. Contact us today for a quote!
                 </p>
                 <button className="sm:mx-auto">
                   <a
