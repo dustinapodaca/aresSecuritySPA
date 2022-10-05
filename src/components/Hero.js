@@ -33,14 +33,14 @@ export default function Example() {
               <nav className="relative flex items-center justify-between sm:h-10 lg:justify-start" aria-label="Global">
                 <div className="flex flex-shrink-0 flex-grow items-center lg:flex-grow-0">
                   <div className="flex w-full items-center justify-between md:w-auto">
-                    <a href="#">
+                    <div>
                       <span className="sr-only">Ares Security</span>
                       <img
                         alt="Ares Security"
                         className="h-8 w-auto sm:h-14"
                         src="https://www.aressecurity.co/wp-content/uploads/2021/03/ARES-SYMBOL-Green.png"
                       />
-                    </a>
+                    </div>
                     <div className="-mr-2 flex items-center md:hidden">
                       <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
                         <span className="sr-only">Open main menu</span>
@@ -127,16 +127,16 @@ export default function Example() {
                   </g>
                 </svg></span>{' '}
                 <span className="block text-litegreen xl:inline">protection for 
-                  <span class="fade-in-text1">
+                  <span className="fade-in-text1">
                     <span className='text-odgreen'> people</span>
                   </span>
                 </span>{' '}
                 <span className="block text-litegreen xl:inline">
-                  <span class="fade-in-text2">
+                  <span className="fade-in-text2">
                     <span className='text-odgreen'>property</span>
                   </span>
                 <span> &</span>
-                  <span class="fade-in-text3">
+                  <span className="fade-in-text3">
                     <span className='text-odgreen'> plants.</span>
                   </span>
                 </span>
