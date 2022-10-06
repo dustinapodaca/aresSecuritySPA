@@ -5,10 +5,10 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { Link } from "react-scroll";
 
 const navigation = [
-  { name: 'Company  ', to: 'company' },
-  { name: 'Services  ', to: 'services' },
-  { name: 'Contact Us  ', to: 'contact' },
-  { name: 'Careers  ', to: 'careers' },
+  { name: 'Company', to: 'company' },
+  { name: 'Services', to: 'services' },
+  { name: 'Contact Us', to: 'contact' },
+  { name: 'Careers', to: 'careers' },
 ];
 
 export default function Hero() {
@@ -39,8 +39,8 @@ export default function Hero() {
                         src="https://www.aressecurity.co/wp-content/uploads/2021/03/ARES-SYMBOL-Green.png"
                       />
                     </div>
-                    <div className="-mr-2 flex items-center md:hidden">
-                      <Popover.Button className="inline-flex items-center justify-center rounded-md bg-litegreen p-2 text-black hover:bg-litegreen hover:text-black focus:outline-none focus:ring-2 focus:ring-inset focus:ring-odgreen focus:transition ease-in-out duration-200">
+                    <div className="-mr-2 flex items-center md:hidden focus:outline-none">
+                      <Popover.Button id="popOver1" className="inline-flex items-center justify-center rounded-md bg-litegreen p-2 text-black focus:outline-none focus:ring-1 focus:ring-inset focus:ring-odgreen">
                         <span className="sr-only">Open Main Menu</span>
                         <Bars3Icon className="h-6 w-6" aria-hidden="true" />
                       </Popover.Button>
@@ -49,7 +49,7 @@ export default function Hero() {
                 </div>
                 <div className="hidden md:ml-16 md:block md:space-x-12 md:pr-4">
                   {navigation.map((item) => (
-                    <span key={item.name} className="font-medium text-white text-lg pb-1 link link-underline link-underline-black active"><Link to={item.to} spy={true} smooth={true}>
+                    <span key={item.name} style={{ cursor: 'pointer' }} className="font-medium text-white text-lg pb-1 link link-underline link-underline-black active"><Link to={item.to} spy={true} smooth={true}>
                       {item.name}
                     </Link></span>
                   ))}
@@ -80,7 +80,7 @@ export default function Hero() {
                       />
                     </div>
                     <div className="-mr-2">
-                      <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                      <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" id="popOver2">
                         <span className="sr-only">Close Main Menu</span>
                         <XMarkIcon className="h-6 w-6" aria-hidden="true" />
                       </Popover.Button>

@@ -29,7 +29,7 @@ export default function Services() {
                 <div className="w-full xl:w-1/2 px-3 sm:px-4">
                   <div className="my-4 relative z-10">
                     <img
-                      src="https://www.aressecurity.co/wp-content/uploads/2022/10/received_6138644996613962-3.jpg"
+                      src="https://www.aressecurity.co/wp-content/uploads/2022/10/received_6138644996613962-4.jpg"
                       alt=""
                       className="rounded-2xl w-full"
                     />

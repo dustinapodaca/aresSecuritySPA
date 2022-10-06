@@ -1,3 +1,15 @@
+#popOver1:focus {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  outline: none;
+}
+
+#popOver2 {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  outline: none;
+}
+
 #map {
   filter: grayscale(1) contrast(1.2) opacity(0.30);
 }
