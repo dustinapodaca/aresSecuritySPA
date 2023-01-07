@@ -1,6 +1,76 @@
 import React from 'react';
+import { useState, useEffect, useRef } from 'react';
+// import { useReducer } from 'react';
 
-export default function Contact() {
+// import axios from 'axios';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { ThreeDots } from 'react-loader-spinner'
+
+//mailgun
+import formData from 'form-data';
+import Mailgun from 'mailgun.js';
+
+const mg = new Mailgun(formData);
+const client = mg.client({username: 'api', key: process.env.REACT_APP_MAILGUN_API_KEY});
+
+const Contact = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [subject, setSubject] = useState('');
+  const [message, setMessage] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+  const [loading, setLoading] = useState(false);
+
+  // Create a ref for the form element
+  const formRef = useRef(null);
+
+  // Display success or error message when it has changed
+  useEffect(() => {
+    if (successMessage === 'Message sent successfully!') {
+      toast.success(successMessage);
+      resetForm();
+    } else if (errorMessage) {
+      toast.error(errorMessage);
+    }
+  }, [successMessage, errorMessage]);
+  
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    try {
+      const response = await client.messages.create(process.env.REACT_APP_DOMAIN, {
+        from: `Ares Security Contact Form Submission <${email}>`,
+        to: 'dustin.apodaca@aressecurity.co',
+        subject: subject,
+        // template: 'arescontact', 'v:name': name, 'v:email': email, 'v:message': message, 'v:subject': subject, 'h:X-Mailgun-Variables': JSON.stringify({name: name, email: email, message: message, subject: subject})
+        text: `FROM: ${name}\nREPLY EMAIL: ${email}\n\nMESSAGE:\n${message}\n\n\n© 2023 Ares Security LLC`
+      });
+
+      console.log('RESPONSE', response);
+
+      if (response.status === 200) {
+        setSuccessMessage('Message sent successfully!');
+      }
+    } catch (error) {
+      console.log(error);
+      setErrorMessage('Failed to send message, please try again or email us directly at: contact@aressecurity.co');
+    } finally {
+      setTimeout(() => {
+        setLoading(false);
+      }, 500);
+    }
+  }
+
+  const resetForm = () => {
+    formRef.current.reset();
+    setName('');
+    setEmail('');
+    setSubject('');
+    setMessage('');
+  };
+
   return (
     <>
       <section id="contact" className="text-gray-400 bg-black body-font relative">
@@ -38,23 +108,77 @@ export default function Contact() {
             >
               HOW CAN WE HELP YOU?
             </h2>
-            <div className="relative mb-4">
-              <label for="name" className="leading-7 text-sm text-white">Name</label>
-              <input type="text" id="name" name="name" className="w-full bg-white rounded border border-litegreen focus:border-odgreen focus:ring-2 focus:ring-litegreen text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"/>
-            </div>
-            <div className="relative mb-4">
-              <label for="email" className="leading-7 text-sm text-white">Email</label>
-              <input type="email" id="email" name="email" className="w-full bg-white rounded border border-litegreen focus:border-odgreen focus:ring-2 focus:ring-litegreen text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"/>
-            </div>
-            <div className="relative mb-4">
-              <label for="message" className="leading-7 text-sm text-white">Message</label>
-              <textarea id="message" name="message" className="w-full bg-gray-800 rounded border border-litegreen focus:border-indigo-500 focus:ring-2 focus:ring-litegreen h-32 text-base outline-none text-gray-100 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
-            </div>
-            <button className="text-white bg-odgreen border-0 py-3 px-10 lg:px-8 xl:px-10 focus:outline-none hover:bg-litegreen hover:text-black transition ease-in-out duration-300 rounded-lg text-lg">Send</button>
-            <p className="text-xs text-white text-opacity-90 mt-3">© 2022 Ares Security LLC</p>
+
+              <form ref={formRef} onSubmit={handleSubmit}>
+                <div className="relative mb-4">
+                  <label htmlFor="name" className="leading-7 text-sm text-white">Name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    className="w-full bg-white rounded border border-litegreen focus:border-odgreen focus:ring-2 focus:ring-litegreen text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                    value={name}
+                    onChange={(event) => setName(event.target.value)}
+                  />
+                </div>
+                <div className="relative mb-4">
+                  <label htmlFor="email" className="leading-7 text-sm text-white">Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    className="w-full bg-white rounded border border-litegreen focus:border-odgreen focus:ring-2 focus:ring-litegreen text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                    value={email}
+                    onChange={(event) => setEmail(event.target.value)}
+                  />
+                </div>
+              <div className="relative mb-4">
+                <label htmlFor="subject" className="leading-7 text-sm text-white">Subject</label>
+                <input
+                  type="subject"
+                  id="subject"
+                  name="subject"
+                  className="w-full bg-white rounded border border-litegreen focus:border-odgreen focus:ring-2 focus:ring-litegreen text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  value={subject}
+                  onChange={(event) => setSubject(event.target.value)}
+                />
+              </div>
+
+                <div className="relative mb-4">
+                  <label htmlFor="message" className="leading-7 text-sm text-white">Message</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    className="w-full bg-gray-800 rounded border border-litegreen focus:border-indigo-500 focus:ring-2 focus:ring-litegreen h-32 text-base outline-none text-gray-100 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+                    value={message}
+                    onChange={(event) => setMessage(event.target.value)}
+                  />
+                </div>
+              {loading ? (
+                <div className="mx-5">
+                  <ThreeDots
+                    height="52"
+                    width="80"
+                    radius="9"
+                    color="#fff"
+                    ariaLabel="three-dots-loading"
+                    wrapperStyle={{}}
+                    wrapperClassName=""
+                    visible={true}
+                  />
+                </div>
+              ) : (
+                <>
+                  <button className="text-white bg-odgreen border-0 py-3 px-10 lg:px-8 xl:px-10 focus:outline-none hover:bg-litegreen hover:text-black transition ease-in-out duration-300 rounded-lg text-lg">Send</button>
+                </>
+              )}
+                <p className="text-xs text-white text-opacity-90 mt-3">© 2023 Ares Security LLC</p>
+              </form>
           </div>
         </div>
       </section>
     </>
   );
 }
+
+export default Contact;

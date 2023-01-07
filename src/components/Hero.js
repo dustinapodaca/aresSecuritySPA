@@ -165,7 +165,7 @@ export default function Hero() {
                 </span>
               </h1>
               <p className="mt-3 text-litegreen text-gray-500 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-lg md:mt-7 md:text-xl lg:mx-0 lg:mb-8">
-                Ares strives to be Colorado's first Security Company dedicated to the Cannabis Industry. We understand that MJ Dispensaries face different obstacles than ordinary businesses, which is why guards are trained on Product, Distribution, and MED regulations.
+                Ares strives to be Colorado's first Security Company dedicated to the Cannabis Industry. We understand that MJ Dispensaries face different obstacles than ordinary businesses, which is why all guards are trained on Product, Distribution, and MED regulations.
               </p>
             </div>
           </main>

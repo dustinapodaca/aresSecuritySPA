@@ -1,6 +1,6 @@
 import './App.scss';
 import "animate.css/animate.min.css";
-import React from 'react';
+// import React, { useState, useEffect } from 'react';
 import Hero from './components/Hero';
 import Company from './components/Company';
 import Services from './components/Services';
@@ -10,29 +10,35 @@ import Careers from './components/Careers';
 import Footer from './components/Footer';
 import { animateScroll as scroll } from "react-scroll";
 
-class App extends React.Component {
+const App = () => {
+  // const [isMobile, setIsMobile] = useState(false);
 
-  scrollToTop = () => {
+  const scrollToTop = () => {
     scroll.scrollToTop();
   };
 
-  render() {
-    return (
-      <>
-        <Hero id="home" />
-        <Company id="company" />
-        <Services id="services" />
-        <Testimonials />
-        <Contact id="contact" />
-        <Careers id="careers" />
-        <Footer
-          scrollToTop={this.scrollToTop}
-        />
-      </>
-    );
-  }
-}
+  // useEffect(() => {
+  //   const updatePredicate = () => {
+  //     setIsMobile(window.innerWidth < 768);
+  //   };
+  //   updatePredicate();
+  //   window.addEventListener("resize", updatePredicate);
+  //   return () => window.removeEventListener("resize", updatePredicate);
+  // }, []);
+
+  return (
+    <>
+      <Hero id="home" />
+      <Company id="company" />
+      <Services id="services" />
+      <Testimonials />
+      <Contact id="contact" />
+      <Careers id="careers" />
+      <Footer
+        scrollToTop={scrollToTop}
+      />
+    </>
+  );
+};
 
 export default App;
-
-
