@@ -8,7 +8,7 @@ export default function Careers() {
   return (
     <>
       <section id="careers" className="text-gray-600 body-font">
-        <div className="container mx-auto flex flex-col px-5 pt-24 pb-8 justify-center items-center">
+        <div className="container mx-auto flex flex-col px-5 pt-20 pb-4 justify-center items-center">
           <AnimationOnScroll animateIn="animate__fadeInLeft" duration={1} animateOnce={true}>
             <img className="lg:w-4/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded mx-auto" alt="hero" src={aresGroup}/>
           </AnimationOnScroll>

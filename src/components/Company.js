@@ -4,7 +4,7 @@ export default function Company() {
   return (
     <>
       <section id="company" className="text-gray-600 body-font">
-        <div className="container px-5 py-24 mx-auto">
+        <div className="container px-5 py-20 mx-auto">
           <div className="text-center mb-20">
             <h2 className="sm:text-3xl text-2xl font-medium title-font text-gray-900 mb-4">Women Owned & Operated.</h2>
             <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s">We are Colorado’s first women-owned and operated security company dedicated to protecting Cannabis and those who understand it’s potential for a brighter future. Ares is honored to be here for you as we navigate this emerging industry, together.</p>

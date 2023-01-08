@@ -9,7 +9,7 @@ import protectionThree from '../assets/img/range.jpg';
 export default function Services() {
   return (
     <>
-      <section id="services" className="pt-12 lg:pt-[120px] pb-12 lg:pb-[90px] overflow-hidden bg-black">
+      <section id="services" className="pt-12 lg:pt-[75px] pb-12 lg:pb-[75px] overflow-hidden bg-black">
         <div className="container mx-auto px-6">
           <div className="flex flex-wrap justify-between items-center -mx-4">
             <div className="w-full lg:w-6/12 px-4">
