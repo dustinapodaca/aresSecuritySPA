@@ -5,7 +5,8 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { Link } from "react-scroll";
 
 import hero from '../assets/img/hero.jpg';
-import logo from '../assets/img/areslogo.png';
+// import logo from '../assets/img/areslogo.png';
+import svgLogo from '../assets/img/ares-logo.svg';
 
 const navigation = [
   { name: 'Company', to: 'company' },
@@ -39,7 +40,7 @@ export default function Hero() {
                       <img
                         alt="Ares Security"
                         className="h-8 w-auto sm:h-14"
-                        src={logo}
+                        src={svgLogo}
                       />
                     </div>
                     <div className="-mr-2 flex items-center md:hidden focus:outline-none">
@@ -78,7 +79,7 @@ export default function Hero() {
                     <div>
                       <img
                         className="h-8 w-auto"
-                        src={logo}
+                        src={svgLogo}
                         alt="Ares Security"
                       />
                     </div>
