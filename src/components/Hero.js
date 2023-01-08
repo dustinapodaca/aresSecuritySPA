@@ -4,6 +4,9 @@ import { Popover, Transition } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { Link } from "react-scroll";
 
+import hero from '../assets/img/hero.jpg';
+import logo from '../assets/img/areslogo.png';
+
 const navigation = [
   { name: 'Company', to: 'company' },
   { name: 'Services', to: 'services' },
@@ -36,7 +39,7 @@ export default function Hero() {
                       <img
                         alt="Ares Security"
                         className="h-8 w-auto sm:h-14"
-                        src="https://www.aressecurity.co/wp-content/uploads/2021/03/ARES-SYMBOL-Green.png"
+                        src={logo}
                       />
                     </div>
                     <div className="-mr-2 flex items-center md:hidden focus:outline-none">
@@ -75,7 +78,7 @@ export default function Hero() {
                     <div>
                       <img
                         className="h-8 w-auto"
-                        src="https://www.aressecurity.co/wp-content/uploads/2021/03/ARES-SYMBOL-Green.png"
+                        src={logo}
                         alt="Ares Security"
                       />
                     </div>
@@ -174,8 +177,8 @@ export default function Hero() {
       <div id="heroImg" className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
         <img
           className="h-56 w-full object-cover sm:h-72 md:h-96 lg:h-full lg:w-full"
-          src="https://www.aressecurity.co/wp-content/uploads/2021/08/IMG_4688-3NoWrinkles-scaled.jpg"
-          alt=""
+          src={hero}
+          alt="aresGuards"
         />
       </div>
     </div>

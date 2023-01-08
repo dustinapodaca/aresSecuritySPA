@@ -2,6 +2,9 @@ import React from 'react';
 import { AnimationOnScroll } from 'react-animation-on-scroll';
 import { Link } from "react-scroll";
 
+import protectionOne from '../assets/img/protection1.jpg';
+import protectionTwo from '../assets/img/protection2.jpg';
+
 export default function Services() {
   return (
     <>
@@ -13,8 +16,8 @@ export default function Services() {
                 <div className="w-full xl:w-1/2 px-3 sm:px-4">
                   <div className="py-3 sm:py-4">
                     <img
-                      src="https://www.aressecurity.co/wp-content/uploads/2021/08/IMG_4647-2-2-scaled.jpg"
-                      alt=""
+                      src={protectionOne}
+                      alt="Women of Ares"
                       className="rounded-2xl w-full"
                     />
                   </div>
@@ -29,8 +32,8 @@ export default function Services() {
                 <div className="w-full xl:w-1/2 px-3 sm:px-4">
                   <div className="my-4 relative z-10">
                     <img
-                      src="https://www.aressecurity.co/wp-content/uploads/2022/10/received_6138644996613962-4.jpg"
-                      alt=""
+                      src={protectionTwo}
+                      alt="Men of Ares"
                       className="rounded-2xl w-full"
                     />
                     <span className="absolute -right-7 -bottom-7 z-[-1]">
