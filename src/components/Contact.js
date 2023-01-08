@@ -119,6 +119,7 @@ const Contact = () => {
                     className="w-full bg-white rounded border border-litegreen focus:border-odgreen focus:ring-2 focus:ring-litegreen text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     value={name}
                     onChange={(event) => setName(event.target.value)}
+                    required
                   />
                 </div>
                 <div className="relative mb-4">
@@ -130,20 +131,26 @@ const Contact = () => {
                     className="w-full bg-white rounded border border-litegreen focus:border-odgreen focus:ring-2 focus:ring-litegreen text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     value={email}
                     onChange={(event) => setEmail(event.target.value)}
+                    required
                   />
                 </div>
-              <div className="relative mb-4">
-                <label htmlFor="subject" className="leading-7 text-sm text-white">Subject</label>
-                <input
-                  type="subject"
-                  id="subject"
-                  name="subject"
-                  className="w-full bg-white rounded border border-litegreen focus:border-odgreen focus:ring-2 focus:ring-litegreen text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                  value={subject}
-                  onChange={(event) => setSubject(event.target.value)}
-                />
-              </div>
-
+                <div className="relative mb-4">
+                  <label htmlFor="subject" className="leading-7 text-sm text-white">Subject</label>
+                  <select
+                    id="subject"
+                    name="subject"
+                    className="w-full bg-white rounded border border-litegreen focus:border-odgreen focus:ring-2 focus:ring-litegreen text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                    value={subject}
+                    onChange={(event) => setSubject(event.target.value)}
+                    required
+                  >
+                    <option value="" disabled>What can we help you with?</option>
+                    <option value="get-a-quote">Get A Quote</option>
+                    <option value="general-inquiry">General Inquiry</option>
+                    <option value="careers">Careers</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
                 <div className="relative mb-4">
                   <label htmlFor="message" className="leading-7 text-sm text-white">Message</label>
                   <textarea
@@ -152,6 +159,7 @@ const Contact = () => {
                     className="w-full bg-gray-800 rounded border border-litegreen focus:border-indigo-500 focus:ring-2 focus:ring-litegreen h-32 text-base outline-none text-gray-100 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
                     value={message}
                     onChange={(event) => setMessage(event.target.value)}
+                    required
                   />
                 </div>
               {loading ? (
