@@ -1,15 +1,16 @@
 import React from 'react';
 import { AnimationOnScroll } from 'react-animation-on-scroll';
 
-import apply from '../assets/img/apply.jpg';
+// import apply from '../assets/img/apply.jpg';
+import aresGroup from '../assets/img/aresGroup.jpg';
 
 export default function Careers() {
   return (
     <>
       <section id="careers" className="text-gray-600 body-font">
         <div className="container mx-auto flex flex-col px-5 pt-24 pb-8 justify-center items-center">
-          <AnimationOnScroll animateIn="animate__fadeInUp" duration={1} animateOnce={true}>
-            <img className="lg:w-4/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded mx-auto" alt="hero" src={apply}/>
+          <AnimationOnScroll animateIn="animate__fadeInLeft" duration={1} animateOnce={true}>
+            <img className="lg:w-4/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded mx-auto" alt="hero" src={aresGroup}/>
           </AnimationOnScroll>
             <div className="w-full md:w-2/3 flex flex-col mb-16 items-center text-center">
             <h2 className="font-bold text-4xl sm:text-4xl text-black mb-8">

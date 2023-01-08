@@ -34,6 +34,14 @@
   color: #d5ddcb;
 }
 
+.fade-in-hero {
+  animation: fadeInHero 6s;
+  -webkit-animation: fadeInHero 6s;
+  -moz-animation: fadeInHero 6s;
+  -o-animation: fadeInHero 6s;
+  -ms-animation: fadeInHero 6s;
+}
+
 .fade-in-text1 {
   animation: fadeIn1 3s;
   -webkit-animation: fadeIn1 3s;
@@ -56,6 +64,20 @@
   -moz-animation: fadeIn3 5s;
   -o-animation: fadeIn3 5s;
   -ms-animation: fadeIn3 5s;
+}
+
+@keyframes fadeInHero {
+  0% {
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes fadeIn1 {

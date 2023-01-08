@@ -4,6 +4,7 @@ import { Link } from "react-scroll";
 
 import protectionOne from '../assets/img/protection1.jpg';
 import protectionTwo from '../assets/img/protection2.jpg';
+import protectionThree from '../assets/img/range.jpg';
 
 export default function Services() {
   return (
@@ -23,8 +24,8 @@ export default function Services() {
                   </div>
                   <div className="py-3 sm:py-4">
                     <img
-                      src="https://scontent.fapa1-1.fna.fbcdn.net/v/t39.30808-6/306001257_458097536377023_137010803059467882_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=730e14&_nc_ohc=WT2fwDJeVYoAX9Q3J39&_nc_ht=scontent.fapa1-1.fna&oh=00_AT_pEuTzqZB0_ScrHZQYe9Rvlhwt14428yN-b_ukMbyiuQ&oe=63429ACC"
-                      alt=""
+                      src={protectionThree}
+                      alt="Ares Group"
                       className="rounded-2xl w-full"
                     />
                   </div>
