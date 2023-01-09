@@ -40,26 +40,49 @@ const Contact = () => {
   const setCaptchaValue = (value) => {
     captchaRef.current.setValue(value);
   };
+
+  const verifyReCaptcha = async (token) => {
+    try {
+      const res = await axios.post('https://6vxi4lo4bcalgcit43rsnraeiy0azzyi.lambda-url.us-west-2.on.aws/', {
+        response: token,
+        secret: process.env.REACT_APP_SECRET_KEY,
+      });
+
+      return res.data.success;
+
+    } catch (error) {
+      console.log('error', error);
+      return false;
+    }
+  };
   
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
 
     const captchaValue = captchaRef.current.getValue();
+    
     if (!captchaValue) {
       setErrorMessage('Please complete the reCAPTCHA verification');
       return;
     }
 
+    const isVerifed = await verifyReCaptcha(captchaValue);
+
+    if (!isVerifed) {
+      setErrorMessage('Failed to verify reCAPTCHA, please try again');
+      return;
+    }
+
     try {
-      const reCaptchaRes = await axios.post('https://www.google.com/recaptcha/api/siteverify', {
-        secret: process.env.REACT_APP_SECRET_KEY,
-        response: captchaValue,
-      });
+      // const reCaptchaRes = await axios.post('https://www.google.com/recaptcha/api/siteverify', {
+      //   secret: process.env.REACT_APP_SECRET_KEY,
+      //   response: captchaValue,
+      // });
 
-      console.log('reCaptchaRes', reCaptchaRes);
+      // console.log('reCaptchaRes', reCaptchaRes);
 
-      if (reCaptchaRes.data.success) {
+      if (isVerifed) {
         const mailgunRes = await client.messages.create(process.env.REACT_APP_DOMAIN, {
           from: `Ares Security Contact Form Submission <${email}>`,
           // to: 'contact@aressecurity.co',
