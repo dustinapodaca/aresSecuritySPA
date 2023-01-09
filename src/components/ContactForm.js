@@ -83,7 +83,7 @@ const Contact = () => {
     if (successMessage === 'Message sent successfully!') {
       toast.success(`Thank you for reaching out! 🌱 \n\n Your message has been sent successfully and we will be in touch with you shortly.`, {
         position: "top-right",
-        autoClose: 5000,
+        autoClose: 4000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: false,
@@ -96,7 +96,7 @@ const Contact = () => {
     } else if (errorMessage) {
       toast.error((errorMessage), {
         position: "top-right",
-        autoClose: 5000,
+        autoClose: 4000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: false,
