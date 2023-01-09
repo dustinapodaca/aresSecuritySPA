@@ -148,8 +148,8 @@ const Contact = () => {
     try {
       const mailgunRes = await client.messages.create(process.env.REACT_APP_DOMAIN, {
         from: `Ares Security Contact Form Submission <${email}>`,
-        to: 'contact@aressecurity.co',
-        // to: 'dustin.apodaca@aressecurity.co',
+        // to: 'contact@aressecurity.co',
+        to: 'dustin.apodaca@aressecurity.co',
         subject: subject,
         // template: 'arescontact', 'v:name': name, 'v:email': email, 'v:message': message, 'v:subject': subject, 'h:X-Mailgun-Variables': JSON.stringify({name: name, email: email, message: message, subject: subject})
         text: `FROM: ${name}\nREPLY EMAIL: ${email}\n\nMESSAGE:\n${message}\n\n\n© 2023 Ares Security LLC`
@@ -192,7 +192,7 @@ const Contact = () => {
               </div>
             </div>
           </div>
-          <div className="lg:w-1/3 md:w-1/2 flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0">
+          <div className="lg:w-1/3 md:w-1/2 flex flex-col md:ml-auto w-full md:py-2 mt-8 md:mt-0">
             <span className="block mb-2 text-3xl text-base text-white font-semibold">
               Contact Us
             </span>

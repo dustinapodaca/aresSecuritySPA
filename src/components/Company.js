@@ -7,7 +7,7 @@ export default function Company() {
         <div className="container px-5 py-20 mx-auto">
           <div className="text-center mb-20">
             <h2 className="sm:text-3xl text-2xl font-medium title-font text-gray-900 mb-4">Women Owned & Operated.</h2>
-            <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s">We are Colorado’s first women-owned and operated security company dedicated to protecting Cannabis and those who understand it’s potential for a brighter future. Ares is honored to be here for you as we navigate this emerging industry, together.</p>
+            <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s">We are Colorado’s first women-owned and operated security company dedicated to protecting Cannabis and those who understand its potential for a brighter future. Ares is honored to be here for you as we navigate this emerging industry- <em>together.</em></p>
             <div className="flex mt-6 justify-center">
               <div className="w-16 h-1 rounded-full bg-black inline-flex"></div>
             </div>
@@ -35,7 +35,7 @@ export default function Company() {
               </div>
               <div className="flex-grow">
                 <h2 className="text-gray-900 text-lg title-font font-medium mb-3">Personnel</h2>
-                <p className="leading-relaxed text-base px-10">Ares Security guards are the backbone of our business. Our belief is that well-trained, healthy employees provide a quality service to all our clients.</p>
+                <p className="leading-relaxed text-base px-10">Ares Security guards are the backbone of our business. We believe that well-trained, healthy employees provide a quality service to all our clients.</p>
                   <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-4 h-4 ml-2" viewBox="0 0 24 24">
                   </svg>
               </div>

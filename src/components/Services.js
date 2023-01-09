@@ -633,7 +633,7 @@ export default function Services() {
                   </AnimationOnScroll> by providing them with reliable security services.
                 </h2>
                 <p className="text-white text-lg text-body-color mb-8">
-                  Our guards are trained on product, distribution, and MED regulations, tailoring our services to your dispensaries needs. GPS perimeter patrol scans, daily reports, and logbook software generates security analytics for your business.
+                  Our guards are trained on product, distribution, and MED regulations, tailoring our services to your dispensaries' needs. GPS perimeter patrol scans, daily reports, and logbook software generate security analytics for your business.
                 </p>
                 <p className="text-white text-lg text-body-color mb-12">
                   Our client portal allows management to review incidents, submit requests, and recall incoming & outgoing personnel. Contact us today for a quote!
