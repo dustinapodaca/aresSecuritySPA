@@ -41,10 +41,10 @@ const Contact = () => {
     captchaRef.current.setValue(value);
   };
 
-  const verifyReCaptcha = async (token) => {
+  const verifyReCaptcha = async (captchaValue) => {
     try {
       const res = await axios.post('https://6vxi4lo4bcalgcit43rsnraeiy0azzyi.lambda-url.us-west-2.on.aws/', {
-        response: token,
+        token: captchaValue,
         secret: process.env.REACT_APP_SECRET_KEY,
       });
 
