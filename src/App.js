@@ -1,13 +1,13 @@
-import Hero from './Components/Hero';
-import Company from './Components/Company';
-import Services from './Components/Services';
-import Testimonials from './Components/Testimonials';
+import Hero from './components/Hero';
+import Company from './components/Company';
+import Services from './components/Services';
+import Testimonials from './components/Testimonials';
 
-import Contact from './Components/ContactForm';
-import { FormProvider } from './Components/ContactForm';
+import Contact from './components/ContactForm';
+import { FormProvider } from './components/ContactForm';
 
-import Careers from './Components/Careers';
-import Footer from './Components/Footer';
+import Careers from './components/Careers';
+import Footer from './components/Footer';
 
 import { animateScroll as scroll } from "react-scroll";
 import "animate.css/animate.min.css";
