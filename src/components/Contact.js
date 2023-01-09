@@ -22,6 +22,7 @@ const Contact = () => {
   const [message, setMessage] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const [reCAPTCHAswitch, setReCAPTCHAswitch] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const formRef = useRef(null);
@@ -201,12 +202,15 @@ const Contact = () => {
                 </div>
               ) : (
                 <>
-                  <ReCAPTCHA 
-                    sitekey={process.env.REACT_APP_SITE_KEY} 
-                    ref={captchaRef} 
-                    onChange={(value) => setCaptchaValue(value)}
-                  />
-                  <button className="text-white bg-odgreen border-0 py-3 px-10 lg:px-8 xl:px-10 focus:outline-none hover:bg-litegreen hover:text-black transition ease-in-out duration-300 rounded-lg text-lg">Send</button>
+                  <div className='flex justify-between'>
+                    <button className="text-white bg-odgreen h-5/6 border-0 py-3 px-10 lg:px-8 xl:px-10 focus:outline-none hover:bg-litegreen hover:text-black transition ease-in-out duration-300 rounded-lg text-lg">Send</button>
+                    {}
+                    <ReCAPTCHA
+                      sitekey={process.env.REACT_APP_SITE_KEY}
+                      ref={captchaRef}
+                      onChange={(value) => setCaptchaValue(value)}
+                      />
+                  </div>
                 </>
               )}
                 <p className="text-xs text-white text-opacity-90 mt-3">© 2023 Ares Security LLC</p>
