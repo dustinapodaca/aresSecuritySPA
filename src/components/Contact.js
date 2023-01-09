@@ -1,8 +1,8 @@
 import React from 'react';
-import { useState, useEffect, useRef } from 'react';
-// import { useReducer } from 'react';
+import { useEffect, useRef } from 'react';
+import { useReducer, useContext } from 'react';
+// import { useState } from 'react';
 
-import axios from 'axios';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { ThreeDots } from 'react-loader-spinner'
@@ -10,113 +10,167 @@ import { ThreeDots } from 'react-loader-spinner'
 //mailgun
 import formData from 'form-data';
 import Mailgun from 'mailgun.js';
-import ReCAPTCHA from "react-google-recaptcha"
+// import axios from 'axios';
+// import ReCAPTCHA from "react-google-recaptcha"
 
 const mg = new Mailgun(formData);
 const client = mg.client({username: 'api', key: process.env.REACT_APP_MAILGUN_API_KEY});
 
-const Contact = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [subject, setSubject] = useState('');
-  const [message, setMessage] = useState('');
-  const [successMessage, setSuccessMessage] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
-  const [loading, setLoading] = useState(false);
+// configured state with useReducer and useContext
+const initialState = {
+  name: '',
+  email: '',
+  subject: '',
+  message: '',
+  successMessage: '',
+  errorMessage: '',
+  loading: false,
+};
 
+function resetFormAction() {
+  return {
+    type: 'RESET_FORM',
+    payload: initialState,
+  };
+}
+
+function formReducer(state, action) {
+  switch (action.type) {
+    case 'SET_NAME':
+      return { ...state, name: action.payload };
+    case 'SET_EMAIL':
+      return { ...state, email: action.payload };
+    case 'SET_SUBJECT':
+      return { ...state, subject: action.payload };
+    case 'SET_MESSAGE':
+      return { ...state, message: action.payload };
+    case 'SET_SUCCESS_MESSAGE':
+      return { ...state, successMessage: action.payload };
+    case 'SET_ERROR_MESSAGE':
+      return { ...state, errorMessage: action.payload };
+    case 'SET_LOADING':
+      return { ...state, loading: action.payload };
+    case 'RESET_FORM':
+      return initialState;
+    default:
+      throw new Error(`Unhandled action type: ${action.type}`);
+  }
+}
+
+const FormContext = React.createContext();
+
+export const FormProvider = ({ children }) => {
+  const [state, dispatch] = useReducer(formReducer, initialState);
+  return (
+    <FormContext.Provider value={{ state, dispatch }}>
+      {children}
+    </FormContext.Provider>
+  );
+};
+
+const Contact = () => {
+  // const [name, setName] = useState('');
+  // const [email, setEmail] = useState('');
+  // const [subject, setSubject] = useState('');
+  // const [message, setMessage] = useState('');
+  // const [successMessage, setSuccessMessage] = useState('');
+  // const [errorMessage, setErrorMessage] = useState('');
+  // const [loading, setLoading] = useState(false);
+
+  const { state, dispatch } = useContext(FormContext);
+  const { name, email, subject, message, successMessage, errorMessage, loading } = state;
   const formRef = useRef(null);
-  const captchaRef = useRef(null);
+
+  // const captchaRef = useRef(null);
 
   // Display success or error message when it has changed
   useEffect(() => {
+    const resetForm = () => {
+      formRef.current.reset();
+      dispatch(resetFormAction());
+      // setName('');
+      // setEmail('');
+      // setSubject('');
+      // setMessage('');
+    }
+
     if (successMessage === 'Message sent successfully!') {
       toast.success(successMessage);
       resetForm();
     } else if (errorMessage) {
       toast.error(errorMessage);
     }
-  }, [successMessage, errorMessage]);
+  }, [successMessage, errorMessage, dispatch]);
 
-  const setCaptchaValue = (value) => {
-    captchaRef.current.setValue(value);
-  };
+  // const setCaptchaValue = (value) => {
+  //   captchaRef.current.setValue(value);
+  // };
 
-  const verifyReCaptcha = async (captchaValue) => {
-    try {
-      const res = await axios.post('https://6vxi4lo4bcalgcit43rsnraeiy0azzyi.lambda-url.us-west-2.on.aws/', {
-        token: captchaValue,
-        secret: process.env.REACT_APP_SECRET_KEY,
-      });
+  // const verifyReCaptcha = async (captchaValue) => {
+  //   try {
+  //     const res = await axios.post('https://6vxi4lo4bcalgcit43rsnraeiy0azzyi.lambda-url.us-west-2.on.aws/', {
+  //       token: captchaValue,
+  //       secret: process.env.REACT_APP_SECRET_KEY,
+  //     });
 
-      return res.data.success;
+  //     return res.data.success;
 
-    } catch (error) {
-      console.log('error', error);
-      return false;
-    }
-  };
+  //   } catch (error) {
+  //     console.log('error', error);
+  //     return false;
+  //   }
+  // };
   
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
+    // setLoading(true);
+    dispatch({ type: 'SET_LOADING', payload: true });
 
-    const captchaValue = captchaRef.current.getValue();
+    // const captchaValue = captchaRef.current.getValue();
     
-    if (!captchaValue) {
-      setErrorMessage('Please complete the reCAPTCHA verification');
-      return;
-    }
+    // if (!captchaValue) {
+    //   setErrorMessage('Please complete the reCAPTCHA verification');
+    //   return;
+    // }
 
-    const isVerifed = await verifyReCaptcha(captchaValue);
+    // const isVerifed = await verifyReCaptcha(captchaValue);
 
-    if (!isVerifed) {
-      setErrorMessage('Failed to verify reCAPTCHA, please try again');
-      return;
-    }
+    // if (!isVerifed) {
+    //   setErrorMessage('Failed to verify reCAPTCHA, please try again');
+    //   return;
+    // }
 
     try {
-      // const reCaptchaRes = await axios.post('https://www.google.com/recaptcha/api/siteverify', {
-      //   secret: process.env.REACT_APP_SECRET_KEY,
-      //   response: captchaValue,
-      // });
+      const mailgunRes = await client.messages.create(process.env.REACT_APP_DOMAIN, {
+        from: `Ares Security Contact Form Submission <${email}>`,
+        // to: 'contact@aressecurity.co',
+        to: 'dustin.apodaca@aressecurity.co',
+        subject: subject,
+        // template: 'arescontact', 'v:name': name, 'v:email': email, 'v:message': message, 'v:subject': subject, 'h:X-Mailgun-Variables': JSON.stringify({name: name, email: email, message: message, subject: subject})
+        text: `FROM: ${name}\nREPLY EMAIL: ${email}\n\nMESSAGE:\n${message}\n\n\n© 2023 Ares Security LLC`
+      });
 
-      // console.log('reCaptchaRes', reCaptchaRes);
+      console.log('mailgunRes', mailgunRes);
 
-      if (isVerifed) {
-        const mailgunRes = await client.messages.create(process.env.REACT_APP_DOMAIN, {
-          from: `Ares Security Contact Form Submission <${email}>`,
-          // to: 'contact@aressecurity.co',
-          to: 'dustin.apodaca@aressecurity.co',
-          subject: subject,
-          // template: 'arescontact', 'v:name': name, 'v:email': email, 'v:message': message, 'v:subject': subject, 'h:X-Mailgun-Variables': JSON.stringify({name: name, email: email, message: message, subject: subject})
-          text: `FROM: ${name}\nREPLY EMAIL: ${email}\n\nMESSAGE:\n${message}\n\n\n© 2023 Ares Security LLC`
-        });
+      if (mailgunRes.status === 200) {
+        // setSuccessMessage('Message sent successfully!');
+        dispatch({ type: 'SET_SUCCESS_MESSAGE', payload: 'Message sent successfully!' });
 
-        console.log('mailgunRes', mailgunRes);
-
-        if (mailgunRes.status === 200) {
-          setSuccessMessage('Message sent successfully!');
-        }
       } else {
-        setErrorMessage('Failed to send message, please try again or email us directly at: contact@aressecurity.co');
+        // setErrorMessage('Failed to send message, please try again or email us directly at: contact@aressecurity.co');
+        dispatch({ type: 'SET_ERROR_MESSAGE', payload: 'Failed to send message, please try again or email us directly at: contact@aressecurity.co' });
       }
     } catch (error) {
       console.log(error);
-      setErrorMessage('Failed to send message, please try again or email us directly at: contact@aressecurity.co');
+      // setErrorMessage('Failed to send message, please try again or email us directly at: contact@aressecurity.co');
+      dispatch({ type: 'SET_ERROR_MESSAGE', payload: 'Failed to send message, please try again or email us directly at: contact@aressecurity.co' });
     } finally {
       setTimeout(() => {
-        setLoading(false);
+        // setLoading(false);
+        dispatch({ type: 'SET_LOADING', payload: false });
       }, 500);
     }
   }
-
-  const resetForm = () => {
-    formRef.current.reset();
-    setName('');
-    setEmail('');
-    setSubject('');
-    setMessage('');
-  };
 
   return (
     <>
@@ -165,7 +219,7 @@ const Contact = () => {
                     name="name"
                     className="w-full bg-white rounded border border-litegreen focus:border-odgreen focus:ring-2 focus:ring-litegreen text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     value={name}
-                    onChange={(event) => setName(event.target.value)}
+                    onChange={(event) => dispatch({ type: 'SET_NAME', payload: event.target.value })}
                     required
                   />
                 </div>
@@ -177,7 +231,7 @@ const Contact = () => {
                     name="email"
                     className="w-full bg-white rounded border border-litegreen focus:border-odgreen focus:ring-2 focus:ring-litegreen text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     value={email}
-                    onChange={(event) => setEmail(event.target.value)}
+                    onChange={(event) => dispatch({ type: 'SET_EMAIL', payload: event.target.value })}
                     required
                   />
                 </div>
@@ -188,7 +242,7 @@ const Contact = () => {
                     name="subject"
                     className="w-full bg-white rounded border border-litegreen focus:border-odgreen focus:ring-2 focus:ring-litegreen text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     value={subject}
-                    onChange={(event) => setSubject(event.target.value)}
+                    onChange={(event) => dispatch({ type: 'SET_SUBJECT', payload: event.target.value })}
                     required
                   >
                     <option value="" disabled>What can we help you with?</option>
@@ -205,7 +259,7 @@ const Contact = () => {
                     name="message"
                     className="w-full bg-gray-800 rounded border border-litegreen focus:border-indigo-500 focus:ring-2 focus:ring-litegreen h-32 text-base outline-none text-gray-100 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
                     value={message}
-                    onChange={(event) => setMessage(event.target.value)}
+                    onChange={(event) => dispatch({ type: 'SET_MESSAGE', payload: event.target.value })}
                     required
                   />
                 </div>
@@ -226,11 +280,11 @@ const Contact = () => {
                 <>
                   <div className='flex justify-between'>
                     <button className="text-white bg-odgreen h-5/6 border-0 py-3 px-10 lg:px-8 xl:px-10 focus:outline-none hover:bg-litegreen hover:text-black transition ease-in-out duration-300 rounded-lg text-lg">Send</button>
-                    <ReCAPTCHA
+                    {/* <ReCAPTCHA
                       sitekey={process.env.REACT_APP_SITE_KEY}
                       ref={captchaRef}
                       onChange={(value) => setCaptchaValue(value)}
-                    />
+                    /> */}
                   </div>
                 </>
               )}
