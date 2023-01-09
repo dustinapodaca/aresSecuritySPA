@@ -1,13 +1,13 @@
 import React from 'react';
 import { useEffect, useRef } from 'react';
 import { useReducer, useContext } from 'react';
-// import { useState } from 'react';
 
-import { toast } from 'react-toastify';
+// UI Components
+import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { ThreeDots } from 'react-loader-spinner'
 
-//mailgun
+//Mailgun API
 import formData from 'form-data';
 import Mailgun from 'mailgun.js';
 // import axios from 'axios';
@@ -16,7 +16,7 @@ import Mailgun from 'mailgun.js';
 const mg = new Mailgun(formData);
 const client = mg.client({username: 'api', key: process.env.REACT_APP_MAILGUN_API_KEY});
 
-// configured state with useReducer and useContext
+// Configured state with useReducer and useContext
 const initialState = {
   name: '',
   email: '',
@@ -69,36 +69,42 @@ export const FormProvider = ({ children }) => {
 };
 
 const Contact = () => {
-  // const [name, setName] = useState('');
-  // const [email, setEmail] = useState('');
-  // const [subject, setSubject] = useState('');
-  // const [message, setMessage] = useState('');
-  // const [successMessage, setSuccessMessage] = useState('');
-  // const [errorMessage, setErrorMessage] = useState('');
-  // const [loading, setLoading] = useState(false);
-
   const { state, dispatch } = useContext(FormContext);
   const { name, email, subject, message, successMessage, errorMessage, loading } = state;
   const formRef = useRef(null);
-
   // const captchaRef = useRef(null);
 
-  // Display success or error message when it has changed
   useEffect(() => {
     const resetForm = () => {
       formRef.current.reset();
       dispatch(resetFormAction());
-      // setName('');
-      // setEmail('');
-      // setSubject('');
-      // setMessage('');
     }
 
     if (successMessage === 'Message sent successfully!') {
-      toast.success(successMessage);
+      toast.success(`Thank you for reaching out! 🌱 \n\n Your message has been sent successfully and we will be in touch with you shortly.`, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        progress: undefined,
+        theme: "dark",
+      });
+
       resetForm();
     } else if (errorMessage) {
-      toast.error(errorMessage);
+      toast.error((errorMessage), {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        progress: undefined,
+        theme: "dark",
+      });;
+      resetForm();
     }
   }, [successMessage, errorMessage, dispatch]);
 
@@ -123,7 +129,6 @@ const Contact = () => {
   
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // setLoading(true);
     dispatch({ type: 'SET_LOADING', payload: true });
 
     // const captchaValue = captchaRef.current.getValue();
@@ -143,8 +148,8 @@ const Contact = () => {
     try {
       const mailgunRes = await client.messages.create(process.env.REACT_APP_DOMAIN, {
         from: `Ares Security Contact Form Submission <${email}>`,
-        // to: 'contact@aressecurity.co',
         to: 'contact@aressecurity.co',
+        // to: 'dustin.apodaca@aressecurity.co',
         subject: subject,
         // template: 'arescontact', 'v:name': name, 'v:email': email, 'v:message': message, 'v:subject': subject, 'h:X-Mailgun-Variables': JSON.stringify({name: name, email: email, message: message, subject: subject})
         text: `FROM: ${name}\nREPLY EMAIL: ${email}\n\nMESSAGE:\n${message}\n\n\n© 2023 Ares Security LLC`
@@ -153,20 +158,16 @@ const Contact = () => {
       console.log('mailgunRes', mailgunRes);
 
       if (mailgunRes.status === 200) {
-        // setSuccessMessage('Message sent successfully!');
         dispatch({ type: 'SET_SUCCESS_MESSAGE', payload: 'Message sent successfully!' });
-
+        
       } else {
-        // setErrorMessage('Failed to send message, please try again or email us directly at: contact@aressecurity.co');
         dispatch({ type: 'SET_ERROR_MESSAGE', payload: 'Failed to send message, please try again or email us directly at: contact@aressecurity.co' });
       }
     } catch (error) {
       console.log(error);
-      // setErrorMessage('Failed to send message, please try again or email us directly at: contact@aressecurity.co');
       dispatch({ type: 'SET_ERROR_MESSAGE', payload: 'Failed to send message, please try again or email us directly at: contact@aressecurity.co' });
     } finally {
       setTimeout(() => {
-        // setLoading(false);
         dispatch({ type: 'SET_LOADING', payload: false });
       }, 500);
     }
@@ -290,6 +291,18 @@ const Contact = () => {
               )}
                 <p className="text-xs text-white text-opacity-90 mt-3">© 2023 Ares Security LLC</p>
               </form>
+            <ToastContainer
+              position="top-center"
+              autoClose={2000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="dark"
+            />
           </div>
         </div>
       </section>
