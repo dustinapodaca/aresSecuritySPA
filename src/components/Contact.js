@@ -43,7 +43,7 @@ const Contact = () => {
 
   const verifyReCaptcha = async (token) => {
     try {
-      const res = await axios.post('https://81yzehuzg4.execute-api.us-west-2.amazonaws.com/aresSecurityAPI', {
+      const res = await axios.post('https://81yzehuzg4.execute-api.us-west-2.amazonaws.com/aresSecurityAPI/', {
         response: token,
         secret: process.env.REACT_APP_SECRET_KEY,
       });
