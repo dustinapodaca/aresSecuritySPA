@@ -42,7 +42,8 @@ export default function Testimonials() {
                   </div>
                   <span className="flex-grow flex flex-col pl-4">
                     <span className="title-font font-medium text-gray-900">Matt Schooley</span>
-                    <span className="text-odgreen text-sm">General Manager - RiNo Supply Company, Denver CO.</span>
+                    <span className="text-odgreen text-sm">General Manager</span>
+                    <span className="text-odgreen text-sm">RiNo Supply Company - <em>Denver, Colorado.</em></span>
                   </span>
                 </div>
               </div>
