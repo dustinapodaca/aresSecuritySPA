@@ -34,7 +34,9 @@ const App = () => {
     <>
       <Hero id="home" />
       <Company id="company" />
-      <Services id="services" />
+      <FormProvider>
+        <Services id="services" />
+      </FormProvider>
       <Testimonials />
       <FormProvider>
         <Contact id="contact" />
