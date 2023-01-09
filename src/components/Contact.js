@@ -2,7 +2,7 @@ import React from 'react';
 import { useState, useEffect, useRef } from 'react';
 // import { useReducer } from 'react';
 
-// import axios from 'axios';
+import axios from 'axios';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { ThreeDots } from 'react-loader-spinner'
@@ -10,6 +10,7 @@ import { ThreeDots } from 'react-loader-spinner'
 //mailgun
 import formData from 'form-data';
 import Mailgun from 'mailgun.js';
+import ReCAPTCHA from "react-google-recaptcha"
 
 const mg = new Mailgun(formData);
 const client = mg.client({username: 'api', key: process.env.REACT_APP_MAILGUN_API_KEY});
@@ -23,8 +24,8 @@ const Contact = () => {
   const [errorMessage, setErrorMessage] = useState('');
   const [loading, setLoading] = useState(false);
 
-  // Create a ref for the form element
   const formRef = useRef(null);
+  const captchaRef = useRef(null);
 
   // Display success or error message when it has changed
   useEffect(() => {
@@ -35,23 +36,46 @@ const Contact = () => {
       toast.error(errorMessage);
     }
   }, [successMessage, errorMessage]);
+
+  const setCaptchaValue = (value) => {
+    captchaRef.current.setValue(value);
+  };
   
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+
+    const captchaValue = captchaRef.current.getValue();
+    if (!captchaValue) {
+      setErrorMessage('Please complete the reCAPTCHA verification');
+      return;
+    }
+
     try {
-      const response = await client.messages.create(process.env.REACT_APP_DOMAIN, {
-        from: `Ares Security Contact Form Submission <${email}>`,
-        to: 'contact@aressecurity.co',
-        subject: subject,
-        // template: 'arescontact', 'v:name': name, 'v:email': email, 'v:message': message, 'v:subject': subject, 'h:X-Mailgun-Variables': JSON.stringify({name: name, email: email, message: message, subject: subject})
-        text: `FROM: ${name}\nREPLY EMAIL: ${email}\n\nMESSAGE:\n${message}\n\n\n© 2023 Ares Security LLC`
+      const reCaptchaRes = await axios.post('https://www.google.com/recaptcha/api/siteverify', {
+        secret: process.env.REACT_APP_SECRET_KEY,
+        response: captchaValue,
       });
 
-      console.log('RESPONSE', response);
+      console.log('reCaptchaRes', reCaptchaRes);
 
-      if (response.status === 200) {
-        setSuccessMessage('Message sent successfully!');
+      if (reCaptchaRes.data.success) {
+        const mailgunRes = await client.messages.create(process.env.REACT_APP_DOMAIN, {
+          from: `Ares Security Contact Form Submission <${email}>`,
+          // to: 'contact@aressecurity.co',
+          to: 'dustin.apodaca@aressecurity.co',
+          subject: subject,
+          // template: 'arescontact', 'v:name': name, 'v:email': email, 'v:message': message, 'v:subject': subject, 'h:X-Mailgun-Variables': JSON.stringify({name: name, email: email, message: message, subject: subject})
+          text: `FROM: ${name}\nREPLY EMAIL: ${email}\n\nMESSAGE:\n${message}\n\n\n© 2023 Ares Security LLC`
+        });
+
+        console.log('mailgunRes', mailgunRes);
+
+        if (mailgunRes.status === 200) {
+          setSuccessMessage('Message sent successfully!');
+        }
+      } else {
+        setErrorMessage('Failed to send message, please try again or email us directly at: contact@aressecurity.co');
       }
     } catch (error) {
       console.log(error);
@@ -145,10 +169,10 @@ const Contact = () => {
                     required
                   >
                     <option value="" disabled>What can we help you with?</option>
-                    <option value="get-a-quote">Get A Quote</option>
-                    <option value="general-inquiry">General Inquiry</option>
-                    <option value="careers">Careers</option>
-                    <option value="other">Other</option>
+                    <option value="Quote Inquiry">Get A Quote</option>
+                    <option value="General Inquiry">General Inquiry</option>
+                    <option value="Career Inquiry">Careers</option>
+                    <option value="Other Inquiry">Other</option>
                   </select>
                 </div>
                 <div className="relative mb-4">
@@ -177,6 +201,11 @@ const Contact = () => {
                 </div>
               ) : (
                 <>
+                  <ReCAPTCHA 
+                    sitekey={process.env.REACT_APP_SITE_KEY} 
+                    ref={captchaRef} 
+                    onChange={(value) => setCaptchaValue(value)}
+                  />
                   <button className="text-white bg-odgreen border-0 py-3 px-10 lg:px-8 xl:px-10 focus:outline-none hover:bg-litegreen hover:text-black transition ease-in-out duration-300 rounded-lg text-lg">Send</button>
                 </>
               )}
