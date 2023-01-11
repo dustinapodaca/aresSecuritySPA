@@ -107,43 +107,10 @@ const Contact = () => {
       resetForm();
     }
   }, [successMessage, errorMessage, dispatch]);
-
-  // const setCaptchaValue = (value) => {
-  //   captchaRef.current.setValue(value);
-  // };
-
-  // const verifyReCaptcha = async (captchaValue) => {
-  //   try {
-  //     const res = await axios.post('https://6vxi4lo4bcalgcit43rsnraeiy0azzyi.lambda-url.us-west-2.on.aws/', {
-  //       token: captchaValue,
-  //       secret: process.env.REACT_APP_SECRET_KEY,
-  //     });
-
-  //     return res.data.success;
-
-  //   } catch (error) {
-  //     console.log('error', error);
-  //     return false;
-  //   }
-  // };
   
   const handleSubmit = async (e) => {
     e.preventDefault();
     dispatch({ type: 'SET_LOADING', payload: true });
-
-    // const captchaValue = captchaRef.current.getValue();
-    
-    // if (!captchaValue) {
-    //   setErrorMessage('Please complete the reCAPTCHA verification');
-    //   return;
-    // }
-
-    // const isVerifed = await verifyReCaptcha(captchaValue);
-
-    // if (!isVerifed) {
-    //   setErrorMessage('Failed to verify reCAPTCHA, please try again');
-    //   return;
-    // }
 
     try {
       const mailgunRes = await client.messages.create(process.env.REACT_APP_DOMAIN, {
@@ -178,7 +145,7 @@ const Contact = () => {
       <section id="contact" className="text-gray-400 bg-black body-font relative">
         <div className="container px-5 py-20 mx-auto flex sm:flex-nowrap flex-wrap">
           <div className="lg:w-2/3 md:w-1/2 bg-odgreen rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
-            <iframe id="map" width="100%" height="100%" title="map" className="absolute inset-0" frameborder="0" marginheight="0" marginwidth="0" scrolling="no" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1589687.5626687733!2d-105.9444551171875!3d38.90435052382222!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87134327f4199271%3A0xd2591dd0e6d83a81!2sAres%20Security%20LLC!5e0!3m2!1sen!2sus!4v1664942444750!5m2!1sen!2sus"/>
+            <iframe id="map" width="100%" height="100%" title="map" className="absolute inset-0" frameBorder="0" marginHeight="0" marginWidth="0" scrolling="no" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1589687.5626687733!2d-105.9444551171875!3d38.90435052382222!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87134327f4199271%3A0xd2591dd0e6d83a81!2sAres%20Security%20LLC!5e0!3m2!1sen!2sus!4v1664942444750!5m2!1sen!2sus"/>
             <div className="bg-black relative flex flex-wrap py-6 rounded shadow-md">
               <div className="lg:w-1/2 px-6">
                 <h2 className="title-font font-semibold text-white tracking-widest text-xs">SERVICE AREAS</h2>
@@ -193,7 +160,7 @@ const Contact = () => {
             </div>
           </div>
           <div className="lg:w-1/3 md:w-1/2 flex flex-col md:ml-auto w-full md:py-2 mt-8 md:mt-0">
-            <span className="block mb-2 text-3xl text-base text-white font-semibold">
+            <span className="block mb-2 text-3xl text-white font-semibold">
               Contact Us
             </span>
             <h2
@@ -280,7 +247,7 @@ const Contact = () => {
               ) : (
                 <>
                   <div className='flex justify-between'>
-                    <button className="text-white bg-odgreen h-5/6 border-0 py-3 px-10 lg:px-8 xl:px-10 focus:outline-none hover:bg-litegreen hover:text-black transition ease-in-out duration-300 rounded-lg text-lg">Send</button>
+                    <button className="text-white bg-odgreen h-5/6 border-0 py-3 px-10 focus:outline-none hover:bg-litegreen hover:text-black transition ease-in-out duration-300 rounded-lg text-lg cursor-pointer">Send</button>
                     {/* <ReCAPTCHA
                       sitekey={process.env.REACT_APP_SITE_KEY}
                       ref={captchaRef}
@@ -289,7 +256,7 @@ const Contact = () => {
                   </div>
                 </>
               )}
-                <p className="text-xs text-white text-opacity-90 mt-3">© 2023 Ares Security LLC</p>
+                <p className="text-xs text-white text-opacity-90 mt-4">© 2023 Ares Security LLC</p>
               </form>
             <ToastContainer
               position="top-center"
@@ -311,3 +278,37 @@ const Contact = () => {
 }
 
 export default Contact;
+
+// reCAPTHCA in Progress
+  // const setCaptchaValue = (value) => {
+  //   captchaRef.current.setValue(value);
+  // };
+
+  // const verifyReCaptcha = async (captchaValue) => {
+  //   try {
+  //     const res = await axios.post('https://6vxi4lo4bcalgcit43rsnraeiy0azzyi.lambda-url.us-west-2.on.aws/', {
+  //       token: captchaValue,
+  //       secret: process.env.REACT_APP_SECRET_KEY,
+  //     });
+
+  //     return res.data.success;
+
+  //   } catch (error) {
+  //     console.log('error', error);
+  //     return false;
+  //   }
+  // };
+
+  // const captchaValue = captchaRef.current.getValue();
+    
+    // if (!captchaValue) {
+    //   setErrorMessage('Please complete the reCAPTCHA verification');
+    //   return;
+    // }
+
+    // const isVerifed = await verifyReCaptcha(captchaValue);
+
+    // if (!isVerifed) {
+    //   setErrorMessage('Failed to verify reCAPTCHA, please try again');
+    //   return;
+    // }
