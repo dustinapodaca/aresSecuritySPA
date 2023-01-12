@@ -638,7 +638,7 @@ export default function Services() {
                 <p className="text-white text-lg text-body-color mb-12">
                   Our client portal allows management to review incidents, submit requests, and recall incoming & outgoing personnel. Contact us today for a quote!
                 </p>
-                <button className="sm:mx-auto"><Link to="contact" spy={true} smooth={true}>
+                <button className="sm:mx-auto"><Link href="/contact" to="contact" spy={true} smooth={true}>
                   <span
                     className="
                     mx-auto

@@ -8,10 +8,10 @@ import hero from '../../assets/img/hero.jpg';
 // import svgLogo from '../../assets/img/ares-logo.svg';
 
 const navigation = [
-  { name: 'Company', to: 'company' },
-  { name: 'Services', to: 'services' },
-  { name: 'Contact Us', to: 'contact' },
-  { name: 'Careers', to: 'careers' },
+  { name: 'Company', to: 'company', href: '/company' },
+  { name: 'Services', to: 'services', href: '/services' },
+  { name: 'Contact Us', to: 'contact', href: '/contact' },
+  { name: 'Careers', to: 'careers', href: '/careers' },
 ];
 
 export default function Hero() {
@@ -62,7 +62,7 @@ export default function Hero() {
                 </div>
                 <div className="hidden md:ml-16 md:block md:space-x-12 md:pr-4">
                   {navigation.map((item) => (
-                    <span key={item.name} style={{ cursor: 'pointer' }} className="font-medium text-white text-lg pb-1 link link-underline link-underline-black active"><Link to={item.to} spy={true} smooth={true}>
+                    <span key={item.name} style={{ cursor: 'pointer' }} className="font-medium text-white text-lg pb-1 link link-underline link-underline-black active"><Link href={item.href} to={item.to} spy={true} smooth={true}>
                       {item.name}
                     </Link></span>
                   ))}
