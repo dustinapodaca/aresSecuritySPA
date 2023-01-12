@@ -17,16 +17,16 @@ export default function Careers() {
             offset={50}
           >
             <img
-              className="md:w-5/6 mb-7 object-cover object-center rounded mx-auto"
+              className="lg:w-4/6 md:w-5/6 w-5/6 mb-7 object-cover object-center rounded mx-auto"
               alt="hero"
               src={aresGroup}
             />
           </AnimationOnScroll>
-          <div className="w-full md:w-5/6 flex flex-col mb-24 items-center text-center">
+          <div className="w-full lg:w-4/6 md:w-5/6 flex flex-col mb-24 items-center text-center">
             <h2 className="font-bold text-4xl sm:text-4xl text-black mb-6">
               Join Our <span className="text-litegreen">Team</span>
             </h2>
-            <p className="mb-7 leading-relaxed">
+            <p className="mb-7 leading-relaxed text-lg text-body-color">
               Our philosophy is simple - the well-being of our employees is most
               important to us. We believe that happy and healthy employees are
               the foundation of a great company, and that balance between work,
