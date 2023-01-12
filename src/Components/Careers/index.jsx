@@ -9,19 +9,20 @@ export default function Careers() {
   return (
     <>
       <section id="careers" className="text-gray-600 body-font">
-        <div className="container mx-auto flex flex-col px-5 pt-20 pb-4 justify-center items-center">
+        <div className="container mx-auto flex flex-col px-5 pt-12 pb-4 md:pt-16 lg:pt-16 justify-center items-center">
           <AnimationOnScroll
             animateIn="animate__fadeInLeft"
             duration={1}
             animateOnce={true}
+            offset={50}
           >
             <img
-              className="lg:w-4/6 md:w-3/6 w-5/6 mb-7 object-cover object-center rounded mx-auto"
+              className="md:w-5/6 mb-7 object-cover object-center rounded mx-auto"
               alt="hero"
               src={aresGroup}
             />
           </AnimationOnScroll>
-          <div className="w-full md:w-2/3 flex flex-col mb-24 items-center text-center">
+          <div className="w-full md:w-5/6 flex flex-col mb-24 items-center text-center">
             <h2 className="font-bold text-4xl sm:text-4xl text-black mb-6">
               Join Our <span className="text-litegreen">Team</span>
             </h2>
