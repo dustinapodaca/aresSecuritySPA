@@ -26,7 +26,7 @@ export default function Careers() {
             <h2 className="font-bold text-4xl sm:text-4xl text-black mb-6">
               Join Our <span className="text-litegreen">Team</span>
             </h2>
-            <p className="mb-7 leading-relaxed text-lg text-body-color">
+            <p className="mb-7 leading-relaxed lg:text-lg text-body-color">
               Our philosophy is simple - the well-being of our employees is most
               important to us. We believe that happy and healthy employees are
               the foundation of a great company, and that balance between work,

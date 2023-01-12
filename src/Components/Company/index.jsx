@@ -9,7 +9,7 @@ export default function Company() {
             <h2 className="sm:text-3xl text-2xl font-medium title-font text-gray-900 mb-4">
               Women Owned & Operated.
             </h2>
-            <p className="text-lg leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s">
+            <p className="lg:text-lg leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s">
               We are Colorado’s first women-owned and operated security company
               dedicated to protecting Cannabis and those who understand its
               potential for a brighter future. Ares is honored to be here for
@@ -38,7 +38,7 @@ export default function Company() {
                 <h2 className="text-gray-900 text-xl title-font font-medium mb-3">
                   Integrity
                 </h2>
-                <p className="leading-relaxed text-lg px-10">
+                <p className="leading-relaxed lg:text-lg px-10">
                   We believe that communication is key, and that integrity and
                   transparency are the foundation for building trust and true
                   security with our clients.
@@ -73,7 +73,7 @@ export default function Company() {
                 <h2 className="text-gray-900 text-xl title-font font-medium mb-3">
                   Personnel
                 </h2>
-                <p className="leading-relaxed text-lg px-10">
+                <p className="leading-relaxed lg:text-lg px-10">
                   Ares Security guards are the backbone of our business. We
                   believe that well-trained, healthy employees provide a quality
                   service to all our clients.
