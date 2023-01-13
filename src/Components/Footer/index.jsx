@@ -4,7 +4,7 @@ class Footer extends React.Component {
   render() {
     return (
       <>
-        <footer className="text-white bg-black body-font">
+        <footer id="footer" className="text-white bg-black body-font">
           <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
             <span
               className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900"

@@ -16,7 +16,7 @@ const navigation = [
 
 export default function Hero() {
   return (
-    <div className="relative overflow-hidden bg-black">
+    <header id="header" className="relative overflow-hidden bg-black">
       <div className="mx-auto max-w-7xl">
         <h1 className="sr-only">Ares Security</h1>
         <h2 className="sr-only">Colorado Security Services</h2>
@@ -371,6 +371,6 @@ export default function Hero() {
           alt="aresGuards"
         />
       </div>
-    </div>
+    </header>
   );
 }
