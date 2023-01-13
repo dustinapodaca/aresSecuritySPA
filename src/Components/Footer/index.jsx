@@ -4,7 +4,7 @@ class Footer extends React.Component {
   render() {
     return (
       <>
-        <footer className="text-white bg-odgreen body-font">
+        <footer className="text-white bg-black body-font">
           <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
             <span
               className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900"
@@ -20,7 +20,7 @@ class Footer extends React.Component {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="0"
-                className="w-12 h-12 text-white p-2 bg-litegreen fill-odgreen rounded-lg"
+                className="w-12 h-12 text-white p-2 bg-odgreen fill-litegreen rounded-lg"
               >
                 <g id="Layer_1-2" data-name="Layer 1">
                   <path
@@ -33,13 +33,13 @@ class Footer extends React.Component {
                   />
                 </g>
               </svg>
-              <h2 className="ml-3 text-xl">Ares Security</h2>
+              <h2 className="ml-3 text-xl text-litegreen">Ares Security</h2>
             </span>
-            <p className="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
+            <p className="text-litegreen text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
               © 2023 Ares Security LLC —
               <a
                 href="https://linkedin.com/in/dustinapodaca"
-                className="text-gray-600 ml-1"
+                className="text-gray-600 ml-1 text-litegreen"
                 rel="noopener noreferrer"
                 target="_blank"
               >
@@ -58,7 +58,7 @@ class Footer extends React.Component {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth="2"
-                  className="w-5 h-5"
+                  className="w-5 h-5 fill-litegreen"
                   viewBox="0 0 24 24"
                 >
                   <title>Facebook</title>
@@ -77,7 +77,7 @@ class Footer extends React.Component {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth="2.1"
-                  className="w-5 h-5"
+                  className="w-5 h-5 stroke-litegreen"
                   viewBox="0 0 24 24"
                 >
                   <title>Instagram</title>
@@ -96,7 +96,7 @@ class Footer extends React.Component {
                   width="64"
                   height="64"
                   fill="currentColor"
-                  className="w-4 h-4"
+                  className="w-4 h-4 fill-litegreen"
                   shape-rendering="geometricPrecision"
                   text-rendering="geometricPrecision"
                   image-rendering="optimizeQuality"
@@ -120,7 +120,7 @@ class Footer extends React.Component {
                   width="800px"
                   height="800px"
                   viewBox="0 0 32 32"
-                  className="w-5 h-5"
+                  className="w-5 h-5 fill-litegreen"
                   style={{ marginLeft: 1 }}
                   version="1.1"
                   xmlns="http://www.w3.org/2000/svg"
