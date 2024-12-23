@@ -5,7 +5,7 @@ class Footer extends React.Component {
     return (
       <>
         <footer id="footer" className="text-white bg-black body-font">
-          <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+          <div className="container px-5 py-32 mx-auto flex items-center sm:flex-row flex-col">
             <span
               className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900"
               onClick={this.props.scrollToTop}
@@ -20,7 +20,7 @@ class Footer extends React.Component {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="0"
-                className="w-12 h-12 text-white p-2 bg-odgreen fill-litegreen rounded-lg"
+                className="w-14 h-14 text-white p-2 bg-odgreen fill-litegreen rounded-lg"
               >
                 <g id="Layer_1-2" data-name="Layer 1">
                   <path
@@ -33,10 +33,12 @@ class Footer extends React.Component {
                   />
                 </g>
               </svg>
-              <h2 className="ml-3 text-xl text-litegreen">Ares Security</h2>
+              <h2 className="ml-3 text-2xl md:text-3xl font-semibold text-litegreen">
+                Ares Security
+              </h2>
             </span>
-            <p className="text-litegreen text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
-              © 2023 Ares Security LLC —
+            <p className="text-litegreen text-sm md:text-lg text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-8">
+              © 2025 Ares Security LLC —
               <a
                 href="https://linkedin.com/in/dustinapodaca"
                 className="text-gray-600 ml-1 text-litegreen"
@@ -46,7 +48,8 @@ class Footer extends React.Component {
                 @dustinapodaca
               </a>
             </p>
-            <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+            <span className="inline-flex sm:ml-auto sm:mt-0 mt-10 justify-center sm:justify-start items-center space-x-6 md:space-x-8 ">
+              {/* Facebook */}
               <a
                 href="https://facebook.com/protectionbyares"
                 target="_blank"
@@ -58,33 +61,37 @@ class Footer extends React.Component {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth="2"
-                  className="w-5 h-5 fill-litegreen"
                   viewBox="0 0 24 24"
+                  className="w-6 h-6 md:w-8 md:h-8 fill-litegreen"
                 >
                   <title>Facebook</title>
-                  <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                  <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
                 </svg>
               </a>
+
+              {/* Instagram */}
               <a
                 href="https://instagram.com/protectionbyares"
                 target="_blank"
                 rel="noreferrer"
-                className="ml-3 text-gray-500"
+                className="text-gray-500"
               >
                 <svg
                   fill="none"
                   stroke="currentColor"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  strokeWidth="2.1"
-                  className="w-5 h-5 stroke-litegreen"
+                  strokeWidth="2"
                   viewBox="0 0 24 24"
+                  className="w-6 h-6 md:w-8 md:h-8 stroke-litegreen"
                 >
                   <title>Instagram</title>
                   <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-                  <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+                  <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01" />
                 </svg>
               </a>
+
+              {/* Google My Business */}
               <a
                 href="https://business.google.com/n/3308618090331569903/searchprofile?hl=en-US"
                 target="_blank"
@@ -92,41 +99,29 @@ class Footer extends React.Component {
                 className="text-gray-500"
               >
                 <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="64"
-                  height="64"
                   fill="currentColor"
-                  className="w-4 h-4 fill-litegreen"
-                  shape-rendering="geometricPrecision"
-                  text-rendering="geometricPrecision"
-                  image-rendering="optimizeQuality"
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
                   viewBox="0 0 640 640"
-                  style={{ marginTop: 2.5, marginLeft: 13 }}
+                  className="w-5 h-5 md:w-7 md:h-7 fill-litegreen"
                 >
                   <title>Google My Business</title>
                   <path d="M326.331 274.255v109.761h181.49c-7.37 47.115-54.886 138.002-181.49 138.002-109.242 0-198.369-90.485-198.369-202.006 0-111.509 89.127-201.995 198.369-201.995 62.127 0 103.761 26.516 127.525 49.359l86.883-83.635C484.99 31.512 412.741-.012 326.378-.012 149.494-.012 6.366 143.116 6.366 320c0 176.884 143.128 320.012 320.012 320.012 184.644 0 307.256-129.876 307.256-312.653 0-21-2.244-36.993-5.008-52.997l-302.248-.13-.047.024z" />
                 </svg>
               </a>
+
+              {/* LinkedIn */}
               <a
                 href="https://www.linkedin.com/company/ares-security-llc/"
                 target="_blank"
                 rel="noreferrer"
-                className="ml-3 text-gray-500"
+                className="text-gray-500"
               >
                 <svg
                   fill="currentColor"
-                  width="800px"
-                  height="800px"
                   viewBox="0 0 32 32"
-                  className="w-5 h-5 fill-litegreen"
-                  style={{ marginLeft: 1 }}
-                  version="1.1"
-                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-6 h-6 md:w-7 md:h-7 fill-litegreen"
                 >
                   <title>LinkedIn</title>
-                  <path d="M28.778 1.004h-25.56c-0.008-0-0.017-0-0.027-0-1.199 0-2.172 0.964-2.186 2.159v25.672c0.014 1.196 0.987 2.161 2.186 2.161 0.010 0 0.019-0 0.029-0h25.555c0.008 0 0.018 0 0.028 0 1.2 0 2.175-0.963 2.194-2.159l0-0.002v-25.67c-0.019-1.197-0.994-2.161-2.195-2.161-0.010 0-0.019 0-0.029 0h0.001zM9.9 26.562h-4.454v-14.311h4.454zM7.674 10.293c-1.425 0-2.579-1.155-2.579-2.579s1.155-2.579 2.579-2.579c1.424 0 2.579 1.154 2.579 2.578v0c0 0.001 0 0.002 0 0.004 0 1.423-1.154 2.577-2.577 2.577-0.001 0-0.002 0-0.003 0h0zM26.556 26.562h-4.441v-6.959c0-1.66-0.034-3.795-2.314-3.795-2.316 0-2.669 1.806-2.669 3.673v7.082h-4.441v-14.311h4.266v1.951h0.058c0.828-1.395 2.326-2.315 4.039-2.315 0.061 0 0.121 0.001 0.181 0.003l-0.009-0c4.5 0 5.332 2.962 5.332 6.817v7.855z"></path>
+                  <path d="M28.778 1.004h-25.56c-0.008 0-0.017 0-0.027 0-1.199 0-2.172 0.964-2.186 2.159v25.672c0.014 1.196 0.987 2.161 2.186 2.161 0.010 0 0.019 0 0.029 0h25.555c0.008 0 0.018 0 0.028 0 1.2 0 2.175-0.963 2.194-2.159l0-0.002v-25.67c-0.019-1.197-0.994-2.161-2.195-2.161-0.010 0-0.019 0-0.029 0h0.001zM9.9 26.562h-4.454v-14.311h4.454zM7.674 10.293c-1.425 0-2.579-1.155-2.579-2.579s1.155-2.579 2.579-2.579c1.424 0 2.579 1.154 2.579 2.578v0c0 0.001 0 0.002 0 0.004 0 1.423-1.154 2.577-2.577 2.577h-0.003zM26.556 26.562h-4.441v-6.959c0-1.66-0.034-3.795-2.314-3.795-2.316 0-2.669 1.806-2.669 3.673v7.082h-4.441v-14.311h4.266v1.951h0.058c0.828-1.395 2.326-2.315 4.039-2.315 4.5 0 5.332 2.962 5.332 6.817v7.855z" />
                 </svg>
               </a>
             </span>

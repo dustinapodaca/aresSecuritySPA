@@ -167,7 +167,6 @@ const Contact = () => {
               className="
                   text-litegreen
                   mb-2
-                  uppercase
                   font-bold
                   text-[32px]
                   sm:text-[40px]
@@ -175,7 +174,7 @@ const Contact = () => {
                   xl:text-[40px]
                   "
             >
-              HOW CAN WE HELP YOU?
+              How can we help you?
             </p>
 
               <form ref={formRef} onSubmit={handleSubmit}>
@@ -213,7 +212,7 @@ const Contact = () => {
                     onChange={(event) => dispatch({ type: 'SET_SUBJECT', payload: event.target.value })}
                     required
                   >
-                    <option value="" disabled>What can we help you with?</option>
+                    <option value="" disabled>Choose one.</option>
                     <option value="Quote Inquiry">Get A Quote</option>
                     <option value="General Inquiry">General Inquiry</option>
                     <option value="Career Inquiry">Careers</option>
@@ -256,7 +255,7 @@ const Contact = () => {
                   </div>
                 </>
               )}
-                <p className="text-xs text-white text-opacity-90 mt-4">© 2023 Ares Security LLC</p>
+                <p className="text-xs text-white text-opacity-90 mt-4">© 2025 Ares Security LLC</p>
               </form>
             <ToastContainer
               position="top-center"

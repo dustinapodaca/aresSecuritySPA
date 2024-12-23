@@ -9,11 +9,10 @@ export default function Company() {
             <h2 className="sm:text-3xl text-2xl font-medium title-font text-gray-900 mb-4">
               Women Owned & Operated.
             </h2>
-            <p className="lg:text-lg leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s">
-              We are Colorado’s first women-owned and operated security company
-              dedicated to protecting Cannabis and those who understand its
-              potential for a brighter future. Ares is honored to be here for
-              you as we navigate this emerging industry- <em>together.</em>
+            <p className="lg:text-lg leading-relaxed xl:w-3/5 lg:w-3/4 mx-auto text-gray-500s">
+              Ares Security is led by innovative women dedicated to
+              raising the bar and setting a new standard for security services and careers, welcoming
+              professionals of all backgrounds to excel.
             </p>
             <div className="flex mt-6 justify-center">
               <div className="mt-3 w-20 h-1 rounded-full bg-black inline-flex"></div>
@@ -34,6 +33,7 @@ export default function Company() {
                   <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
                 </svg>
               </div>
+              
               <div className="flex-grow">
                 <h2 className="text-gray-900 text-xl title-font font-medium mb-3">
                   Integrity
@@ -92,6 +92,7 @@ export default function Company() {
           </div>
         </div>
       </section>
+      
     </>
   );
 }

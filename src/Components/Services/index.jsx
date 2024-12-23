@@ -10,7 +10,10 @@ import protectionThree from '../../assets/img/range.jpg';
 export default function Services() {
   return (
     <>
-      <section id="services" className="pt-12 lg:pt-[75px] pb-12 lg:pb-[75px] overflow-hidden bg-black">
+      <section
+        id="services"
+        className="pt-12 lg:pt-[75px] pb-12 lg:pb-[75px] overflow-hidden bg-black"
+      >
         <div className="container mx-auto px-6">
           <div className="flex flex-wrap justify-between items-center -mx-4">
             <div className="w-full lg:w-6/12 px-4">
@@ -614,33 +617,59 @@ export default function Services() {
             </div>
             <div className="w-full lg:w-1/2 xl:w-5/12 px-4">
               <div className="mt-10 sm:mx-auto lg:mt-0">
-                <span className="font-semibold text-3xl text-white mb-2 block">
-                  Why Choose Us
+                <span className="font-semibold text-3xl lg:text-5xl text-white mb-2 block">
+                  Why Choose Us?
                 </span>
-                <h2 className="font-bold text-4xl sm:text-4xl text-litegreen mb-8">
-                  <span>Make your </span>
-                  <AnimationOnScroll animateIn="animate__fadeIn" duration={3} className="inline-block" animateOnce={true}>
-                    <span className='text-odgreen'>customers</span>
-                  </AnimationOnScroll><span> & </span> 
-                  <AnimationOnScroll animateIn="animate__fadeIn" duration={3} className="inline-block" animateOnce={true}>
-                    <span className='text-odgreen'> employees</span>
-                  </AnimationOnScroll><span> </span> 
-                  <AnimationOnScroll animateIn="animate__fadeIn" duration={3} delay={750} className="inline-block" animateOnce={true}><span> feel</span> 
-                    <span className='text-odgreen'> safe</span>
-                  </AnimationOnScroll><span> & </span> 
-                  <AnimationOnScroll animateIn="animate__fadeIn" duration={3} delay={1100} className="inline-block" animateOnce={true}>
+                <br />
+                <h2 className="font-bold text-3xl lg:text-4xl text-litegreen mb-8">
+                  <span>More than protection. </span>
+                  <br />
+                  <AnimationOnScroll
+                    animateIn="animate__fadeIn"
+                    duration={3}
+                    delay={250}
+                    className="inline-block"
+                    animateOnce={true}
+                  >
+                    <span className="text-odgreen">Professional, </span>
+                  </AnimationOnScroll>
+                  <span> </span>
+                  <AnimationOnScroll
+                    animateIn="animate__fadeIn"
+                    duration={3}
+                    delay={550}
+                    className="inline-block"
+                    animateOnce={true}
+                  >
+                    <span className="text-odgreen"> approachable,</span>
+                  </AnimationOnScroll>
+                  <span> & </span>
+                  <AnimationOnScroll
+                    animateIn="animate__fadeIn"
+                    duration={3}
+                    delay={750}
+                    className="inline-block"
+                    animateOnce={true}
+                  >
+                    <span className="text-odgreen"> focused</span>
+                  </AnimationOnScroll>
+                  <span> on customer care.</span>
+                  {/* <AnimationOnScroll animateIn="animate__fadeIn" duration={3} delay={1100} className="inline-block" animateOnce={true}>
                     <span className='text-odgreen'>happy</span>
-                  </AnimationOnScroll> by providing them with reliable security services.
+                  </AnimationOnScroll> by providing them with reliable security services. */}
                 </h2>
-                <p className="text-white text-lg text-body-color mb-8">
-                  Our guards are trained on product, distribution, and MED regulations, tailoring our services to your dispensaries' needs. GPS perimeter patrol scans, daily reports, and logbook software generate security analytics for your business.
+                <p className="text-white text-xl text-body-color mb-14">
+                  Ares is committed to protect its reputation as one of
+                  Colorado’s most reliable security companies. Having
+                  established a strong record of performance and client
+                  satisfaction, we’re your go-to partner for all your security
+                  needs. Contact us today for a quote!
                 </p>
-                <p className="text-white text-lg text-body-color mb-12">
-                  Our client portal allows management to review incidents, submit requests, and recall incoming & outgoing personnel. Contact us today for a quote!
-                </p>
-                <button className="sm:mx-auto"><Link href="/contact" to="contact" spy={true} smooth={true}>
-                  <span
-                    className="
+
+                <button className="sm:mx-auto">
+                  <Link href="/contact" to="contact" spy={true} smooth={true}>
+                    <span
+                      className="
                     mx-auto
                     py-4
                     px-10
@@ -655,15 +684,16 @@ export default function Services() {
                     font-normal
                     rounded-lg
                     "
-                  >
-                  Get A Quote
-                  </span>
-                </Link></button>
+                    >
+                      Get A Quote
+                    </span>
+                  </Link>
+                </button>
               </div>
             </div>
           </div>
         </div>
       </section>
     </>
-  )
+  );
 }

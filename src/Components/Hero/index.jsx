@@ -342,20 +342,20 @@ export default function Hero() {
                 </span>{" "}
                 <span className="block text-litegreen xl:inline">
                   <span className="fade-in-text2">
-                    <span className="text-odgreen">property</span>
+                    <span className="text-odgreen">assets</span>
                   </span>
                   <span> &</span>
                   <span className="fade-in-text3">
-                    <span className="text-odgreen"> plants.</span>
+                    <span className="text-odgreen"> operations.</span>
                   </span>
                 </span>
               </h1>
               <p className="mt-3 text-litegreen text-gray-500 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-lg md:mt-7 md:text-xl lg:mx-0 lg:mb-8">
-                Ares strives to be Colorado's first Security Company dedicated
-                to the Cannabis Industry. We understand that MJ Dispensaries
-                face different obstacles than ordinary businesses, which is why
-                all guards are trained on Product, Distribution, and MED
-                regulations.
+                Ares is a versatile security firm with a proven track record in
+                complex environments. Our highly trained and experienced team
+                adapts to evolving business needs, providing tailored
+                security solutions to ensure the safety of your
+                operations.
               </p>
             </div>
           </main>

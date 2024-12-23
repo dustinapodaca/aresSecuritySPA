@@ -26,16 +26,14 @@ export default function Careers() {
             <h2 className="font-bold text-4xl sm:text-4xl text-black mb-6">
               Join Our <span className="text-litegreen">Team</span>
             </h2>
-            <p className="mb-7 leading-relaxed lg:text-lg text-body-color">
+            <p className="mb-10 leading-relaxed lg:text-lg text-body-color">
               Our philosophy is simple - the well-being of our employees is most
               important to us. We believe that happy and healthy employees are
               the foundation of a great company, and that balance between work,
               play, and rest is a must. At Ares, you are more than just a
               security guard. Here, you will have the opportunity to work in
               customer service, managerial, marketing, and sales roles- because
-              as we grow, we want you to grow with us! We encourage anybody who
-              is serious about security and knowledgeable about cannabis to
-              apply.
+              as we grow, we want you to grow with us.
             </p>
             <div className="flex w-full justify-center items-end">
               {/* <a href="https://www.indeed.com/cmp/Ares-Security-1" target="_blank" rel="noreferrer">
