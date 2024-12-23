@@ -11,8 +11,8 @@ export default function Company() {
             </h2>
             <p className="lg:text-lg leading-relaxed xl:w-3/5 lg:w-3/4 mx-auto text-gray-500s">
               Ares Security is led by innovative women dedicated to
-              raising the bar and setting a new standard for security services and careers, welcoming
-              professionals of all backgrounds to excel.
+              revolutionizing and setting a new standard of excellence in
+              security services and careers.
             </p>
             <div className="flex mt-6 justify-center">
               <div className="mt-3 w-20 h-1 rounded-full bg-black inline-flex"></div>
@@ -33,7 +33,7 @@ export default function Company() {
                   <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
                 </svg>
               </div>
-              
+
               <div className="flex-grow">
                 <h2 className="text-gray-900 text-xl title-font font-medium mb-3">
                   Integrity
@@ -92,7 +92,6 @@ export default function Company() {
           </div>
         </div>
       </section>
-      
     </>
   );
 }
