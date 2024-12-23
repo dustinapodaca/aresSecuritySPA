@@ -7,7 +7,7 @@ export default function Company() {
         <div className="container px-5 py-20 mx-auto">
           <div className="text-center mb-20">
             <h2 className="sm:text-3xl text-2xl font-medium title-font text-gray-900 mb-4">
-              Women Owned & Operated.
+              Women Owned & Operated
             </h2>
             <p className="lg:text-lg leading-relaxed xl:w-3/5 lg:w-3/4 mx-auto text-gray-500s">
               Ares Security is led by innovative women dedicated to

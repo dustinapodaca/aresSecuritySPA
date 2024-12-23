@@ -622,8 +622,8 @@ export default function Services() {
                 </span>
                 <br />
                 <h2 className="font-bold text-3xl lg:text-4xl text-litegreen mb-8">
-                  <span>More than protection. </span>
-                  <br />
+                  {/* <span>More than protection. </span>
+                  <br /> */}
                   <AnimationOnScroll
                     animateIn="animate__fadeIn"
                     duration={3}
@@ -678,7 +678,7 @@ export default function Services() {
                     inline-flex
                     items-center
                     justify-center
-                    text-center text-white text-base
+                    text-center text-white text-md md:text-xl
                     bg-odgreen
                     hover:bg-litegreen hover:text-black transition ease-in-out duration-300
                     font-normal

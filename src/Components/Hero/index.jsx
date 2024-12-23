@@ -342,11 +342,11 @@ export default function Hero() {
                 </span>{" "}
                 <span className="block text-litegreen xl:inline">
                   <span className="fade-in-text2">
-                    <span className="text-odgreen">assets</span>
+                    <span className="text-odgreen">property</span>
                   </span>
                   <span> &</span>
                   <span className="fade-in-text3">
-                    <span className="text-odgreen"> operations.</span>
+                    <span className="text-odgreen"> premises.</span>
                   </span>
                 </span>
               </h1>
