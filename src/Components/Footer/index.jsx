@@ -41,7 +41,7 @@ class Footer extends React.Component {
               © 2025 Ares Security LLC —
               <a
                 href="https://linkedin.com/in/dustinapodaca"
-                className="text-gray-600 ml-1 text-litegreen"
+                className="text-gray-600 ml-1 text-litegreen text-sm"
                 rel="noopener noreferrer"
                 target="_blank"
               >
