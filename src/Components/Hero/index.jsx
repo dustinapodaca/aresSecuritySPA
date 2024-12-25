@@ -334,13 +334,13 @@ export default function Hero() {
                     </g>
                   </svg>
                 </span>{" "}
-                <span className="block text-litegreen xl:inline">
+                <span className="block text-litegreen xl:inline mt-6">
                   protection for
                   <span className="fade-in-text1">
                     <span className="text-odgreen"> people</span>
                   </span>
                 </span>{" "}
-                <span className="block text-litegreen xl:inline">
+                <span className="block text-litegreen xl:inline mb-6">
                   <span className="fade-in-text2">
                     <span className="text-odgreen">property</span>
                   </span>
@@ -350,7 +350,7 @@ export default function Hero() {
                   </span>
                 </span>
               </h1>
-              <p className="mt-3 text-litegreen text-gray-500 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-lg md:mt-7 md:text-xl lg:mx-0 lg:mb-8">
+              <p className="mt-3 text-litegreen text-gray-500 sm:mx-auto sm:mt-5 mb-2 sm:max-w-xl sm:text-lg md:mt-7 md:text-xl lg:mx-0 lg:mb-8">
                 Ares is a versatile security firm with a proven track record in
                 complex environments. Our highly trained and experienced team
                 adapts to evolving business needs, providing tailored
@@ -366,7 +366,7 @@ export default function Hero() {
         className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 fade-in-hero"
       >
         <img
-          className="h-56 w-full object-cover sm:h-72 md:h-96 lg:h-full lg:w-full"
+          className="h-80 w-full object-cover sm:h-72 md:h-96 lg:h-full lg:w-full"
           src={hero}
           alt="aresGuards"
         />

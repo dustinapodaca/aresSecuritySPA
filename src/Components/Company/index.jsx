@@ -4,14 +4,13 @@ export default function Company() {
   return (
     <>
       <section id="company" className="text-gray-600 body-font">
-        <div className="container px-5 py-20 pb-32 md:pb-24 mx-auto">
+        <div className="container px-5 py-20 pb-32 md:pb-20 mx-auto">
           {/* The key is flex-col for mobile, md:flex-row for desktop */}
           <div className="flex flex-col md:flex-row sm:-m-4 -mx-4 -mb-8 -mt-4 md:space-x-8 space-y-6 md:space-y-0">
             {/* Card 1: Integrity */}
             <div
               className="
               p-4
-              md:w-1/3
               flex flex-col text-center items-center
               rounded-xl
               order-2 md:order-1
@@ -34,7 +33,7 @@ export default function Company() {
                 <h2 className="text-gray-900 text-2xl title-font font-medium mb-3">
                   Integrity
                 </h2>
-                <p className="leading-relaxed lg:text-lg lg:px-10 md:px-6">
+                <p className="leading-relaxed lg:text-lg px-10">
                   We believe that communication is key, and that integrity and
                   transparency are the foundation for building trust and true
                   security with our clients.
@@ -46,7 +45,6 @@ export default function Company() {
             <div
               className="
               p-4
-              md:w-2/5
               flex flex-col text-center items-center
               rounded-xl
               order-1 md:order-2
@@ -81,7 +79,6 @@ export default function Company() {
             <div
               className="
               p-4
-              md:w-1/3
               flex flex-col text-center items-center
               rounded-xl
               order-3 md:order-3
@@ -105,7 +102,7 @@ export default function Company() {
                 <h2 className="text-gray-900 text-2xl title-font font-medium mb-3">
                   Personnel
                 </h2>
-                <p className="leading-relaxed lg:text-lg lg:px-10 md:px-6">
+                <p className="leading-relaxed lg:text-lg px-10">
                   Ares Security guards are the backbone of our business. We
                   believe that well-trained, healthy employees provide a quality
                   service to all our clients.
