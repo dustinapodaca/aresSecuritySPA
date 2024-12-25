@@ -33,7 +33,7 @@ export default function Company() {
                 <h2 className="text-gray-900 text-2xl title-font font-medium mb-3">
                   Integrity
                 </h2>
-                <p className="leading-relaxed lg:text-lg px-10">
+                <p className="leading-relaxed lg:text-lg px-10 md:px-0">
                   We believe that communication is key, and that integrity and
                   transparency are the foundation for building trust and true
                   security with our clients.
@@ -64,10 +64,10 @@ export default function Company() {
                 </svg>
               </div>
               <div className="flex-grow">
-                <h2 className="text-gray-900 text-xl md:text-2xl title-font font-semibold mb-3">
+                <h2 className="text-gray-900 text-2xl md:text-2xl title-font font-medium mb-3">
                   Women Owned &amp; Operated
                 </h2>
-                <p className="leading-relaxed text-lg lg:text-lg px-10 pb-8">
+                <p className="leading-relaxed text-md lg:text-lg px-10 md:px-0 pb-8">
                   Ares Security is led by innovative women dedicated to
                   revolutionizing and setting a new standard of excellence in
                   security services and careers.
@@ -102,7 +102,7 @@ export default function Company() {
                 <h2 className="text-gray-900 text-2xl title-font font-medium mb-3">
                   Personnel
                 </h2>
-                <p className="leading-relaxed lg:text-lg px-10">
+                <p className="leading-relaxed lg:text-lg px-10 md:px-0">
                   Ares Security guards are the backbone of our business. We
                   believe that well-trained, healthy employees provide a quality
                   service to all our clients.

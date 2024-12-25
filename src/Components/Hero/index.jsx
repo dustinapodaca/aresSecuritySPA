@@ -350,7 +350,7 @@ export default function Hero() {
                   </span>
                 </span>
               </h1>
-              <p className="mt-3 text-litegreen text-gray-500 sm:mx-auto sm:mt-5 mb-2 sm:max-w-xl sm:text-lg md:mt-7 md:text-xl lg:mx-0 lg:mb-8">
+              <p className="mt-3 text-litegreen text-gray-500 sm:mx-auto sm:mt-5 mb-2 sm:max-w-xl text-xl md:mt-7 md:text-xl lg:mx-0 lg:mb-8">
                 Ares is a versatile security firm with a proven track record in
                 complex environments. Our highly trained and experienced team
                 adapts to evolving business needs, providing tailored
