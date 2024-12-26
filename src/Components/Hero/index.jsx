@@ -268,7 +268,7 @@ export default function Hero() {
                     data-name="Layer 2"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 576 174.87"
-                    className="fill-odgreen h-3/5 w-3/5 sm:h-2/4 sm:w-2/4 md:h-2/4 md:w-2/4 lg:w-3/5 lg:h-3/5 mb-3 sm:mx-auto lg:mx-0"
+                    className="fill-odgreen h-2/3 w-2/3 sm:h-2/4 sm:w-2/4 md:h-2/4 md:w-2/4 lg:w-3/5 lg:h-3/5 mb-3 sm:mx-auto lg:mx-0"
                   >
                     <g id="Layer_1-2" data-name="Layer 1">
                       <path

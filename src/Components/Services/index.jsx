@@ -627,7 +627,7 @@ export default function Services() {
                   <AnimationOnScroll
                     animateIn="animate__fadeIn"
                     duration={3}
-                    delay={250}
+                    delay={150}
                     className="inline-block"
                     animateOnce={true}
                   >
@@ -637,7 +637,7 @@ export default function Services() {
                   <AnimationOnScroll
                     animateIn="animate__fadeIn"
                     duration={3}
-                    delay={550}
+                    delay={350}
                     className="inline-block"
                     animateOnce={true}
                   >
@@ -647,7 +647,7 @@ export default function Services() {
                   <AnimationOnScroll
                     animateIn="animate__fadeIn"
                     duration={3}
-                    delay={750}
+                    delay={500}
                     className="inline-block"
                     animateOnce={true}
                   >
