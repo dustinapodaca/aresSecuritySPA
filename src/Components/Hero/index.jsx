@@ -23,9 +23,15 @@ export default function Hero() {
         <h2 className="sr-only">Denver | Colorado Springs | Pueblo</h2>
         <h2 className="sr-only">Protection for People, Property and Premises</h2>
         <div className="relative z-10 bg-black pb-8 sm:pb-16 md:pb-20 lg:w-full lg:max-w-2xl lg:pb-28 xl:pb-32">
+          {/* Angled divider between the dark panel and the hero photo. Fill is
+              currentColor driven by text-black, which is the SAME token the
+              parent panel uses for bg-black — so the two can never drift
+              apart again. It was hardcoded #151515 (the palette's old black)
+              while the panel had moved to ink, which read as two different
+              blacks meeting at the diagonal. */}
           <svg
-            className="absolute inset-y-0 right-0 hidden h-full w-48 translate-x-1/2 transform text-white lg:block"
-            fill="#151515"
+            className="absolute inset-y-0 right-0 hidden h-full w-48 translate-x-1/2 transform text-black lg:block"
+            fill="currentColor"
             viewBox="0 0 100 100"
             preserveAspectRatio="none"
             aria-hidden="true"
