@@ -3,7 +3,6 @@ import Hero from './Components/Hero';
 import Company from './Components/Company';
 import Services from './Components/Services';
 import Capability from './Components/Capability';
-import Testimonials from './Components/Testimonials';
 
 import Contact from './Components/ContactForm';
 import { FormProvider } from './Components/ContactForm';
@@ -29,7 +28,6 @@ const App = () => {
         <Company id="company" />
         <Services id="services" />
         <Capability id="capability" />
-        <Testimonials />
         <Contact id="contact" />
         <Careers id="careers" />
         <Footer

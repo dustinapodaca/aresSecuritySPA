@@ -14,7 +14,7 @@ export default function Services() {
         id="services"
         className="pt-12 lg:pt-[75px] pb-12 lg:pb-[75px] overflow-hidden bg-black"
       >
-        <div className="container mx-auto px-6">
+        <div className="container-ares">
           <div className="flex flex-wrap justify-between items-center -mx-4">
             <div className="w-full lg:w-6/12 px-4">
               <div className="flex items-center -mx-3 sm:-mx-4">
@@ -617,11 +617,10 @@ export default function Services() {
             </div>
             <div className="w-full lg:w-1/2 xl:w-5/12 px-4">
               <div className="mt-10 sm:mx-auto lg:mt-0">
-                <span className="font-semibold text-3xl lg:text-5xl text-white mb-2 block">
-                  Why Choose Us?
-                </span>
-                <br />
-                <h2 className="font-bold text-3xl lg:text-4xl text-litegreen mb-8">
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-light mb-4">
+                  Why Choose Us
+                </p>
+                <h2 className="text-3xl md:text-4xl font-normal tracking-tight text-white mb-8">
                   {/* <span>More than protection. </span>
                   <br /> */}
                   <AnimationOnScroll

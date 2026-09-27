@@ -38,7 +38,7 @@ const PDF_URL = `${process.env.PUBLIC_URL}/files/Ares-Security-Capability-Statem
 export default function Capability() {
   return (
     <section id="capability" className="bg-paper-2 border-t border-b border-line">
-      <div className="container px-5 py-20 mx-auto">
+      <div className="container-ares py-20">
         {/* Heading */}
         <div className="mb-12 text-center md:text-left">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-mid mb-4">

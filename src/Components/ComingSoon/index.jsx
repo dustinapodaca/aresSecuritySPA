@@ -11,7 +11,7 @@ import React from 'react';
 export default function ComingSoon() {
   return (
     <div className="bg-odgreen text-white">
-      <div className="container mx-auto px-5 py-2.5 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-center">
+      <div className="container-ares py-2.5 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-center">
         <span
           aria-hidden="true"
           className="inline-block h-1.5 w-1.5 rounded-full bg-litegreen flex-shrink-0"

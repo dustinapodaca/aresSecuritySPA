@@ -5,7 +5,7 @@ class Footer extends React.Component {
     return (
       <>
         <footer id="footer" className="text-white bg-black body-font">
-          <div className="container px-5 py-32 mx-auto flex items-center sm:flex-row flex-col">
+          <div className="container-ares py-32 flex items-center sm:flex-row flex-col">
             <span
               className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900"
               onClick={this.props.scrollToTop}

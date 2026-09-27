@@ -143,7 +143,7 @@ const Contact = () => {
   return (
     <>
       <section id="contact" className="text-gray-400 bg-black body-font relative">
-        <div className="container px-5 py-20 mx-auto flex sm:flex-nowrap flex-wrap">
+        <div className="container-ares py-20 flex sm:flex-nowrap flex-wrap">
           <div className="lg:w-2/3 md:w-1/2 bg-odgreen rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
             <iframe id="map" width="100%" height="100%" title="map" className="absolute inset-0" frameBorder="0" marginHeight="0" marginWidth="0" scrolling="no" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1589687.5626687733!2d-105.9444551171875!3d38.90435052382222!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87134327f4199271%3A0xd2591dd0e6d83a81!2sAres%20Security%20LLC!5e0!3m2!1sen!2sus!4v1664942444750!5m2!1sen!2sus"/>
             <div className="bg-black relative flex flex-wrap py-6 rounded shadow-md">
@@ -160,54 +160,51 @@ const Contact = () => {
             </div>
           </div>
           <div className="lg:w-1/3 md:w-1/2 flex flex-col md:ml-auto w-full md:py-2 mt-8 md:mt-0">
-            <h3 className="block mb-2 text-3xl text-white font-semibold">
-              Contact Us
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-light mb-4">
+              Request a Quote
+            </p>
+            <h3 className="text-3xl md:text-4xl font-normal tracking-tight text-white mb-4">
+              How can we <span className="italic font-light text-light">help you?</span>
             </h3>
-            <p
-              className="
-                  text-litegreen
-                  mb-2
-                  font-bold
-                  text-[32px]
-                  sm:text-[40px]
-                  lg:text-[36px]
-                  xl:text-[40px]
-                  "
-            >
-              How can we help you?
+            <p className="text-pale leading-relaxed mb-8">
+              Send a site, a shift pattern and a deadline. We respond within one business day.
             </p>
 
-              <form ref={formRef} onSubmit={handleSubmit}>
-                <div className="relative mb-4">
-                  <label htmlFor="name" className="leading-7 text-sm text-white">Name</label>
+              <form
+                ref={formRef}
+                onSubmit={handleSubmit}
+                className="bg-white rounded-2xl border border-line p-7 flex flex-col gap-5"
+              >
+                <div className="flex flex-col gap-2">
+                  <label htmlFor="name" className="field-label">Name</label>
                   <input
                     type="text"
                     id="name"
                     name="name"
-                    className="w-full bg-white rounded border border-litegreen focus:border-odgreen focus:ring-2 focus:ring-litegreen text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                    className="field-input"
                     value={name}
                     onChange={(event) => dispatch({ type: 'SET_NAME', payload: event.target.value })}
                     required
                   />
                 </div>
-                <div className="relative mb-4">
-                  <label htmlFor="email" className="leading-7 text-sm text-white">Email</label>
+                <div className="flex flex-col gap-2">
+                  <label htmlFor="email" className="field-label">Email</label>
                   <input
                     type="email"
                     id="email"
                     name="email"
-                    className="w-full bg-white rounded border border-litegreen focus:border-odgreen focus:ring-2 focus:ring-litegreen text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                    className="field-input"
                     value={email}
                     onChange={(event) => dispatch({ type: 'SET_EMAIL', payload: event.target.value })}
                     required
                   />
                 </div>
-                <div className="relative mb-4">
-                  <label htmlFor="subject" className="leading-7 text-sm text-white">Subject</label>
+                <div className="flex flex-col gap-2">
+                  <label htmlFor="subject" className="field-label">Subject</label>
                   <select
                     id="subject"
                     name="subject"
-                    className="w-full bg-white rounded border border-litegreen focus:border-odgreen focus:ring-2 focus:ring-litegreen text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                    className="field-input"
                     value={subject}
                     onChange={(event) => dispatch({ type: 'SET_SUBJECT', payload: event.target.value })}
                     required
@@ -219,12 +216,12 @@ const Contact = () => {
                     <option value="Other Inquiry">Other</option>
                   </select>
                 </div>
-                <div className="relative mb-4">
-                  <label htmlFor="message" className="leading-7 text-sm text-white">Message</label>
+                <div className="flex flex-col gap-2">
+                  <label htmlFor="message" className="field-label">Message</label>
                   <textarea
                     id="message"
                     name="message"
-                    className="w-full bg-gray-800 rounded border border-litegreen focus:border-indigo-500 focus:ring-2 focus:ring-litegreen h-32 text-base outline-none text-gray-100 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+                    className="field-input h-32 resize-none"
                     value={message}
                     onChange={(event) => dispatch({ type: 'SET_MESSAGE', payload: event.target.value })}
                     required
@@ -236,7 +233,7 @@ const Contact = () => {
                     height="52"
                     width="80"
                     radius="9"
-                    color="#fff"
+                    color="#1f1f1f"
                     ariaLabel="three-dots-loading"
                     wrapperStyle={{}}
                     wrapperClassName=""
@@ -246,7 +243,7 @@ const Contact = () => {
               ) : (
                 <>
                   <div className='flex justify-between'>
-                    <button className="text-white bg-odgreen h-5/6 border-0 py-3 px-10 focus:outline-none hover:bg-litegreen hover:text-black transition ease-in-out duration-300 rounded-lg text-lg cursor-pointer">Send</button>
+                    <button className="inline-flex items-center justify-center rounded-full bg-ink text-white px-8 py-4 text-sm font-semibold uppercase tracking-[0.08em] transition-colors hover:bg-gray-700 focus:outline-none cursor-pointer">Send Request</button>
                     {/* <ReCAPTCHA
                       sitekey={process.env.REACT_APP_SITE_KEY}
                       ref={captchaRef}
@@ -255,7 +252,7 @@ const Contact = () => {
                   </div>
                 </>
               )}
-                <p className="text-xs text-white text-opacity-90 mt-4">© 2025 Ares Security LLC</p>
+                <p className="text-xs text-mid mt-1">© 2026 Ares Security LLC</p>
               </form>
             <ToastContainer
               position="top-center"

@@ -9,7 +9,7 @@ export default function Careers() {
   return (
     <>
       <section id="careers" className="text-gray-600 body-font">
-        <div className="container mx-auto flex flex-col px-5 pt-12 pb-4 md:pt-16 lg:pt-16 justify-center items-center">
+        <div className="container-ares flex flex-col pt-12 pb-4 md:pt-16 lg:pt-16 justify-center items-center">
           <AnimationOnScroll
             animateIn="animate__fadeInLeft"
             duration={1}
@@ -23,8 +23,11 @@ export default function Careers() {
             />
           </AnimationOnScroll>
           <div className="w-full lg:w-4/6 md:w-5/6 flex flex-col mb-24 items-center text-center">
-            <h2 className="font-bold text-4xl sm:text-4xl text-black mb-6">
-              Join Our <span className="text-mid">Team</span>
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-mid mb-4">
+              Careers
+            </p>
+            <h2 className="text-3xl md:text-4xl font-normal tracking-tight text-gray-900 mb-6">
+              Join Our <span className="italic font-light text-mid">Team</span>
             </h2>
             <p className="mb-10 leading-relaxed lg:text-lg text-body-color">
               Our philosophy is simple - the well-being of our employees is most

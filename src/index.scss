@@ -2,6 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Shared page container, matching the new site's .container-ares.
+   Tailwind's own `container` caps at 2xl:1536px, which left only ~32px of
+   gutter on a 1600px screen and made every section look full-bleed. This
+   holds content to 1320px with a 28px inner pad, so there is real breathing
+   room on both sides at any width. */
+@layer components {
+  .container-ares {
+    @apply mx-auto w-full max-w-[1320px] px-7;
+  }
+
+  /* Form field styling lifted from the new site's Request a Quote page, so
+     the placeholder form matches what visitors will see after the relaunch.
+     The fields sit on a light card rather than directly on the dark section:
+     that is how the new site renders them, and it also fixes inputs that
+     were bg-white with near-white text. */
+  .field-label {
+    @apply text-[11px] font-semibold uppercase tracking-[0.18em] text-mid;
+  }
+  .field-input {
+    @apply block w-full min-w-0 rounded-xl border border-line bg-paper px-4 py-3
+           text-[15px] text-ink placeholder:text-mid transition-colors
+           focus:border-ink focus:outline-none focus:ring-2 focus:ring-ink/10;
+  }
+}
+
 body {
   margin: 0;
   /* Inter, matching the new Ares site. The system stack stays as a fallback

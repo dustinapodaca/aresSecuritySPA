@@ -4,7 +4,19 @@ export default function Company() {
   return (
     <>
       <section id="company" className="text-gray-600 body-font">
-        <div className="container px-5 py-20 pb-32 md:pb-20 mx-auto">
+        <div className="container-ares py-20 pb-32 md:pb-20">
+          {/* Section heading, matching the Capability section's treatment:
+              small tracked eyebrow, then a light-weight heading whose second
+              half takes the muted italic accent. */}
+          <div className="mb-12 text-center md:text-left">
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-mid mb-4">
+              Our Company
+            </p>
+            <h2 className="text-3xl md:text-4xl font-normal tracking-tight text-gray-900">
+              What we <span className="italic font-light text-mid">stand for</span>
+            </h2>
+          </div>
+
           {/* The key is flex-col for mobile, md:flex-row for desktop */}
           <div className="flex flex-col md:flex-row sm:-m-4 -mx-4 -mb-8 -mt-4 md:space-x-8 space-y-6 md:space-y-0">
             {/* Card 1: Integrity */}
@@ -30,7 +42,7 @@ export default function Company() {
                 </svg>
               </div>
               <div className="flex-grow">
-                <h2 className="text-gray-900 text-2xl title-font font-medium mb-3">
+                <h2 className="text-gray-900 text-xl font-semibold tracking-tight mb-3">
                   Integrity
                 </h2>
                 <p className="leading-relaxed lg:text-lg px-10 md:px-0">
@@ -64,7 +76,7 @@ export default function Company() {
                 </svg>
               </div>
               <div className="flex-grow">
-                <h2 className="text-gray-900 text-2xl md:text-2xl title-font font-medium mb-3">
+                <h2 className="text-gray-900 text-xl font-semibold tracking-tight mb-3">
                   Women Owned &amp; Operated
                 </h2>
                 <p className="leading-relaxed text-md lg:text-lg px-10 md:px-0 pb-8">
@@ -99,7 +111,7 @@ export default function Company() {
                 </svg>
               </div>
               <div className="flex-grow">
-                <h2 className="text-gray-900 text-2xl title-font font-medium mb-3">
+                <h2 className="text-gray-900 text-xl font-semibold tracking-tight mb-3">
                   Personnel
                 </h2>
                 <p className="leading-relaxed lg:text-lg px-10 md:px-0">
