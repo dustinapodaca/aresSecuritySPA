@@ -4,7 +4,7 @@ import { Popover, Transition } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { Link } from "react-scroll";
 
-import hero from '../../assets/img/hero-buildings.webp';
+import hero from '../../assets/img/hero-officers.png';
 // import svgLogo from '../../assets/img/ares-logo.svg';
 
 const navigation = [
@@ -371,15 +371,13 @@ export default function Hero() {
         id="heroImg"
         className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 fade-in-hero"
       >
-        {/* object-left, not the default centre: this half-width container is
-            taller than it is wide, so object-cover would crop roughly equal
-            amounts off BOTH sides and cut the Ares/GSA glass cards out of
-            frame. Anchoring left keeps the whole left edge of the photo
-            visible hard against the text panel and crops only off the right. */}
+        {/* object-center: this photo's subjects sit centrally, so an even crop
+            off both sides keeps them framed. (The previous skyline shot used
+            object-left because its glass cards sat left of centre.) */}
         <img
-          className="h-72 w-full object-cover object-left sm:h-72 md:h-96 lg:h-full lg:w-full"
+          className="h-72 w-full object-cover object-center sm:h-72 md:h-96 lg:h-full lg:w-full"
           src={hero}
-          alt="Ares Security and GSA Contract Holder marks over a downtown skyline"
+          alt="Two Ares Security officers in uniform polos approaching a building entrance"
         />
       </div>
     </header>
