@@ -24,7 +24,7 @@ export default function Careers() {
           </AnimationOnScroll>
           <div className="w-full lg:w-4/6 md:w-5/6 flex flex-col mb-24 items-center text-center">
             <h2 className="font-bold text-4xl sm:text-4xl text-black mb-6">
-              Join Our <span className="text-litegreen">Team</span>
+              Join Our <span className="text-mid">Team</span>
             </h2>
             <p className="mb-10 leading-relaxed lg:text-lg text-body-color">
               Our philosophy is simple - the well-being of our employees is most

@@ -53,7 +53,7 @@ export default function Hero() {
                         data-name="Layer 2"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 407.66 425.89"
-                        className="fill-odgreen h-8 w-auto sm:h-14"
+                        className="fill-paper h-8 w-auto sm:h-14"
                       >
                         <g id="Layer_1-2" data-name="Layer 1">
                           <path
@@ -268,7 +268,7 @@ export default function Hero() {
                     data-name="Layer 2"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 576 174.87"
-                    className="fill-odgreen h-2/3 w-2/3 sm:h-2/4 sm:w-2/4 md:h-2/4 md:w-2/4 lg:w-3/5 lg:h-3/5 mb-3 sm:mx-auto lg:mx-0"
+                    className="fill-paper h-2/3 w-2/3 sm:h-2/4 sm:w-2/4 md:h-2/4 md:w-2/4 lg:w-3/5 lg:h-3/5 mb-3 sm:mx-auto lg:mx-0"
                   >
                     <g id="Layer_1-2" data-name="Layer 1">
                       <path
@@ -337,16 +337,16 @@ export default function Hero() {
                 <span className="block text-litegreen xl:inline mt-4">
                   protection for
                   <span className="fade-in-text1">
-                    <span className="text-odgreen"> people</span>
+                    <span className="text-paper"> people</span>
                   </span>
                 </span>{" "}
                 <span className="block text-litegreen xl:inline mb-4">
                   <span className="fade-in-text2">
-                    <span className="text-odgreen">property</span>
+                    <span className="text-paper">property</span>
                   </span>
                   <span> &</span>
                   <span className="fade-in-text3">
-                    <span className="text-odgreen"> premises.</span>
+                    <span className="text-paper"> premises.</span>
                   </span>
                 </span>
               </h1>

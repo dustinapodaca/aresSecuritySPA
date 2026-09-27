@@ -4,11 +4,22 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  /* Inter, matching the new Ares site. The system stack stays as a fallback
+     so the page still renders if Google Fonts is blocked or slow. */
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    'Roboto', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #fafaf9;
+  color: #545353;
+}
+
+/* Heading floor. Element selectors (0,0,1) lose to any utility class (0,1,0),
+   so an explicit text-white / text-gray-900 still wins — this only catches
+   headings that carry no colour class at all, which would otherwise inherit
+   the ink-2 body colour and read washed out. */
+h1, h2, h3, h4, h5, h6 {
+  color: #1f1f1f;
 }
 
 code {

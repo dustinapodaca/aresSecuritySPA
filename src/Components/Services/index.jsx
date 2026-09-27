@@ -631,7 +631,7 @@ export default function Services() {
                     className="inline-block"
                     animateOnce={true}
                   >
-                    <span className="text-odgreen">Professional, </span>
+                    <span className="text-paper">Professional, </span>
                   </AnimationOnScroll>
                   <span> </span>
                   <AnimationOnScroll
@@ -641,7 +641,7 @@ export default function Services() {
                     className="inline-block"
                     animateOnce={true}
                   >
-                    <span className="text-odgreen"> approachable,</span>
+                    <span className="text-paper"> approachable,</span>
                   </AnimationOnScroll>
                   <span> & </span>
                   <AnimationOnScroll
@@ -651,11 +651,11 @@ export default function Services() {
                     className="inline-block"
                     animateOnce={true}
                   >
-                    <span className="text-odgreen"> focused</span>
+                    <span className="text-paper"> focused</span>
                   </AnimationOnScroll>
                   <span> on customer care.</span>
                   {/* <AnimationOnScroll animateIn="animate__fadeIn" duration={3} delay={1100} className="inline-block" animateOnce={true}>
-                    <span className='text-odgreen'>happy</span>
+                    <span className='text-paper'>happy</span>
                   </AnimationOnScroll> by providing them with reliable security services. */}
                 </h2>
                 <p className="text-white text-xl text-body-color mb-14">
