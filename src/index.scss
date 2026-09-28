@@ -21,7 +21,7 @@
     @apply text-[11px] font-semibold uppercase tracking-[0.18em] text-mid;
   }
   .field-input {
-    @apply block w-full min-w-0 rounded-xl border border-line bg-paper px-4 py-3
+    @apply block w-full min-w-0 rounded-xl border border-line bg-paper px-4 py-2.5
            text-[15px] text-ink placeholder:text-mid transition-colors
            focus:border-ink focus:outline-none focus:ring-2 focus:ring-ink/10;
   }
