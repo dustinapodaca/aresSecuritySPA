@@ -3,9 +3,9 @@ import React from 'react';
 import { AnimationOnScroll } from 'react-animation-on-scroll';
 import { Link } from "react-scroll";
 
-import protectionOne from '../../assets/img/protection1.jpg';
-import protectionTwo from '../../assets/img/protection3.jpg';
-import protectionThree from '../../assets/img/range.jpg';
+import protectionOne from '../../assets/img/protection1.webp';
+import protectionTwo from '../../assets/img/protection3.webp';
+import protectionThree from '../../assets/img/range.webp';
 
 export default function Services() {
   return (

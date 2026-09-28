@@ -3,7 +3,7 @@ import { AnimationOnScroll } from 'react-animation-on-scroll';
 import * as Popover from '@radix-ui/react-popover';
 import './careers.styles.scss';
 
-import aresGroup from '../../assets/img/aresGroup.jpg';
+import aresGroup from '../../assets/img/aresGroup.webp';
 
 export default function Careers() {
   return (
