@@ -7,14 +7,18 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { ThreeDots } from 'react-loader-spinner'
 
-//Mailgun API
-import formData from 'form-data';
-import Mailgun from 'mailgun.js';
-// import axios from 'axios';
-// import ReCAPTCHA from "react-google-recaptcha"
-
-const mg = new Mailgun(formData);
-const client = mg.client({username: 'api', key: process.env.REACT_APP_MAILGUN_API_KEY});
+/**
+ * Submission goes through Web3Forms, matching the new site.
+ *
+ * This replaced calling the Mailgun API directly from the browser. CRA inlines
+ * every REACT_APP_* variable into the JS bundle at build time, so that approach
+ * published the PRIVATE Mailgun API key to every visitor — it was readable in
+ * the live bundle. A Web3Forms access key is public by design: it only permits
+ * submissions to one destination inbox, so exposing it is not a credential leak.
+ */
+const WEB3FORMS_KEY = process.env.REACT_APP_WEB3FORMS_KEY;
+const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
+const CONTACT_EMAIL = 'contact@aressecurity.co';
 
 // Configured state with useReducer and useContext
 const initialState = {
@@ -110,29 +114,47 @@ const Contact = () => {
   
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Honeypot: invisible to people, filled by bots. Bail silently.
+    if (e.target.botcheck && e.target.botcheck.checked) return;
+
+    if (!WEB3FORMS_KEY) {
+      dispatch({
+        type: 'SET_ERROR_MESSAGE',
+        payload: `Form not configured. Please email us directly at: ${CONTACT_EMAIL}`,
+      });
+      return;
+    }
+
     dispatch({ type: 'SET_LOADING', payload: true });
 
+    const fd = new FormData();
+    fd.append('access_key', WEB3FORMS_KEY);
+    fd.append('subject', `Ares Inquiry \u2014 ${subject || 'General Inquiry'}`);
+    fd.append('name', name);
+    fd.append('email', email);
+    fd.append('message', message);
+    // So replying from the inbox goes to the inquirer, not to Web3Forms.
+    fd.append('replyTo', email);
+    fd.append('from_name', `Ares Contact \u2014 ${name}`);
+
     try {
-      const mailgunRes = await client.messages.create(process.env.REACT_APP_DOMAIN, {
-        from: `Ares Security Contact Form Submission <${email}>`,
-        to: 'contact@aressecurity.co',
-        // to: 'dustin.apodaca@aressecurity.co',
-        subject: subject,
-        // template: 'arescontact', 'v:name': name, 'v:email': email, 'v:message': message, 'v:subject': subject, 'h:X-Mailgun-Variables': JSON.stringify({name: name, email: email, message: message, subject: subject})
-        text: `FROM: ${name}\nREPLY EMAIL: ${email}\n\nMESSAGE:\n${message}\n\n\n© 2023 Ares Security LLC`
-      });
+      const res = await fetch(WEB3FORMS_ENDPOINT, { method: 'POST', body: fd });
+      const data = await res.json();
 
-      console.log('mailgunRes', mailgunRes);
-
-      if (mailgunRes.status === 200) {
+      if (data.success) {
         dispatch({ type: 'SET_SUCCESS_MESSAGE', payload: 'Message sent successfully!' });
-        
       } else {
-        dispatch({ type: 'SET_ERROR_MESSAGE', payload: 'Failed to send message, please try again or email us directly at: contact@aressecurity.co' });
+        dispatch({
+          type: 'SET_ERROR_MESSAGE',
+          payload: `Failed to send message, please try again or email us directly at: ${CONTACT_EMAIL}`,
+        });
       }
     } catch (error) {
-      console.log(error);
-      dispatch({ type: 'SET_ERROR_MESSAGE', payload: 'Failed to send message, please try again or email us directly at: contact@aressecurity.co' });
+      dispatch({
+        type: 'SET_ERROR_MESSAGE',
+        payload: `Failed to send message, please try again or email us directly at: ${CONTACT_EMAIL}`,
+      });
     } finally {
       setTimeout(() => {
         dispatch({ type: 'SET_LOADING', payload: false });
@@ -175,6 +197,16 @@ const Contact = () => {
                 onSubmit={handleSubmit}
                 className="bg-white rounded-2xl border border-line p-6 flex flex-col gap-4"
               >
+                {/* Honeypot. Kept out of the tab order and hidden from
+                    assistive tech; only bots fill it. */}
+                <input
+                  type="checkbox"
+                  name="botcheck"
+                  tabIndex="-1"
+                  aria-hidden="true"
+                  style={{ display: 'none' }}
+                />
+
                 {/* Name and Email share a row: the column is wide enough for two
                     fields, and pairing them removes a full field row from the
                     form's height. They stack again below sm. */}
