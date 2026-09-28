@@ -53,7 +53,7 @@ export default function Company() {
               </div>
             </div>
 
-            {/* Card 2: Women Owned & Operated */}
+            {/* Card 2: Reliability */}
             <div
               className="
               p-4
@@ -72,17 +72,18 @@ export default function Company() {
                   className="w-10 h-10"
                   viewBox="0 0 24 24"
                 >
-                  <path d="M12 21c-0.58-0.48-1.15-0.95-1.71-1.43C5.33 15.32 2 12.36 2 8.5 2 5.42 4.42 3 7.5 3c1.84 0 3.52 0.99 4.5 2.49C13 3.99 14.68 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.86-3.33 6.82-8.29 11.07-0.56 0.48-1.13 0.95-1.71 1.43z" />
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  <path d="M9 12l2 2 4-4" />
                 </svg>
               </div>
               <div className="flex-grow">
                 <h2 className="text-gray-900 text-xl font-semibold tracking-tight mb-3">
-                  Women Owned &amp; Operated
+                  Reliability
                 </h2>
                 <p className="leading-relaxed text-md lg:text-lg px-10 md:px-0 pb-8">
-                  Ares Security is led by innovative women dedicated to
-                  revolutionizing and setting a new standard of excellence in
-                  security services and careers.
+                  On-call coverage is written into every contract, and
+                  leadership works the first shift on every new post. A site
+                  that isn't staffed isn't a discount &mdash; it's an exposure.
                 </p>
               </div>
             </div>
