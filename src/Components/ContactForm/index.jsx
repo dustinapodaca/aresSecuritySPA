@@ -144,7 +144,7 @@ const Contact = () => {
     <>
       <section id="contact" className="text-gray-400 bg-black body-font relative">
         <div className="container-ares py-14 flex sm:flex-nowrap flex-wrap gap-y-10 sm:gap-x-14">
-          <div className="lg:w-1/2 md:w-1/2 min-w-0 bg-odgreen rounded-lg overflow-hidden p-6 flex items-end justify-start relative">
+          <div className="lg:w-1/2 md:w-1/2 min-w-0 self-start h-[430px] bg-odgreen rounded-lg overflow-hidden p-6 flex items-end justify-start relative">
             <iframe id="map" width="100%" height="100%" title="map" className="absolute inset-0" frameBorder="0" marginHeight="0" marginWidth="0" scrolling="no" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1589687.5626687733!2d-105.9444551171875!3d38.90435052382222!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87134327f4199271%3A0xd2591dd0e6d83a81!2sAres%20Security%20LLC!5e0!3m2!1sen!2sus!4v1664942444750!5m2!1sen!2sus"/>
             <div className="bg-black relative flex flex-wrap py-6 rounded shadow-md">
               <div className="w-full px-4">
@@ -175,29 +175,34 @@ const Contact = () => {
                 onSubmit={handleSubmit}
                 className="bg-white rounded-2xl border border-line p-6 flex flex-col gap-4"
               >
-                <div className="flex flex-col gap-2">
-                  <label htmlFor="name" className="field-label">Name</label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    className="field-input"
-                    value={name}
-                    onChange={(event) => dispatch({ type: 'SET_NAME', payload: event.target.value })}
-                    required
-                  />
-                </div>
-                <div className="flex flex-col gap-2">
-                  <label htmlFor="email" className="field-label">Email</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    className="field-input"
-                    value={email}
-                    onChange={(event) => dispatch({ type: 'SET_EMAIL', payload: event.target.value })}
-                    required
-                  />
+                {/* Name and Email share a row: the column is wide enough for two
+                    fields, and pairing them removes a full field row from the
+                    form's height. They stack again below sm. */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="flex flex-col gap-2">
+                    <label htmlFor="name" className="field-label">Name</label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      className="field-input"
+                      value={name}
+                      onChange={(event) => dispatch({ type: 'SET_NAME', payload: event.target.value })}
+                      required
+                    />
+                  </div>
+                  <div className="flex flex-col gap-2">
+                    <label htmlFor="email" className="field-label">Email</label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      className="field-input"
+                      value={email}
+                      onChange={(event) => dispatch({ type: 'SET_EMAIL', payload: event.target.value })}
+                      required
+                    />
+                  </div>
                 </div>
                 <div className="flex flex-col gap-2">
                   <label htmlFor="subject" className="field-label">Subject</label>
@@ -221,7 +226,7 @@ const Contact = () => {
                   <textarea
                     id="message"
                     name="message"
-                    className="field-input h-24 resize-none"
+                    className="field-input h-20 resize-none"
                     value={message}
                     onChange={(event) => dispatch({ type: 'SET_MESSAGE', payload: event.target.value })}
                     required
