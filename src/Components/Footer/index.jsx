@@ -38,7 +38,7 @@ class Footer extends React.Component {
               </h2>
             </span>
             <p className="text-litegreen text-sm md:text-lg text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-8">
-              © 2025 Ares Security LLC —
+              © 2026 Ares Security LLC —
               <a
                 href="https://linkedin.com/in/dustinapodaca"
                 className="text-gray-600 ml-1 text-litegreen text-sm"
@@ -49,48 +49,6 @@ class Footer extends React.Component {
               </a>
             </p>
             <span className="inline-flex sm:ml-auto sm:mt-0 mt-10 justify-center sm:justify-start items-center space-x-6 md:space-x-8 ">
-              {/* Facebook */}
-              <a
-                href="https://facebook.com/protectionbyares"
-                target="_blank"
-                rel="noreferrer"
-                className="text-gray-500"
-              >
-                <svg
-                  fill="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                  className="w-6 h-6 md:w-8 md:h-8 fill-litegreen"
-                >
-                  <title>Facebook</title>
-                  <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
-                </svg>
-              </a>
-
-              {/* Instagram */}
-              <a
-                href="https://instagram.com/protectionbyares"
-                target="_blank"
-                rel="noreferrer"
-                className="text-gray-500"
-              >
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                  className="w-6 h-6 md:w-8 md:h-8 stroke-litegreen"
-                >
-                  <title>Instagram</title>
-                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-                  <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01" />
-                </svg>
-              </a>
-
               {/* Google My Business */}
               <a
                 href="https://business.google.com/n/3308618090331569903/searchprofile?hl=en-US"
