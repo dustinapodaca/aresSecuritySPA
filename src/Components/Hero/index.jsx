@@ -147,7 +147,11 @@ export default function Hero() {
                         </g>
                       </svg>
                     </div>
-                    <div className="-mr-2">
+                    {/* -mr-5, not -mr-2: this panel is inset 8px and its header
+                        uses px-5, where the nav bar uses px-4 with -mr-2. Cancelling
+                        the full px-5 puts the X's icon edge at the same 16px from the
+                        viewport as the hamburger it replaces. */}
+                    <div className="-mr-5">
                       <Popover.Button
                         className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
                         id="popOver2"
@@ -170,51 +174,6 @@ export default function Hero() {
                     ))}
                     <div className="space-y-1 px-2 pt-1 pb-2">
                       <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start mx-auto">
-                        <a
-                          href="https://facebook.com/protectionbyares"
-                          target="_blank"
-                          rel="noreferrer"
-                          className="text-gray-500"
-                        >
-                          <svg
-                            fill="currentColor"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            className="w-5 h-5 fill-odgreen"
-                            viewBox="0 0 24 24"
-                          >
-                            <title>Facebook</title>
-                            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
-                          </svg>
-                        </a>
-                        <a
-                          href="https://instagram.com/protectionbyares"
-                          target="_blank"
-                          rel="noreferrer"
-                          className="ml-3 text-gray-500"
-                        >
-                          <svg
-                            fill="none"
-                            stroke="currentColor"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2.3"
-                            className="w-5 h-5 stroke-odgreen"
-                            viewBox="0 0 24 24"
-                          >
-                            <title>Instagram</title>
-                            <rect
-                              width="20"
-                              height="20"
-                              x="2"
-                              y="2"
-                              rx="5"
-                              ry="5"
-                            ></rect>
-                            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
-                          </svg>
-                        </a>
                         <a
                           href="https://business.google.com/n/3308618090331569903/searchprofile?hl=en-US"
                           target="_blank"

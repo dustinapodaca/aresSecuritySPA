@@ -15,10 +15,15 @@ import React from 'react';
 export default function ComingSoon() {
   return (
     <div className="bg-[#000000] text-white">
-      <div className="container-ares py-2.5 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-center">
+      {/* items-start below sm: the second half of the sentence wraps to its own
+          line on mobile, and items-center was centring the dot against the
+          two-line block, which parked it between the lines. Aligning to the top
+          and nudging down by 5px sits it on the optical centre of the "NEW SITE
+          COMING SOON" line instead, matching how it reads on one line at sm+. */}
+      <div className="container-ares py-2.5 flex flex-wrap items-start sm:items-center justify-center gap-x-3 gap-y-1 text-center">
         <span
           aria-hidden="true"
-          className="inline-block h-1.5 w-1.5 rounded-full bg-litegreen flex-shrink-0"
+          className="inline-block h-1.5 w-1.5 rounded-full bg-litegreen flex-shrink-0 mt-[5px] sm:mt-0"
         />
         <p className="text-xs sm:text-sm tracking-wide m-0">
           <span className="font-semibold uppercase tracking-[0.14em]">New site coming soon</span>
