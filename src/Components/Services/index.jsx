@@ -1,11 +1,38 @@
 import React from 'react';
 // import { useState } from 'react';
-import { AnimationOnScroll } from 'react-animation-on-scroll';
 import { Link } from "react-scroll";
 
 import protectionOne from '../../assets/img/protection1.webp';
 import protectionTwo from '../../assets/img/protection3.webp';
 import protectionThree from '../../assets/img/range.webp';
+
+
+/* The six services, matching the competencies on the new site's capability
+   statement so the two describe the same business. Icons are inline strokes
+   rather than an icon dependency — six small paths do not justify a package. */
+const SERVICE_ICON = {
+  shield: 'M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z',
+  user: 'M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z',
+  route: 'M6 3v12M6 21a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM18 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM18 9v3a4 4 0 0 1-4 4h-4',
+  key: 'M15 7a5 5 0 1 1-4.9 6H7v3H4v-3H2v-3h8.1A5 5 0 0 1 15 7z',
+  vehicle: 'M5 17h14M5 17a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM19 17a2 2 0 1 0 4 0 2 2 0 0 0-4 0zM3 17V9l2-4h9l3 4h3v8',
+  alert: 'M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z',
+};
+
+const SERVICES = [
+  { icon: 'shield', t: 'Armed Physical Security',
+    p: 'Licensed, firearms-qualified officers for fixed posts in cash-handling, regulated and high-liability environments.' },
+  { icon: 'user', t: 'Unarmed Physical Security',
+    p: 'Uniformed officers for lobbies, gates and visitor control \u2014 visible deterrence and access oversight, 24/7.' },
+  { icon: 'route', t: 'Patrol Services',
+    p: 'Foot and mobile patrol on documented routes with recorded checkpoints, so coverage can be proven, not just claimed.' },
+  { icon: 'key', t: 'Access Control',
+    p: 'Entry screening, credential verification, visitor management and perimeter control for sites and facilities.' },
+  { icon: 'vehicle', t: 'Patrol Vehicle Security',
+    p: 'Marked-vehicle patrol, alarm response and after-hours property checks with GPS-verified routes.' },
+  { icon: 'alert', t: 'Event & Emergency Response',
+    p: 'Crowd management, incident response and emergency coordination for events, campuses and community venues.' },
+];
 
 export default function Services() {
   return (
@@ -618,53 +645,19 @@ export default function Services() {
             <div className="w-full lg:w-1/2 xl:w-5/12 px-4">
               <div className="mt-10 sm:mx-auto lg:mt-0">
                 <p className="text-xs font-semibold uppercase tracking-[0.22em] text-light mb-4">
-                  Why Choose Us
+                  What We Do
                 </p>
-                <h2 className="text-3xl md:text-4xl font-normal tracking-tight text-white mb-8">
-                  {/* <span>More than protection. </span>
-                  <br /> */}
-                  <AnimationOnScroll
-                    animateIn="animate__fadeIn"
-                    duration={1}
-                    delay={200}
-                    className="inline-block"
-                    animateOnce={true}
-                  >
-                    <span className="text-paper">Professional, </span>
-                  </AnimationOnScroll>
-                  <span> </span>
-                  <AnimationOnScroll
-                    animateIn="animate__fadeIn"
-                    duration={1}
-                    delay={300}
-                    className="inline-block"
-                    animateOnce={true}
-                  >
-                    <span className="text-paper"> approachable,</span>
-                  </AnimationOnScroll>
-                  <span> & </span>
-                  <AnimationOnScroll
-                    animateIn="animate__fadeIn"
-                    duration={1}
-                    delay={450}
-                    className="inline-block"
-                    animateOnce={true}
-                  >
-                    <span className="text-paper"> focused</span>
-                  </AnimationOnScroll>
-                  <span> on customer care.</span>
-                  {/* <AnimationOnScroll animateIn="animate__fadeIn" duration={3} delay={1100} className="inline-block" animateOnce={true}>
-                    <span className='text-paper'>happy</span>
-                  </AnimationOnScroll> by providing them with reliable security services. */}
+                <h2 className="text-3xl md:text-4xl font-normal tracking-tight text-white mb-6">
+                  Our <span className="italic font-light text-mid">Services</span>
                 </h2>
-                <p className="text-white text-xl text-body-color mb-14">
-                  Ares is committed to protect its reputation as one of
-                  Colorado’s most reliable security companies. Having
-                  established a strong record of performance and client
-                  satisfaction, we’re your go-to partner for all your security
-                  needs. Contact us today for a quote!
+                <p className="text-white text-xl mb-6">
+                  Armed and unarmed officers, patrol, access control and event
+                  coverage across Colorado Springs, Denver and Pueblo.
                 </p>
-
+                <p className="text-light text-base mb-10">
+                  On-call coverage is written into every contract, and leadership
+                  works the first shift on every new post.
+                </p>
                 <button className="sm:mx-auto">
                   <Link href="/contact" to="contact" spy={true} smooth={true}>
                     <span
@@ -690,6 +683,36 @@ export default function Services() {
                 </button>
               </div>
             </div>
+          </div>
+
+          {/* Service cards. The section sits on ink, so these use the same
+              translucent-white treatment as the new site's dark cards rather
+              than the light bordered cards used elsewhere on this page. */}
+          <div className="mt-16 lg:mt-20 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {SERVICES.map((sv) => (
+              <div
+                key={sv.t}
+                className="flex flex-col gap-4 rounded-2xl border border-white/10 bg-white/[0.06] p-7 transition-colors duration-300 hover:border-white/25 hover:bg-white/[0.09]"
+              >
+                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d={SERVICE_ICON[sv.icon]} />
+                  </svg>
+                </div>
+                <h3 className="m-0 text-lg font-semibold tracking-tight text-white">{sv.t}</h3>
+                <p className="m-0 text-[15px] leading-relaxed text-light">{sv.p}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
