@@ -37,13 +37,17 @@ Popover.Panel {
 }
 
 .link-underline-black {
-  background-image: linear-gradient(transparent, transparent), linear-gradient(#3d4335, #3d4335);
+  /* Absolute #000. Was #3d4335, the palette's old olive drab — hardcoded
+     here, which is why remapping the Tailwind colours never reached it. */
+  background-image: linear-gradient(transparent, transparent), linear-gradient(#000000, #000000);
 }
 
 .link-underline:hover {
   background-size: 100% 2px;
   background-position: 0 100%;
-  color: #d5ddcb;
+  /* light (#a4a6a8), matching the wordmarks and hero accent words. Was
+     #d5ddcb, a pale green left over from the old palette. */
+  color: #a4a6a8;
 }
 
 .fade-in-hero {
