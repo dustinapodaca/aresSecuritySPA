@@ -30,7 +30,7 @@ const CERTS = [
   { src: certGsa, alt: 'GSA Contract Holder', name: 'GSA Schedule Holder', id: '#47QSMS25D009Q' },
   { src: certWosb, alt: 'Woman-Owned Small Business', name: 'Woman-Owned Small Business', id: 'SBA · #WOSB250470' },
   { src: certWbenc, alt: "WBENC Women's Business Enterprise", name: "WBENC Women's Business Enterprise", id: '#WBE2303571' },
-  { src: certDenver, alt: 'Denver Economic Development & Opportunity', name: 'M/WBE & SBE Certified', id: 'B2G VID 21353671' },
+  { src: certDenver, alt: 'Denver Economic Development & Opportunity', name: 'M/WBE & SBE Certified', id: 'B2G VID 21353671', maxH: 'max-h-[46px]' },
 ];
 
 const PDF_URL = `${process.env.PUBLIC_URL}/files/Ares-Security-Capability-Statement-2026.pdf`;
@@ -99,7 +99,13 @@ export default function Capability() {
               key={c.name}
               className="bg-white border border-line rounded-2xl p-6 flex flex-col items-center justify-center text-center gap-4 min-h-[170px]"
             >
-              <img src={c.src} alt={c.alt} className="max-h-[64px] max-w-full w-auto object-contain" />
+              {/* Fixed-height logo well. The badges differ in aspect (the Denver
+                  mark is ~4:1, the others closer to square), so without a shared
+                  well the shorter ones shift their card's centred content and the
+                  captions stop lining up across the row. */}
+              <div className="h-16 flex items-center justify-center">
+                <img src={c.src} alt={c.alt} className={`${c.maxH || 'max-h-[64px]'} max-w-full w-auto object-contain`} />
+              </div>
               <div>
                 <p className="text-xs font-semibold text-gray-900 leading-snug">{c.name}</p>
                 <p className="text-xs text-mid mt-1 tabular-nums">{c.id}</p>
