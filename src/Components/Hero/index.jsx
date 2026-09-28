@@ -18,12 +18,13 @@ export default function Hero() {
   return (
     <header id="header" className="relative overflow-hidden bg-black">
       <div className="mx-auto max-w-7xl">
-        {/* The four sr-only headings that used to sit here were removed: one
-            was a second <h1> (the visible hero headline is the real one), one
-            duplicated that headline verbatim, and the other two were hidden
-            location keywords — a pattern search engines treat as stuffing.
-            The company name now reaches screen readers through the wordmark
-            SVG's aria-label instead, which is where it belongs. */}
+          {/* The four sr-only headings that used to sit here were removed: one
+            was a second <h1>, one duplicated the hero headline verbatim, and
+            the other two were hidden location keywords — a pattern search
+            engines treat as stuffing. The cities they were trying to smuggle
+            in now sit in the visible <h1> below, where they belong, and the
+            company name reaches screen readers through the wordmark SVG's
+            aria-label. */}
         <div className="relative z-10 bg-black pb-8 sm:pb-16 md:pb-20 lg:w-full lg:max-w-2xl lg:pb-28 xl:pb-32">
           {/* Angled divider between the dark panel and the hero photo. Fill is
               currentColor driven by text-black, which is the SAME token the
@@ -228,7 +229,13 @@ export default function Hero() {
 
           <main className="mx-auto mt-10 max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
             <div className="sm:text-center lg:text-left">
-              <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl lg:mt-32">
+              {/* The brand lockup: wordmark SVG plus the animated tagline. This
+                  used to be the page's <h1>, but its only readable text is
+                  "protection for people, property & premises" — nothing that
+                  says what the company does or where. Google was rewriting the
+                  search result title because of it. It is a div now; the real
+                  <h1> sits below. */}
+              <div className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl lg:mt-32">
                 <span className="block xl:inline">
                   <svg
                     id="Layer_2"
@@ -318,8 +325,23 @@ export default function Hero() {
                     <span className="text-mid"> premises.</span>
                   </span>
                 </span>
+              </div>
+
+              {/* The page's single <h1>. Deliberately a plain sentence naming
+                  all three cities: it is what Google reads to decide the search
+                  result title, and it is the only place on the page where Denver
+                  and Pueblo appear in a heading. Sized as a subheading so the
+                  wordmark above it stays the focal point. */}
+              <h1 className="mt-5 text-base font-semibold uppercase tracking-[0.13em] text-white sm:mx-auto sm:max-w-xl sm:text-lg lg:mx-0">
+                {/* The city list is kept on one line so the heading breaks
+                    after "Colorado Springs," rather than orphaning "Pueblo".
+                    The text content is unchanged, so crawlers read the same
+                    sentence either way. */}
+                Security Guards in Colorado Springs,{' '}
+                <span className="whitespace-nowrap">Denver &amp; Pueblo</span>
               </h1>
-              <p className="mt-3 text-white sm:mx-auto sm:mt-5 mb-2 sm:max-w-xl text-xl md:mt-7 md:text-xl lg:mx-0 lg:mb-8">
+
+              <p className="mt-3 text-white sm:mx-auto sm:mt-4 mb-2 sm:max-w-xl text-xl md:mt-5 md:text-xl lg:mx-0 lg:mb-8">
                 Ares is a versatile security firm with a proven track record in
                 complex environments. Our highly trained and experienced team
                 adapts to evolving business needs, providing tailored

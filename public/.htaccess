@@ -1,0 +1,32 @@
+# Ares Security — Apache config for the static build (DreamHost).
+#
+# CRA copies everything in public/ into build/, so this ships with the site.
+# NOTE: many SFTP clients hide dotfiles — this one has to be uploaded explicitly.
+
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Canonical host. www.aressecurity.co was answering 200 alongside the bare
+  # domain, which splits ranking signals across two copies of the same page.
+  RewriteCond %{HTTP_HOST} ^www\.aressecurity\.co$ [NC]
+  RewriteRule ^(.*)$ https://aressecurity.co/$1 [R=301,L]
+
+  # Never touch anything that actually exists on disk: static/, files/, the
+  # favicons, sitemap.xml, robots.txt, index.html. This guard runs before the
+  # section rules so no real asset can be caught by them.
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Legacy section URLs. Google still lists /company, /services, /contact and
+  # /careers as sitelinks from when this was a multi-page site, and each one
+  # 404s now that everything lives on one scrolling page. Send them to the
+  # matching anchor instead; src/index.js reads the hash on load and scrolls
+  # the visitor to that section.
+  #
+  # NE (noescape) keeps the '#' literal — without it Apache re-encodes it to
+  # %23 and the browser requests a path called "%23company" instead.
+  RewriteRule ^(company|services|capability|contact|careers)/?$ /#$1 [R=301,NE,L]
+</IfModule>

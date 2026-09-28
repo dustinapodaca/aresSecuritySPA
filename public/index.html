@@ -5,19 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#1f1f1f" />
 
-    <!-- Icons. SVG first: modern browsers prefer it and it stays crisp at any
-         size; the .ico is the legacy fallback. All are the glyph in absolute
-         #000 — they were previously the palette's old olive #3d4335. -->
-    <link rel="icon" href="%PUBLIC_URL%/favicon.svg" type="image/svg+xml" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" sizes="32x32" />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/apple-touch-icon.png" />
+    <!-- Icons. All are the black Ares glyph on a white rounded-square plate.
+         The previous set was the bare glyph on transparent and was not square,
+         so Google would not use it: it requires a square icon of at least
+         48x48, and its dark-mode results put the icon on a dark surface where
+         black-on-transparent vanishes.
+         The -v2 filenames are deliberate. Google caches favicons by URL and is
+         slow to refetch an unchanged path, so new paths get it to look again.
+         /favicon.ico stays at the root as the conventional fallback and has
+         been rebuilt with the same artwork at 16/32/48. -->
+    <link rel="icon" href="%PUBLIC_URL%/favicon-v2.svg" type="image/svg+xml" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon-v2-48.png" type="image/png" sizes="48x48" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon-v2-192.png" type="image/png" sizes="192x192" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" sizes="16x16 32x32 48x48" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/apple-touch-icon-v2.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <link rel="canonical" href="https://aressecurity.co/" />
 
     <title>Security Guards in Colorado Springs, Denver & Pueblo | Ares</title>
     <meta
       name="description"
-      content="Woman-owned WOSB and WBENC security firm in Colorado Springs. Armed and unarmed officers, patrol, and access control across Denver and Pueblo. GSA MAS holder."
+      content="Woman-owned (WOSB, WBENC) security company serving Colorado Springs, Denver and Pueblo: armed and unarmed officers, patrol and access control. GSA MAS holder."
     />
 
     <!-- OpenGraph. These live in the static head, so link previews work even
@@ -28,7 +36,7 @@
     <meta property="og:title" content="Security Guards in Colorado Springs, Denver & Pueblo | Ares" />
     <meta
       property="og:description"
-      content="Woman-owned WOSB and WBENC security firm in Colorado Springs. Armed and unarmed officers, patrol, and access control across Denver and Pueblo. GSA MAS holder."
+      content="Woman-owned (WOSB, WBENC) security company serving Colorado Springs, Denver and Pueblo: armed and unarmed officers, patrol and access control. GSA MAS holder."
     />
     <meta property="og:url" content="https://aressecurity.co/" />
     <meta property="og:image" content="https://aressecurity.co/og-ares-security.jpg" />
@@ -43,7 +51,7 @@
     <meta name="twitter:title" content="Security Guards in Colorado Springs, Denver & Pueblo | Ares" />
     <meta
       name="twitter:description"
-      content="Woman-owned WOSB and WBENC security firm in Colorado Springs. Armed and unarmed officers, patrol, and access control across Denver and Pueblo. GSA MAS holder."
+      content="Woman-owned (WOSB, WBENC) security company serving Colorado Springs, Denver and Pueblo: armed and unarmed officers, patrol and access control. GSA MAS holder."
     />
     <meta name="twitter:image" content="https://aressecurity.co/og-ares-security.jpg" />
 
