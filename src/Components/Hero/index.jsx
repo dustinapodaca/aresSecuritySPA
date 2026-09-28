@@ -4,7 +4,7 @@ import { Popover, Transition } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { Link } from "react-scroll";
 
-import hero from '../../assets/img/hero-officers.png';
+import hero from '../../assets/img/hero-officers.webp';
 // import svgLogo from '../../assets/img/ares-logo.svg';
 
 const navigation = [
@@ -377,7 +377,7 @@ export default function Hero() {
         <img
           className="h-72 w-full object-cover object-center sm:h-72 md:h-96 lg:h-full lg:w-full"
           src={hero}
-          alt="Two Ares Security officers in uniform polos approaching a building entrance"
+          alt="Two Ares Security officers in uniform polos at a building entrance, with GSA and Women Owned marks"
         />
       </div>
     </header>
