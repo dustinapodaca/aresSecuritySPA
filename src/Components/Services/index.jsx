@@ -650,14 +650,44 @@ export default function Services() {
                 <h2 className="text-3xl md:text-4xl font-normal tracking-tight text-white mb-6">
                   Our <span className="italic font-light text-mid">Services</span>
                 </h2>
-                <p className="text-white text-xl mb-6">
-                  Armed and unarmed officers, patrol, access control and event
-                  coverage across Colorado Springs, Denver and Pueblo.
+                <p className="text-white text-xl mb-4">
+                  Colorado-based security guard and patrol services for
+                  commercial clients, agencies and prime contractors.
                 </p>
-                <p className="text-light text-base mb-10">
-                  On-call coverage is written into every contract, and leadership
-                  works the first shift on every new post.
+                <p className="text-light text-base mb-9">
+                  Precise, reliable coverage for any environment &mdash; built on
+                  close attention to detail, clear communication, and technical
+                  proposals that set the standard.
                 </p>
+
+                {/* The four-stage process, stated once and compactly. This
+                    replaced a line about on-call coverage and leadership
+                    working the first shift, which the Reliability card in the
+                    Company section already makes. */}
+                <div className="mb-10 border-t border-white/10 pt-7">
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-mid mb-4">
+                    Every engagement runs the same four stages
+                  </p>
+                  {/* Numbered rather than an arrow chain: four pills plus
+                      arrows do not fit this column at any sensible size, and
+                      wrapping left an arrow orphaned at the start of a line.
+                      01-04 still reads as a sequence and wraps cleanly. */}
+                  <ol className="m-0 grid list-none grid-cols-1 gap-x-6 gap-y-3 p-0 sm:grid-cols-2">
+                    {['Technical Audit', 'Compliance Mapping', 'Guard Training', 'Deployment'].map(
+                      (stage, i) => (
+                        <li key={stage} className="flex items-baseline gap-3">
+                          <span className="text-[11px] font-semibold tabular-nums tracking-[0.14em] text-mid">
+                            {String(i + 1).padStart(2, '0')}
+                          </span>
+                          <span className="text-[15px] font-medium text-white">{stage}</span>
+                        </li>
+                      ),
+                    )}
+                  </ol>
+                  <p className="mt-4 mb-0 text-[15px] leading-relaxed text-light">
+                    Documented and audit-ready from day one.
+                  </p>
+                </div>
                 <button className="sm:mx-auto">
                   <Link href="/contact" to="contact" spy={true} smooth={true}>
                     <span
