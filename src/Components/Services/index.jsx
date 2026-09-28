@@ -648,7 +648,7 @@ export default function Services() {
                   What We Do
                 </p>
                 <h2 className="text-3xl md:text-4xl font-normal tracking-tight text-white mb-6">
-                  Our <span className="italic font-light text-mid">Services</span>
+                  Our Services
                 </h2>
                 <p className="text-white text-xl mb-4">
                   Colorado-based security guard and patrol services for

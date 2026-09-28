@@ -164,7 +164,7 @@ const Contact = () => {
               Request a Quote
             </p>
             <h3 className="text-3xl md:text-4xl font-normal tracking-tight text-white mb-4">
-              How can we <span className="italic font-light text-light">help you?</span>
+              How can we help you?
             </h3>
             <p className="text-pale leading-relaxed mb-6">
               Send a site, a shift pattern and a deadline. We respond within one business day.

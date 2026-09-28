@@ -33,7 +33,7 @@ class Footer extends React.Component {
                   />
                 </g>
               </svg>
-              <h2 className="ml-3 text-2xl md:text-3xl font-semibold text-litegreen">
+              <h2 className="ml-3 text-2xl md:text-3xl font-semibold text-white">
                 Ares Security
               </h2>
             </span>

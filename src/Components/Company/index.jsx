@@ -13,7 +13,7 @@ export default function Company() {
               Our Company
             </p>
             <h2 className="text-3xl md:text-4xl font-normal tracking-tight text-gray-900">
-              What we <span className="italic font-light text-mid">stand for</span>
+              What we stand for
             </h2>
           </div>
 

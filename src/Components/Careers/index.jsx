@@ -26,7 +26,7 @@ export default function Careers() {
               Careers
             </p>
             <h2 className="text-3xl md:text-4xl font-normal tracking-tight text-gray-900 mb-6">
-              Join Our <span className="italic font-light text-mid">Team</span>
+              Join Our Team
             </h2>
             <p className="mb-10 leading-relaxed lg:text-lg text-body-color">
               Our philosophy is simple - the well-being of our employees is most

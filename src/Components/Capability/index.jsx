@@ -45,7 +45,7 @@ export default function Capability() {
             Federal Procurement
           </p>
           <h2 className="text-3xl md:text-4xl font-normal tracking-tight text-gray-900 mb-4">
-            Capability <span className="italic font-light text-mid">Statement</span>
+            Capability Statement
           </h2>
           <p className="leading-relaxed lg:text-lg text-gray-600 max-w-3xl mx-auto md:mx-0">
             GSA Schedule holder, SAM-registered, and WOSB &amp; WBENC certified.
