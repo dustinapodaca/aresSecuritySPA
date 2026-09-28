@@ -25,6 +25,19 @@ const head = html.slice(0, html.indexOf('</head>'));
 const body = html.slice(html.indexOf('<body'));
 const count = (s, re) => (s.match(re) || []).length;
 const attr = (s, re) => { const m = s.match(re); return m ? m[1] : null; };
+/** Titles and descriptions are HTML-escaped in the output, so "&" arrives as
+    "&amp;" and inflates the length by four. Google measures the rendered text,
+    so compare and count decoded. */
+const decode = (v) =>
+  v == null
+    ? null
+    : v
+        .replace(/&amp;/g, '&')
+        .replace(/&lt;/g, '<')
+        .replace(/&gt;/g, '>')
+        .replace(/&quot;/g, '"')
+        .replace(/&#(\d+);/g, (_, d) => String.fromCharCode(Number(d)))
+        .replace(/&#x([0-9a-f]+);/gi, (_, h) => String.fromCharCode(parseInt(h, 16)));
 
 // --- prerender actually captured content ---
 const i = body.indexOf('<div id="root">');
@@ -44,9 +57,9 @@ if (canon && !canon.startsWith(HOST)) errors.push(`canonical "${canon}" is not o
 const ogUrl = attr(head, /<meta[^>]+property="og:url"[^>]+content="([^"]+)"/);
 if (!ogUrl || !ogUrl.startsWith(HOST)) errors.push(`og:url "${ogUrl}" is not on ${HOST}`);
 
-const title = attr(head, /<title[^>]*>([^<]*)<\/title>/);
+const title = decode(attr(head, /<title[^>]*>([^<]*)<\/title>/));
 if (title && title.length > 60) warnings.push(`title is ${title.length} chars (>60 may truncate)`);
-const desc = attr(head, /<meta[^>]+name="description"[^>]+content="([^"]*)"/);
+const desc = decode(attr(head, /<meta[^>]+name="description"[^>]+content="([^"]*)"/));
 if (desc && desc.length > 160) warnings.push(`description is ${desc.length} chars (>160 may truncate)`);
 
 // --- social preview ---
