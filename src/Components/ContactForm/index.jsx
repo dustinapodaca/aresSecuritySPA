@@ -144,22 +144,22 @@ const Contact = () => {
     <>
       <section id="contact" className="text-gray-400 bg-black body-font relative">
         <div className="container-ares py-20 flex sm:flex-nowrap flex-wrap">
-          <div className="lg:w-2/3 md:w-1/2 bg-odgreen rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
+          <div className="lg:w-1/3 md:w-1/2 bg-odgreen rounded-lg overflow-hidden sm:mr-10 p-6 flex items-end justify-start relative">
             <iframe id="map" width="100%" height="100%" title="map" className="absolute inset-0" frameBorder="0" marginHeight="0" marginWidth="0" scrolling="no" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1589687.5626687733!2d-105.9444551171875!3d38.90435052382222!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87134327f4199271%3A0xd2591dd0e6d83a81!2sAres%20Security%20LLC!5e0!3m2!1sen!2sus!4v1664942444750!5m2!1sen!2sus"/>
             <div className="bg-black relative flex flex-wrap py-6 rounded shadow-md">
-              <div className="lg:w-1/2 px-6">
+              <div className="w-full px-4">
                 <span className="title-font font-semibold text-white tracking-widest text-xs">SERVICE AREAS</span>
                 <h2 className="mt-1 text-white">- Denver <br />- Colorado Springs <br /> - Pueblo</h2>
               </div>
-              <div className="lg:w-1/2 px-6 mt-4 lg:mt-0">
+              <div className="w-full px-4 mt-4">
                 <p className="title-font font-semibold text-white tracking-widest text-xs">EMAIL</p>
-                <a href="mailto: contact@aressecurity.co" className="text-litegreen leading-relaxed sm:mx-auto md:mr-auto lg:mr-24">contact@aressecurity.co</a>
+                <a href="mailto: contact@aressecurity.co" className="text-litegreen leading-relaxed break-words">contact@aressecurity.co</a>
                 <p className="title-font font-semibold text-white tracking-widest text-xs mt-4">PHONE</p>
                 <p className="leading-relaxed text-litegreen">719-696-3966</p>
               </div>
             </div>
           </div>
-          <div className="lg:w-1/3 md:w-1/2 flex flex-col md:ml-auto w-full md:py-2 mt-8 md:mt-0">
+          <div className="lg:w-2/3 md:w-1/2 flex flex-col md:ml-auto w-full md:py-2 mt-8 md:mt-0">
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-light mb-4">
               Request a Quote
             </p>
