@@ -2,16 +2,46 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/areslogo.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Ares Security is a full service security company that provides security guard services, and security guard training in the state of Colorado."
-    />
+    <meta name="theme-color" content="#1f1f1f" />
+
+    <link rel="icon" href="%PUBLIC_URL%/areslogo.ico" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <link rel="canonical" href="https://aressecurity.co" />
+    <link rel="canonical" href="https://aressecurity.co/" />
+
+    <title>Security Guard Services in Colorado Springs | Ares Security</title>
+    <meta
+      name="description"
+      content="Woman-owned WOSB and WBENC security firm in Colorado Springs. Armed and unarmed officers, patrol, and access control across Denver and Pueblo. GSA MAS holder."
+    />
+
+    <!-- OpenGraph. These live in the static head, so link previews work even
+         though the body is client-rendered — social crawlers do not run JS. -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Ares Security LLC" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="Security Guard Services in Colorado Springs | Ares Security" />
+    <meta
+      property="og:description"
+      content="Woman-owned WOSB and WBENC security firm in Colorado Springs. Armed and unarmed officers, patrol, and access control across Denver and Pueblo. GSA MAS holder."
+    />
+    <meta property="og:url" content="https://aressecurity.co/" />
+    <meta property="og:image" content="https://aressecurity.co/og-ares-security.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Ares Security officers on post, with GSA Contract Holder and Women Owned marks"
+    />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Security Guard Services in Colorado Springs | Ares Security" />
+    <meta
+      name="twitter:description"
+      content="Woman-owned WOSB and WBENC security firm in Colorado Springs. Armed and unarmed officers, patrol, and access control across Denver and Pueblo. GSA MAS holder."
+    />
+    <meta name="twitter:image" content="https://aressecurity.co/og-ares-security.jpg" />
 
     <!-- Inter, matching the new Ares site. Same family and weights. -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -21,7 +51,76 @@
       rel="stylesheet"
     />
 
-    <title>Ares Security</title>
+    <!-- Structured data. Organization + LocalBusiness only; no ratings or
+         reviews, and no geo/openingHours until the exact Google Business
+         Profile values are confirmed. Mirrors the new site so the entity is
+         described identically before and after the relaunch. -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://aressecurity.co/#organization",
+            "name": "Ares Security LLC",
+            "legalName": "ARES SECURITY LLC",
+            "alternateName": "Ares Security",
+            "url": "https://aressecurity.co",
+            "email": "contact@aressecurity.co",
+            "telephone": "+1-719-696-3966",
+            "foundingDate": "2021",
+            "naics": "561612",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "413 Westmark Ave",
+              "addressLocality": "Colorado Springs",
+              "addressRegion": "CO",
+              "postalCode": "80906",
+              "addressCountry": "US"
+            },
+            "sameAs": ["https://www.indeed.com/cmp/Ares-Security-1"]
+          },
+          {
+            "@type": "LocalBusiness",
+            "@id": "https://aressecurity.co/#localbusiness",
+            "name": "Ares Security LLC",
+            "url": "https://aressecurity.co",
+            "image": "https://aressecurity.co/og-ares-security.jpg",
+            "description": "Woman-owned, WOSB- and WBENC-certified security firm in Colorado Springs providing armed and unarmed security officers, patrol, access control, and event security across Colorado Springs, Denver, and Pueblo.",
+            "telephone": "+1-719-696-3966",
+            "email": "contact@aressecurity.co",
+            "foundingDate": "2021",
+            "naics": "561612",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "413 Westmark Ave",
+              "addressLocality": "Colorado Springs",
+              "addressRegion": "CO",
+              "postalCode": "80906",
+              "addressCountry": "US"
+            },
+            "areaServed": [
+              { "@type": "City", "name": "Colorado Springs", "containedInPlace": { "@type": "State", "name": "Colorado" } },
+              { "@type": "City", "name": "Denver", "containedInPlace": { "@type": "State", "name": "Colorado" } },
+              { "@type": "City", "name": "Pueblo", "containedInPlace": { "@type": "State", "name": "Colorado" } }
+            ],
+            "parentOrganization": { "@id": "https://aressecurity.co/#organization" },
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Security services",
+              "itemListElement": [
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Armed security officers" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Unarmed security officers" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Foot and mobile patrol" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Access control and visitor management" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Event security and surge coverage" } }
+              ]
+            },
+            "sameAs": ["https://www.indeed.com/cmp/Ares-Security-1"]
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

@@ -18,10 +18,12 @@ export default function Hero() {
   return (
     <header id="header" className="relative overflow-hidden bg-black">
       <div className="mx-auto max-w-7xl">
-        <h1 className="sr-only">Ares Security</h1>
-        <h2 className="sr-only">Colorado Security Services</h2>
-        <h2 className="sr-only">Denver | Colorado Springs | Pueblo</h2>
-        <h2 className="sr-only">Protection for People, Property and Premises</h2>
+        {/* The four sr-only headings that used to sit here were removed: one
+            was a second <h1> (the visible hero headline is the real one), one
+            duplicated that headline verbatim, and the other two were hidden
+            location keywords — a pattern search engines treat as stuffing.
+            The company name now reaches screen readers through the wordmark
+            SVG's aria-label instead, which is where it belongs. */}
         <div className="relative z-10 bg-black pb-8 sm:pb-16 md:pb-20 lg:w-full lg:max-w-2xl lg:pb-28 xl:pb-32">
           {/* Angled divider between the dark panel and the hero photo. Fill is
               currentColor driven by text-black, which is the SAME token the
@@ -272,6 +274,8 @@ export default function Hero() {
                   <svg
                     id="Layer_2"
                     data-name="Layer 2"
+                    role="img"
+                    aria-label="Ares Security"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 576 174.87"
                     className="fill-paper h-2/3 w-2/3 sm:h-2/4 sm:w-2/4 md:h-2/4 md:w-2/4 lg:w-3/5 lg:h-3/5 mb-3 sm:mx-auto lg:mx-0"

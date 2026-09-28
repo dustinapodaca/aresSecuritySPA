@@ -149,7 +149,7 @@ const Contact = () => {
             <div className="bg-black relative flex flex-wrap py-6 rounded shadow-md">
               <div className="w-full px-4">
                 <span className="title-font font-semibold text-white tracking-widest text-xs">SERVICE AREAS</span>
-                <h2 className="mt-1 text-white">- Denver <br />- Colorado Springs <br /> - Pueblo</h2>
+                <p className="mt-1 text-white">- Denver <br />- Colorado Springs <br /> - Pueblo</p>
               </div>
               <div className="w-full px-4 mt-4">
                 <p className="title-font font-semibold text-white tracking-widest text-xs">EMAIL</p>

@@ -1,3 +1,6 @@
+# Ares Security — https://aressecurity.co
+
 User-agent: *
 Allow: /
-Sitemap: https://baseurl/sitemap.xml
+
+Sitemap: https://aressecurity.co/sitemap.xml

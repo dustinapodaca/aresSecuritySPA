@@ -31,9 +31,12 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && node scripts/prerender.js && node scripts/sitemap.js",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build:nossg": "react-scripts build && node scripts/sitemap.js",
+    "prerender": "node scripts/prerender.js",
+    "check:seo": "node scripts/check-seo.js"
   },
   "eslintConfig": {
     "extends": [
@@ -56,6 +59,7 @@
   "devDependencies": {
     "autoprefixer": "^10.4.12",
     "postcss": "^8.4.17",
+    "puppeteer": "^24.43.1",
     "tailwindcss": "^3.1.8"
   }
 }

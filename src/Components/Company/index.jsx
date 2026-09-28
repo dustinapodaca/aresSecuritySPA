@@ -42,9 +42,9 @@ export default function Company() {
                 </svg>
               </div>
               <div className="flex-grow">
-                <h2 className="text-gray-900 text-xl font-semibold tracking-tight mb-3">
+                <h3 className="text-gray-900 text-xl font-semibold tracking-tight mb-3">
                   Integrity
-                </h2>
+                </h3>
                 <p className="leading-relaxed lg:text-lg px-10 md:px-0">
                   We believe that communication is key, and that integrity and
                   transparency are the foundation for building trust and true
@@ -77,9 +77,9 @@ export default function Company() {
                 </svg>
               </div>
               <div className="flex-grow">
-                <h2 className="text-gray-900 text-xl font-semibold tracking-tight mb-3">
+                <h3 className="text-gray-900 text-xl font-semibold tracking-tight mb-3">
                   Reliability
-                </h2>
+                </h3>
                 <p className="leading-relaxed text-md lg:text-lg px-10 md:px-0 pb-8">
                   On-call coverage is written into every contract, and
                   leadership works the first shift on every new post. A site
@@ -112,9 +112,9 @@ export default function Company() {
                 </svg>
               </div>
               <div className="flex-grow">
-                <h2 className="text-gray-900 text-xl font-semibold tracking-tight mb-3">
+                <h3 className="text-gray-900 text-xl font-semibold tracking-tight mb-3">
                   Personnel
-                </h2>
+                </h3>
                 <p className="leading-relaxed lg:text-lg px-10 md:px-0">
                   Ares Security guards are the backbone of our business. We
                   believe that well-trained, healthy employees provide a quality
