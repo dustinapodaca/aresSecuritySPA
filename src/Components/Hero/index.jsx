@@ -341,7 +341,7 @@ export default function Hero() {
                 <span className="whitespace-nowrap">Denver &amp; Pueblo</span>
               </h1>
 
-              <p className="mt-3 text-white sm:mx-auto sm:mt-4 mb-2 sm:max-w-xl text-xl md:mt-5 md:text-xl lg:mx-0 lg:mb-8">
+              <p className="mt-3 text-white sm:mx-auto sm:mt-4 mb-2 sm:max-w-xl text-base sm:text-xl md:mt-5 md:text-xl lg:mx-0 lg:mb-8">
                 Ares is a versatile security firm with a proven track record in
                 complex environments. Our highly trained and experienced team
                 adapts to evolving business needs, providing tailored
