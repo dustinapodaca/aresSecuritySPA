@@ -677,9 +677,9 @@ export default function Services() {
                     inline-flex
                     items-center
                     justify-center
-                    text-center text-white text-md md:text-xl
-                    bg-odgreen
-                    hover:bg-litegreen hover:text-black transition ease-in-out duration-300
+                    text-center text-black text-md md:text-xl
+                    bg-litegreen
+                    hover:bg-[#000000] hover:text-white transition ease-in-out duration-300
                     font-normal
                     rounded-lg
                     "
