@@ -85,7 +85,26 @@ function fail(msg) {
     });
     await new Promise((r) => setTimeout(r, 1200));
 
-    const html = await page.evaluate(() => `<!doctype html>${document.documentElement.outerHTML}`);
+    // Strip the scroll-animation state before serializing.
+    //
+    // The pass above scrolled the whole page, so by now every [data-reveal]
+    // has been marked revealed and <html> carries .js-reveal. Saving it that
+    // way would be wrong in both directions: a crawler with no JavaScript
+    // would get .js-reveal (and so opacity:0 on anything that had not been
+    // revealed), and a real visitor would get a page that starts already
+    // revealed and never animates. Removing all of it means the static file
+    // is plain visible markup, and the inline script in index.html puts
+    // .js-reveal back on load so the animations run from a clean state.
+    const html = await page.evaluate(() => {
+      document.documentElement.classList.remove('js-reveal');
+      document
+        .querySelectorAll('[data-revealed], [data-in-view]')
+        .forEach((el) => {
+          el.removeAttribute('data-revealed');
+          el.removeAttribute('data-in-view');
+        });
+      return `<!doctype html>${document.documentElement.outerHTML}`;
+    });
     fs.writeFileSync(path.join(BUILD, 'index.html'), html);
 
     const chars = html.replace(/[\s\S]*<div id="root">/, '').length;

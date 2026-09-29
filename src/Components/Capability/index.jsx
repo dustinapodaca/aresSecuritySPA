@@ -79,8 +79,16 @@ export default function Capability() {
 
         {/* Codes */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-line rounded-2xl overflow-hidden mb-12">
-          {CODES.map((c) => (
-            <div key={c.k} className="bg-white p-6">
+          {CODES.map((c, i) => (
+            <div
+              key={c.k}
+              // 60ms apart rather than the certifications' 200ms: there are six
+              // of these against four, and they sit in a tight seamed grid, so
+              // a long stagger reads as the grid assembling itself piecemeal.
+              data-reveal="up"
+              style={{ '--reveal-delay': `${i * 60}ms` }}
+              className="bg-white p-6 hover:bg-paper motion-safe:transition-colors motion-safe:duration-300 motion-safe:ease-out"
+            >
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-mid mb-2">
                 {c.k}
               </p>
@@ -92,12 +100,21 @@ export default function Capability() {
           ))}
         </div>
 
-        {/* Certifications strip */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+        {/* Certifications strip.
+            The ROW is what gets observed, not the individual cards: the cards
+            stagger off that single trigger, so they stay in step with each
+            other however the grid wraps. data-scroll-once latches it on the
+            first crossing so the cascade does not replay every time the row
+            passes the centre of the viewport. */}
+        <div
+          className="cert-cascade grid grid-cols-2 lg:grid-cols-4 gap-4 mb-12"
+          data-scroll-active
+          data-scroll-once
+        >
           {CERTS.map((c) => (
             <div
               key={c.name}
-              className="bg-white border border-line rounded-2xl p-6 flex flex-col items-center justify-center text-center gap-4 min-h-[170px]"
+              className="bg-white border border-line rounded-2xl p-6 flex flex-col items-center justify-center text-center gap-4 min-h-[170px] hover:border-ink hover:-translate-y-0.5 hover:shadow-[0_24px_60px_-28px_rgba(31,31,31,0.18)] motion-safe:transition-[border-color,transform,box-shadow] motion-safe:duration-300 motion-safe:ease-out"
             >
               {/* Fixed-height logo well. The badges differ in aspect (the Denver
                   mark is ~4:1, the others closer to square), so without a shared

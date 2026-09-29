@@ -52,3 +52,84 @@ code {
     monospace;
 }
 
+
+/* ============================================================
+   Scroll-triggered motion
+   ------------------------------------------------------------
+   Ported from the new site so the two feel like the same brand.
+   Two independent systems, kept on separate attributes so an
+   element can use both without them fighting over one piece of
+   state:
+
+     [data-reveal]        one-shot entrance. The element starts
+                          offset and transparent and settles when
+                          it first scrolls into view. Never replays.
+     [data-in-view]       a live "is this at the optical centre of
+                          the viewport" flag. Used to mirror hover
+                          styles on touch devices, and to drive the
+                          certification cascade.
+
+   Everything is gated behind .js-reveal on <html>, which is set by
+   an inline script in index.html before first paint. Without
+   JavaScript the attributes are inert and all content renders at
+   full opacity — important because the build is prerendered, and
+   shipping opacity:0 text to a crawler that cannot run the script
+   to reveal it looks exactly like hidden-text cloaking.
+   ============================================================ */
+
+.js-reveal {
+  [data-reveal] {
+    --reveal-delay: 0ms;
+    opacity: 0;
+    transition:
+      opacity 1.4s cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay),
+      transform 1.4s cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay);
+    will-change: opacity, transform;
+  }
+
+  [data-reveal='up'] { transform: translate3d(0, 32px, 0); }
+  [data-reveal='left'] { transform: translate3d(-40px, 0, 0); }
+  [data-reveal='right'] { transform: translate3d(40px, 0, 0); }
+
+  [data-reveal][data-revealed='true'] {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+
+  /* Certification cascade. The row is the observed element; the cards
+     inside it stagger off a single trigger, which keeps them in step
+     regardless of how the grid wraps. Matches the new site exactly:
+     600ms ease-out, 200ms apart. */
+  .cert-cascade > * {
+    opacity: 0;
+    transform: translateY(16px);
+    transition:
+      opacity 600ms ease-out var(--cascade-delay, 0ms),
+      transform 600ms ease-out var(--cascade-delay, 0ms);
+  }
+
+  .cert-cascade[data-in-view='true'] > * {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .cert-cascade > *:nth-child(1) { --cascade-delay: 0ms; }
+  .cert-cascade > *:nth-child(2) { --cascade-delay: 200ms; }
+  .cert-cascade > *:nth-child(3) { --cascade-delay: 400ms; }
+  .cert-cascade > *:nth-child(4) { --cascade-delay: 600ms; }
+}
+
+/* Motion is decoration here — none of it carries meaning that is lost
+   without it, so for anyone who has asked the OS to reduce motion we
+   simply render the settled state. The new site has no equivalent
+   guard yet; this is worth porting back to it. */
+@media (prefers-reduced-motion: reduce) {
+  .js-reveal {
+    [data-reveal],
+    .cert-cascade > * {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+  }
+}

@@ -21,14 +21,18 @@ export default function Company() {
           <div className="flex flex-col md:flex-row sm:-m-4 -mx-4 -mb-8 -mt-4 md:space-x-8 space-y-6 md:space-y-0">
             {/* Card 1: Integrity */}
             <div
+              data-reveal="up"
+              data-scroll-active
+              style={{ '--reveal-delay': '0ms' }}
               className="
+              group
               p-4
               flex flex-col text-center items-center
               rounded-xl
               order-2 md:order-1
             "
             >
-              <div className="w-20 h-20 inline-flex items-center justify-center rounded-full bg-odgreen text-indigo-500 mb-6 flex-shrink-0">
+              <div className="w-20 h-20 inline-flex items-center justify-center rounded-full bg-odgreen motion-safe:transition-colors motion-safe:duration-300 motion-safe:ease-out group-hover:bg-mid max-[640px]:group-data-[in-view=true]:bg-mid text-indigo-500 mb-6 flex-shrink-0">
                 <svg
                   fill="none"
                   stroke="white"
@@ -55,14 +59,18 @@ export default function Company() {
 
             {/* Card 2: Reliability */}
             <div
+              data-reveal="up"
+              data-scroll-active
+              style={{ '--reveal-delay': '110ms' }}
               className="
+              group
               p-4
               flex flex-col text-center items-center
               rounded-xl
               order-1 md:order-2
             "
             >
-              <div className="w-20 h-20 inline-flex items-center justify-center rounded-full bg-odgreen text-indigo-500 mb-6 flex-shrink-0">
+              <div className="w-20 h-20 inline-flex items-center justify-center rounded-full bg-odgreen motion-safe:transition-colors motion-safe:duration-300 motion-safe:ease-out group-hover:bg-mid max-[640px]:group-data-[in-view=true]:bg-mid text-indigo-500 mb-6 flex-shrink-0">
                 <svg
                   fill="none"
                   stroke="white"
@@ -90,14 +98,18 @@ export default function Company() {
 
             {/* Card 3: Personnel */}
             <div
+              data-reveal="up"
+              data-scroll-active
+              style={{ '--reveal-delay': '220ms' }}
               className="
+              group
               p-4
               flex flex-col text-center items-center
               rounded-xl
               order-3 md:order-3
             "
             >
-              <div className="w-20 h-20 inline-flex items-center justify-center rounded-full bg-odgreen text-white mb-6 flex-shrink-0">
+              <div className="w-20 h-20 inline-flex items-center justify-center rounded-full bg-odgreen motion-safe:transition-colors motion-safe:duration-300 motion-safe:ease-out group-hover:bg-mid max-[640px]:group-data-[in-view=true]:bg-mid text-white mb-6 flex-shrink-0">
                 <svg
                   fill="none"
                   stroke="currentColor"

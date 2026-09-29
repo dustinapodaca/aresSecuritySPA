@@ -719,12 +719,22 @@ export default function Services() {
               translucent-white treatment as the new site's dark cards rather
               than the light bordered cards used elsewhere on this page. */}
           <div className="mt-16 lg:mt-20 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {SERVICES.map((sv) => (
+            {SERVICES.map((sv, i) => (
               <div
                 key={sv.t}
-                className="flex flex-col gap-4 rounded-2xl border border-white/10 bg-white/[0.06] p-7 transition-colors duration-300 hover:border-white/25 hover:bg-white/[0.09]"
+                // Staggered by column position rather than by flat index, so
+                // each ROW of the grid arrives together instead of the six
+                // cards trickling in one at a time down the page.
+                data-reveal="up"
+                style={{ '--reveal-delay': `${(i % 3) * 90}ms` }}
+                data-scroll-active
+                className="group flex flex-col gap-4 rounded-2xl border border-white/10 bg-white/[0.06] p-7 hover:-translate-y-1 hover:border-white/25 hover:bg-white/[0.09] motion-safe:transition-[transform,border-color,background-color,box-shadow] motion-safe:duration-300 motion-safe:ease-out hover:shadow-[0_24px_60px_-28px_rgba(0,0,0,0.6)]"
               >
-                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white">
+                {/* Icon well brightens with the card. On a touch device there
+                    is no hover, so it mirrors off data-in-view instead and
+                    lights up as the card reaches the centre of the screen —
+                    the same fallback the new site uses. */}
+                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white motion-safe:transition-colors motion-safe:duration-300 group-hover:bg-white/20 max-[640px]:group-data-[in-view=true]:bg-white/20">
                   <svg
                     width="20"
                     height="20"

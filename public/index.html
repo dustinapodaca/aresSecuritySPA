@@ -136,6 +136,22 @@
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    <!--
+      Gate for the scroll animations in index.scss. Everything under
+      [data-reveal] / .cert-cascade starts at opacity 0, and only this class
+      turns that on. Set here, inline and before first paint, for two reasons:
+
+        1. Without JavaScript the class never appears, so the prerendered
+           markup renders fully visible. The build is prerendered precisely so
+           non-JS crawlers can read it, and serving them opacity:0 text they
+           cannot reveal is indistinguishable from hidden-text cloaking.
+        2. Setting it from React instead would mean one painted frame with the
+           content visible, then a jump to hidden as the class lands. Inline
+           and synchronous, there is no such frame.
+
+      scripts/prerender.js strips this class back out of the saved HTML.
+    -->
+    <script>document.documentElement.classList.add('js-reveal');</script>
     <div id="root"></div>
   </body>
 </html>
