@@ -79,16 +79,14 @@ export default function Capability() {
 
         {/* Codes */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-line rounded-2xl overflow-hidden mb-12">
-          {CODES.map((c, i) => (
-            <div
-              key={c.k}
-              // 60ms apart rather than the certifications' 200ms: there are six
-              // of these against four, and they sit in a tight seamed grid, so
-              // a long stagger reads as the grid assembling itself piecemeal.
-              data-reveal="up"
-              style={{ '--reveal-delay': `${i * 60}ms` }}
-              className="bg-white p-6 hover:bg-paper motion-safe:transition-colors motion-safe:duration-300 motion-safe:ease-out"
-            >
+          {/* No entrance animation on these deliberately. They are reference
+              numbers in a dense seamed grid, and the 1.4s reveal meant the
+              cells were still settling long after the reader had scrolled
+              past them — they read as arriving late rather than as motion.
+              The certifications below keep theirs: four cards on a 600ms
+              curve is short enough to land while the row is still on screen. */}
+          {CODES.map((c) => (
+            <div key={c.k} className="bg-white p-6">
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-mid mb-2">
                 {c.k}
               </p>
