@@ -356,11 +356,17 @@ export default function Hero() {
         id="heroImg"
         className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 fade-in-hero"
       >
-        {/* object-center: this photo's subjects sit centrally, so an even crop
-            off both sides keeps them framed. (The previous skyline shot used
-            object-left because its glass cards sat left of centre.) */}
+        {/* Two different crops, because the frame changes shape at lg.
+            Below lg the photo is a full-width letterbox strip, which is much
+            wider than the source and so crops hard top and bottom — a centred
+            crop cut the GSA / Women Owned card off the bottom edge on tablet.
+            Biasing to 85% down the frame keeps that card whole and still holds
+            both officers' heads.
+            At lg the photo becomes a full-height half-width panel, taller than
+            it is wide; that crop is horizontal, the card already sits well
+            inside it, and centring is what keeps the subjects framed. */}
         <img
-          className="h-72 w-full object-cover object-center sm:h-72 md:h-96 lg:h-full lg:w-full"
+          className="h-72 w-full object-cover object-[50%_85%] sm:h-72 md:h-96 lg:h-full lg:w-full lg:object-center"
           src={hero}
           alt="Two Ares Security officers in uniform polos at a building entrance, with GSA and Women Owned marks"
         />
