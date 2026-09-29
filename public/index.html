@@ -5,6 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#1f1f1f" />
 
+    <!--
+      Gate for the scroll animations in index.scss. Everything under
+      [data-reveal] / .hero-rise / .cert-cascade starts at opacity 0, and only
+      this class turns that on.
+
+      Two reasons it is set here rather than from React:
+
+        1. Without JavaScript the class never appears, so the prerendered
+           markup renders fully visible. The build is prerendered precisely so
+           non-JS crawlers can read it, and serving them opacity:0 text they
+           cannot reveal is indistinguishable from hidden-text cloaking.
+        2. Setting it from React would mean a painted frame with the content
+           visible, then a jump to hidden. Synchronous, there is no such frame.
+
+      It MUST stay in <head>, above the stylesheet CRA injects at the end of
+      head. A classic inline script has to wait for any pending stylesheet
+      before it runs, and the parser waits with it — this same tag in <body>
+      blocked the entire page from being parsed for ~360ms, so the hero
+      appeared all at once and only then began animating. Up here nothing is
+      pending yet and it executes immediately.
+
+      scripts/prerender.js strips this class back out of the saved HTML.
+    -->
+    <script>document.documentElement.classList.add('js-reveal');</script>
+
     <!-- Icons. All are the black Ares glyph on a white rounded-square plate.
          The previous set was the bare glyph on transparent and was not square,
          so Google would not use it: it requires a square icon of at least
@@ -136,22 +161,6 @@
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <!--
-      Gate for the scroll animations in index.scss. Everything under
-      [data-reveal] / .cert-cascade starts at opacity 0, and only this class
-      turns that on. Set here, inline and before first paint, for two reasons:
-
-        1. Without JavaScript the class never appears, so the prerendered
-           markup renders fully visible. The build is prerendered precisely so
-           non-JS crawlers can read it, and serving them opacity:0 text they
-           cannot reveal is indistinguishable from hidden-text cloaking.
-        2. Setting it from React instead would mean one painted frame with the
-           content visible, then a jump to hidden as the class lands. Inline
-           and synchronous, there is no such frame.
-
-      scripts/prerender.js strips this class back out of the saved HTML.
-    -->
-    <script>document.documentElement.classList.add('js-reveal');</script>
     <div id="root"></div>
   </body>
 </html>
