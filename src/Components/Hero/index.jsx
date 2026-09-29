@@ -229,13 +229,25 @@ export default function Hero() {
 
           <main className="mx-auto mt-10 max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
             <div className="sm:text-center lg:text-left">
-              {/* The brand lockup: wordmark SVG plus the animated tagline. This
+              {/* The brand lockup: wordmark SVG plus the tagline. Revealed as ONE
+                  unit, on the wrapper, not on its parts. The wordmark and the
+                  two tagline lines sit 12px apart, so lifting each of them 32px
+                  on its own schedule changed the gaps between them while they
+                  moved — the wordmark appeared to slide against text that had
+                  already settled, which read as a glitch rather than as an
+                  entrance. The new site gets away with per-part reveals because
+                  its wordmark has 32px of clearance below it; this one does not.
+
+                  This
                   used to be the page's <h1>, but its only readable text is
                   "protection for people, property & premises" — nothing that
                   says what the company does or where. Google was rewriting the
                   search result title because of it. It is a div now; the real
                   <h1> sits below. */}
-              <div className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl lg:mt-32">
+              <div
+                data-reveal="up"
+                className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl lg:mt-32"
+              >
                 <span className="block xl:inline">
                   <svg
                     id="Layer_2"
@@ -244,7 +256,6 @@ export default function Hero() {
                     aria-label="Ares Security"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 576 174.87"
-                    data-reveal="up"
                     className="fill-mid h-2/3 w-2/3 sm:h-2/4 sm:w-2/4 md:h-2/4 md:w-2/4 lg:w-3/5 lg:h-3/5 mb-3 sm:mx-auto lg:mx-0"
                   >
                     <g id="Layer_1-2" data-name="Layer 1">
@@ -313,15 +324,11 @@ export default function Hero() {
                 </span>{" "}
                 <span
                   className="block text-white xl:inline mt-4"
-                  data-reveal="up"
-                  style={{ '--reveal-delay': '80ms' }}
                 >
                   protection for<span className="text-mid"> people</span>
                 </span>{" "}
                 <span
                   className="block text-white xl:inline mb-4"
-                  data-reveal="up"
-                  style={{ '--reveal-delay': '160ms' }}
                 >
                   <span className="text-mid">property</span> &
                   <span className="text-mid"> premises.</span>
@@ -336,7 +343,7 @@ export default function Hero() {
               <h1
                 className="mt-5 text-base font-semibold uppercase tracking-[0.13em] text-white sm:mx-auto sm:max-w-xl sm:text-lg lg:mx-0"
                 data-reveal="up"
-                  style={{ '--reveal-delay': '240ms' }}
+                style={{ '--reveal-delay': '90ms' }}
               >
                 {/* The city list is kept on one line so the heading breaks
                     after "Colorado Springs," rather than orphaning "Pueblo".
@@ -349,7 +356,7 @@ export default function Hero() {
               <p
                 className="mt-3 text-white sm:mx-auto sm:mt-4 mb-2 sm:max-w-xl text-base sm:text-xl md:mt-5 md:text-xl lg:mx-0 lg:mb-8"
                 data-reveal="up"
-                  style={{ '--reveal-delay': '320ms' }}
+                style={{ '--reveal-delay': '180ms' }}
               >
                 Ares is a versatile security firm with a proven track record in
                 complex environments. Our highly trained and experienced team
