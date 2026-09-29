@@ -135,6 +135,49 @@ code {
   .cert-cascade > *:nth-child(4) { --cascade-delay: 600ms; }
 }
 
+/* ------------------------------------------------------------
+   Hero entrance
+   ------------------------------------------------------------
+   The new site's hero recipe, verbatim: a 24px lift and a fade over
+   2.1s on cubic-bezier(0.16, 1, 0.3, 1). The long duration is not a
+   typo — that curve is expo-out, so nearly all of the travel happens
+   in the first quarter and the rest is the last few pixels easing
+   into place. It reads as quick and settled rather than slow.
+
+   Replaces .fade-in-text1/2/3, which faded the three accent words in
+   at 1s, 2s and 3s with no movement at all.
+
+   Applied per LINE, not per word. These are inline spans inside a
+   heading, and animating them individually would shift words up and
+   down relative to their neighbours mid-sentence.
+
+   On mount rather than on scroll: the hero is above the fold, so
+   there is nothing to wait for.
+   ------------------------------------------------------------ */
+@keyframes hero-rise {
+  from { opacity: 0; transform: translate3d(0, 24px, 0); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes hero-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.js-reveal {
+  .hero-rise {
+    opacity: 0;
+    animation: hero-rise 2.1s cubic-bezier(0.16, 1, 0.3, 1) var(--rise-delay, 0ms) forwards;
+  }
+
+  /* The photo fades without the lift. It is a full-bleed image inside a
+     fixed frame, so translating it would expose the frame's edge. */
+  .hero-fade {
+    opacity: 0;
+    animation: hero-fade 1.4s cubic-bezier(0.16, 1, 0.3, 1) var(--rise-delay, 0ms) forwards;
+  }
+}
+
 /* Motion is decoration here — none of it carries meaning that is lost
    without it, so for anyone who has asked the OS to reduce motion we
    simply render the settled state. The new site has no equivalent
@@ -142,10 +185,13 @@ code {
 @media (prefers-reduced-motion: reduce) {
   .js-reveal {
     [data-reveal],
-    .cert-cascade > * {
+    .cert-cascade > *,
+    .hero-rise,
+    .hero-fade {
       opacity: 1 !important;
       transform: none !important;
       transition: none !important;
+      animation: none !important;
     }
   }
 }

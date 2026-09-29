@@ -244,7 +244,7 @@ export default function Hero() {
                     aria-label="Ares Security"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 576 174.87"
-                    className="fill-mid h-2/3 w-2/3 sm:h-2/4 sm:w-2/4 md:h-2/4 md:w-2/4 lg:w-3/5 lg:h-3/5 mb-3 sm:mx-auto lg:mx-0"
+                    className="hero-rise fill-mid h-2/3 w-2/3 sm:h-2/4 sm:w-2/4 md:h-2/4 md:w-2/4 lg:w-3/5 lg:h-3/5 mb-3 sm:mx-auto lg:mx-0"
                   >
                     <g id="Layer_1-2" data-name="Layer 1">
                       <path
@@ -310,20 +310,18 @@ export default function Hero() {
                     </g>
                   </svg>
                 </span>{" "}
-                <span className="block text-white xl:inline mt-4">
-                  protection for
-                  <span className="fade-in-text1">
-                    <span className="text-mid"> people</span>
-                  </span>
+                <span
+                  className="hero-rise block text-white xl:inline mt-4"
+                  style={{ '--rise-delay': '80ms' }}
+                >
+                  protection for<span className="text-mid"> people</span>
                 </span>{" "}
-                <span className="block text-white xl:inline mb-4">
-                  <span className="fade-in-text2">
-                    <span className="text-mid">property</span>
-                  </span>
-                  <span> &</span>
-                  <span className="fade-in-text3">
-                    <span className="text-mid"> premises.</span>
-                  </span>
+                <span
+                  className="hero-rise block text-white xl:inline mb-4"
+                  style={{ '--rise-delay': '160ms' }}
+                >
+                  <span className="text-mid">property</span> &
+                  <span className="text-mid"> premises.</span>
                 </span>
               </div>
 
@@ -332,7 +330,10 @@ export default function Hero() {
                   result title, and it is the only place on the page where Denver
                   and Pueblo appear in a heading. Sized as a subheading so the
                   wordmark above it stays the focal point. */}
-              <h1 className="mt-5 text-base font-semibold uppercase tracking-[0.13em] text-white sm:mx-auto sm:max-w-xl sm:text-lg lg:mx-0">
+              <h1
+                className="hero-rise mt-5 text-base font-semibold uppercase tracking-[0.13em] text-white sm:mx-auto sm:max-w-xl sm:text-lg lg:mx-0"
+                style={{ '--rise-delay': '240ms' }}
+              >
                 {/* The city list is kept on one line so the heading breaks
                     after "Colorado Springs," rather than orphaning "Pueblo".
                     The text content is unchanged, so crawlers read the same
@@ -341,7 +342,10 @@ export default function Hero() {
                 <span className="whitespace-nowrap">Denver &amp; Pueblo</span>
               </h1>
 
-              <p className="mt-3 text-white sm:mx-auto sm:mt-4 mb-2 sm:max-w-xl text-base sm:text-xl md:mt-5 md:text-xl lg:mx-0 lg:mb-8">
+              <p
+                className="hero-rise mt-3 text-white sm:mx-auto sm:mt-4 mb-2 sm:max-w-xl text-base sm:text-xl md:mt-5 md:text-xl lg:mx-0 lg:mb-8"
+                style={{ '--rise-delay': '320ms' }}
+              >
                 Ares is a versatile security firm with a proven track record in
                 complex environments. Our highly trained and experienced team
                 adapts to evolving business needs, providing tailored
@@ -354,7 +358,7 @@ export default function Hero() {
       </div>
       <div
         id="heroImg"
-        className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 fade-in-hero"
+        className="hero-fade lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2"
       >
         {/* Two different crops, because the frame changes shape at lg.
             Below lg the photo is a full-width letterbox strip, which is much
