@@ -30,11 +30,22 @@
     -->
     <script>document.documentElement.classList.add('js-reveal');</script>
 
-    <!-- Icons. All are the black Ares glyph on a white rounded-square plate.
-         The previous set was the bare glyph on transparent and was not square,
-         so Google would not use it: it requires a square icon of at least
-         48x48, and its dark-mode results put the icon on a dark surface where
-         black-on-transparent vanishes.
+    <!-- Icons. All are the grey Ares glyph on a solid black rounded-square
+         plate. The original set was the bare glyph on transparent and was not
+         square, so Google would not use it: it requires a square icon of at
+         least 48x48, and an opaque plate is what keeps the mark visible in
+         both its light and dark result pages.
+
+         Three deliberate details:
+           - Rasterised by supersampling (rendered at 4x, downscaled through
+             canvas with high-quality smoothing). Rendering straight to 48 or
+             16px made Chrome resolve the glyph's fine inner gap at that
+             resolution, which looked chewed up.
+           - The glyph sits slightly up and left of centre. Surfaces that crop
+             an icon to a circle take the corners off, and this mark's weight
+             is low-right, so that was the corner being clipped.
+           - apple-touch-icon is full-bleed, not rounded: iOS applies its own
+             mask, and rounding it here as well double-rounds the corners.
          The -v2 filenames are deliberate. Google caches favicons by URL and is
          slow to refetch an unchanged path, so new paths get it to look again.
          /favicon.ico stays at the root as the conventional fallback and has
@@ -42,7 +53,7 @@
     <link rel="icon" href="%PUBLIC_URL%/favicon-v2.svg" type="image/svg+xml" />
     <link rel="icon" href="%PUBLIC_URL%/favicon-v2-48.png" type="image/png" sizes="48x48" />
     <link rel="icon" href="%PUBLIC_URL%/favicon-v2-192.png" type="image/png" sizes="192x192" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" sizes="16x16 32x32 48x48" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" sizes="16x16 32x32 48x48 64x64" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/apple-touch-icon-v2.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <link rel="canonical" href="https://aressecurity.co/" />
