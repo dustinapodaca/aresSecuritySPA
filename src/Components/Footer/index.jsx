@@ -6,10 +6,17 @@ class Footer extends React.Component {
       <>
         <footer id="footer" className="text-white bg-black body-font">
           <div className="container-ares py-32 flex items-center sm:flex-row flex-col">
-            <span
-              className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900"
+            {/* Back to top. A real <button> rather than a clickable <span>:
+                it was selecting its own text on click, and the slightest drag
+                left "Ares Security" sitting there highlighted. select-none
+                stops that, the tap-highlight reset stops the grey flash on
+                mobile, and being a button means it is reachable by keyboard,
+                which the span never was. */}
+            <button
+              type="button"
               onClick={this.props.scrollToTop}
-              style={{ cursor: "pointer" }}
+              aria-label="Back to top"
+              className="flex title-font font-medium items-center md:justify-start justify-center cursor-pointer select-none appearance-none border-0 bg-transparent p-0 text-left [-webkit-tap-highlight-color:transparent] focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
             >
               <svg
                 id="Layer_2"
@@ -33,10 +40,14 @@ class Footer extends React.Component {
                   />
                 </g>
               </svg>
-              <h2 className="ml-3 text-2xl md:text-3xl font-semibold text-white">
+              {/* Was an <h2>. A heading is not valid inside a button, and a
+                  lone "Ares Security" heading in the footer was not doing any
+                  work in the document outline — the company name is already in
+                  the hero and in the JSON-LD. */}
+              <span className="ml-3 text-2xl md:text-3xl font-semibold text-white">
                 Ares Security
-              </h2>
-            </span>
+              </span>
+            </button>
             <p className="text-litegreen text-sm md:text-lg text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-8">
               © 2026 Ares Security LLC
             </p>
