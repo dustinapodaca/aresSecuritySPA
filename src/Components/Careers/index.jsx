@@ -1,5 +1,4 @@
 import React from 'react';
-import { AnimationOnScroll } from 'react-animation-on-scroll';
 import './careers.styles.scss';
 
 import aresGroup from '../../assets/img/aresGroup.webp';
@@ -9,18 +8,11 @@ export default function Careers() {
     <>
       <section id="careers" className="text-gray-600 body-font">
         <div className="container-ares flex flex-col pt-12 pb-4 md:pt-16 lg:pt-16 justify-center items-center">
-          <AnimationOnScroll
-            animateIn="animate__fadeInLeft"
-            duration={1}
-            animateOnce={true}
-            offset={50}
-          >
-            <img
-              className="lg:w-4/6 md:w-5/6 w-5/6 mb-7 object-cover object-center rounded mx-auto"
-              alt="hero"
-              src={aresGroup}
-            />
-          </AnimationOnScroll>
+          <img
+            className="lg:w-4/6 md:w-5/6 w-5/6 mb-7 object-cover object-center rounded mx-auto"
+            alt="The Ares Security team"
+            src={aresGroup}
+          />
           <div className="w-full lg:w-4/6 md:w-5/6 flex flex-col mb-24 items-center text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-mid mb-4">
               Careers

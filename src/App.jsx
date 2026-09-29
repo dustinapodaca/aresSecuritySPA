@@ -11,7 +11,6 @@ import Careers from './Components/Careers';
 import Footer from './Components/Footer';
 
 import { animateScroll as scroll } from "react-scroll";
-import "animate.css/animate.min.css";
 import './App.scss';
 
 const App = () => {
