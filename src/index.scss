@@ -91,6 +91,17 @@ code {
   [data-reveal='left'] { transform: translate3d(-40px, 0, 0); }
   [data-reveal='right'] { transform: translate3d(40px, 0, 0); }
 
+  /* Marker-only variant: still observed, still gets data-revealed flipped
+     when it enters view, but stays visible and static itself. Used as a
+     parent flag whose revealed state drives a child animation — the
+     certification cascade below. Declared after the directional variants so
+     its values win the cascade. */
+  [data-reveal='none'] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
   [data-reveal][data-revealed='true'] {
     opacity: 1;
     transform: translate3d(0, 0, 0);
@@ -98,8 +109,13 @@ code {
 
   /* Certification cascade. The row is the observed element; the cards
      inside it stagger off a single trigger, which keeps them in step
-     regardless of how the grid wraps. Matches the new site exactly:
-     600ms ease-out, 200ms apart. */
+     regardless of how the grid wraps. 600ms ease-out, 200ms apart.
+
+     Keyed off data-revealed, not data-in-view: the in-view observer only
+     fires at the optical centre of the viewport, which left the badges
+     sitting invisible until the row was half a screen up. data-revealed
+     comes from the same observer the [data-reveal] entrances use, so the
+     cascade now starts as the row enters. */
   .cert-cascade > * {
     opacity: 0;
     transform: translateY(16px);
@@ -108,7 +124,7 @@ code {
       transform 600ms ease-out var(--cascade-delay, 0ms);
   }
 
-  .cert-cascade[data-in-view='true'] > * {
+  .cert-cascade[data-revealed='true'] > * {
     opacity: 1;
     transform: translateY(0);
   }

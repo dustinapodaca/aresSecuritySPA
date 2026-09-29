@@ -102,12 +102,10 @@ export default function Capability() {
             The ROW is what gets observed, not the individual cards: the cards
             stagger off that single trigger, so they stay in step with each
             other however the grid wraps. data-scroll-once latches it on the
-            first crossing so the cascade does not replay every time the row
-            passes the centre of the viewport. */}
+            first crossing so the cascade does not replay on the way back up. */}
         <div
           className="cert-cascade grid grid-cols-2 lg:grid-cols-4 gap-4 mb-12"
-          data-scroll-active
-          data-scroll-once
+          data-reveal="none"
         >
           {CERTS.map((c) => (
             <div
