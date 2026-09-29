@@ -360,13 +360,13 @@ export default function Hero() {
             Below lg the photo is a full-width letterbox strip, which is much
             wider than the source and so crops hard top and bottom — a centred
             crop cut the GSA / Women Owned card off the bottom edge on tablet.
-            Biasing to 85% down the frame keeps that card whole and still holds
-            both officers' heads.
+            Biasing to 95% down the frame keeps that card whole with a little
+            air beneath it, and still holds both officers' heads.
             At lg the photo becomes a full-height half-width panel, taller than
             it is wide; that crop is horizontal, the card already sits well
             inside it, and centring is what keeps the subjects framed. */}
         <img
-          className="h-72 w-full object-cover object-[50%_85%] sm:h-72 md:h-96 lg:h-full lg:w-full lg:object-center"
+          className="h-72 w-full object-cover object-[50%_95%] sm:h-72 md:h-96 lg:h-full lg:w-full lg:object-center"
           src={hero}
           alt="Two Ares Security officers in uniform polos at a building entrance, with GSA and Women Owned marks"
         />
